@@ -1,0 +1,28 @@
+<?php
+
+use Database\Migration as Migration;
+use Database\Schema as Schema;
+
+class {{class}} extends Migration {
+
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		//
+	}
+
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		//
+	}
+
+}

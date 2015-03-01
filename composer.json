@@ -1,0 +1,30 @@
+{
+    "name": "vahitserifsaglam1/framework",
+    "description": "Basic framework",
+
+    "autoload": {
+    "classmap" : [
+        "vendor/src/ozsa-src",
+        "vendor/wixel/gump",
+        "vendor/twig",
+        "vendor/predis/predis",
+        "vendor/guzzlehttp",
+		"vendor/nesbot/carbon",
+		"vendor/danielstjules",
+		"vendor/mailgun",
+		"app/Lib/Zend/Http"
+    ]
+},
+    "require": {
+        "propel/propel": "dev-master",
+        "wixel/gump": "dev-master",
+        "twig/twig" : "dev-master",
+        "predis/predis": "1.1.*@dev",
+        "guzzlehttp/guzzle": "~5.0",
+		"symfony/http-foundation": "3.0.*@dev",
+		"nesbot/carbon": "dev-master",
+		"danielstjules/Stringy":"dev-master",
+		"mailgun/mailgun-php":"dev-master"
+       
+    }
+}
