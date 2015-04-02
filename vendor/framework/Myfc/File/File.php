@@ -5,6 +5,7 @@
 use Myfc\Adapter;
 use Myfc\File\App\DirectoryIterator;
 use Myfc\File\App\Finder;
+use Exception;
 
 /** 
  * @author vahitþerif
@@ -134,7 +135,9 @@ class File
     
     public function exists($path)
     {
+   
         $path = $this->inPath($path);
+ 
         return ( file_exists($path ) ) ? true:false;
     
     }
@@ -344,6 +347,15 @@ class File
         }
         @unlink($src);
     }
+    
+    public function inc($path)
+    {
+        
+        $path = $this->inPath($path);
+        
+        return include $path;
+        
+    }
     /**
      * Sýnýfta bulunmayan fonksiyonlar önce iterator sýnýfýnda aranýr
      * Eðer o sýnýfta bulunmassa 
@@ -355,7 +367,6 @@ class File
      */
     public function __call($name,$params)
     {
-        
         if(method_exists($this->adapter->iterator, $name))
         {
             

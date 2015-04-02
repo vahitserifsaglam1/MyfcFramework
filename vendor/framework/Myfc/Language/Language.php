@@ -38,14 +38,23 @@ class Language
     public function rende($dil,$name)
     {
         
-        $path = LANGUAGE_PATH.'/'.$dil.'/'.$name.'.php';
-        
+        $path = $dil."/".$name.".php";
+
+       
         if($this->file->exists($path))
         {
             
-            return require $path;
+          
+            return $this->file->inc($path);
             
         }
+        
+    }
+    
+    public function getName()
+    {
+        
+        return "language";
         
     }
 }

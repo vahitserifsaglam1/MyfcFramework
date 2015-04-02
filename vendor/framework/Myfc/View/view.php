@@ -3,6 +3,7 @@
  namespace Myfc;
  
  use Myfc\Template\Engine;
+ use Myfc\Singleton;
 
  class View
 
@@ -40,22 +41,56 @@
          }
 
      }
+     
+     private static function installLanguage()
+     {
+         
+         static::$lang = Singleton::make('\Myfc\Language');
+         
+     }
+     /**
+      * 
+      * @param unknown $path -> View dosyasının adı .php olmadan
+      * @param array $params -> içeri enjeckte edilecek parametreler
+      * @param string $rendefiles ->css, js, template, languea ayarlamaları yapılan yer
+      * @param array $templateArray -> template in ayarları ve tanımlamaları
+      * @return NULL
+      */
      public static function render($path,array $params = array(),$rendefiles = '', array $templateArray = array())
      {
 
+         
+         static::installLanguage();
          if(isset($params) && !empty($params))
          {
              $params = $params;
          }
          if(is_array($rendefiles))
          {
+             $lang  = $rendefiles['language'];
+             
+            
+             unset($rendefiles['language']);
              $rende = self::renderFiles($rendefiles);
-
+           
+             $lang = static::createLanguage($lang);
+             
 
          }else{
              $rende = array();
          }
+         
+        
+         
          $extra = array_merge($params,$rende);
+         
+         if(isset($lang) && is_array($lang))
+         {
+             
+             $extra = array_merge($extra,$lang);
+             
+         }
+           
 
          extract($extra);
 
@@ -66,6 +101,8 @@
              file_put_contents($path,$files);
          }
          if(isset($rendefiles['templates'])) $templates = $rendefiles['templates'];
+         
+         
 
          if(isset($templates))
          {
@@ -89,8 +126,19 @@
          {
              $path = VIEW_PATH.$path.'.php';
          }
+         
+         if(file_exists($path))
+         {
+             
+             include $path;
+             
+         }else{
+             
+             throw new \Exception( sprintf("%s view dosyası bulunamadı", $path));
+             
+         }
 
-         include $path;
+         
 
          return null;
      }
@@ -100,10 +148,12 @@
      }
      public static function renderFiles(array $filess = array())
      {
+        
          $files = array(
              'css' => array(),
              'js' => array(),
-             'files' => array()
+             'files' => array(),
+             'language' => array()
          );
 
          foreach($filess as $key => $value)
@@ -127,10 +177,12 @@
          if(isset($files['js'])) self::$js = self::createJs($files['js']);
          if(isset($files['files']) )self::$files = self::createFiles($files['files']);
 
+
+         
          $return =  array(
              'css' => self::$css,
              'js' => self::$js,
-             'files' => self::$files
+             'files' => self::$files,
          );
 
          return $return;
@@ -166,6 +218,29 @@
              $s .= '<script type="text/javascript" href="'.PUBLIC_PATH.'js/'.$key.'" /></script>'."\n";
          }
          return $s;
+     }
+     
+     public static function createLanguage(array $language)
+     {
+         
+    
+         
+         $array = [];
+         
+         foreach($language as $k => $s)
+         {
+             
+             foreach($s as $v)
+             {
+                 
+                 $array = array_merge($array, static::$lang->rende($k,$v));
+                 
+             }
+             
+         }
+         
+         return $array;
+         
      }
 
 

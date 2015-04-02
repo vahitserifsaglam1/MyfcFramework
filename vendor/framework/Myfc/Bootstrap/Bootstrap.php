@@ -89,7 +89,7 @@
     private function languageInstall()
     {
         
-        $this->adapter->addAdapter( Singleton::make(' \Myfc\Language'));
+        $this->adapter->addAdapter( Singleton::make('\Myfc\Language'));
         
     }
     
@@ -103,12 +103,10 @@
         foreach($providers as $pro)
         {
 
-            if(class_exists($pro,true))
-            {
+          
                 
                 $this->adapter->addAdapter(new $pro());
-                
-            }
+               
             
             
         }

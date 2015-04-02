@@ -19,6 +19,10 @@ class Router
     
     private $method;
     
+    private $unsetParams;
+    
+    private $params;
+    
     public function run(Bootstrap $container, $collection)
     {
         
@@ -62,9 +66,9 @@ class Router
          foreach($selected as $select)
          {
          
-              if($parametres = $this->actionParsing($select['action'])){
+              if($this->actionParsing($select['action'])){
                   
-                  $this->callbackParsing($select['callback'], $parametres);
+                  $this->callbackParsing($select['callback']);
                   
               }
               
@@ -81,6 +85,90 @@ class Router
     private function actionParsing($action)
     {
        
+
+             $url = explode("/",rtrim($this->url,"/"));
+            
+             $action = rtrim($action,"/");
+             
+             $explode = explode("/",$action);
+             
+             
+             if(count($url) && count($explode))
+             {
+                 $array = array_map(function($a){
+                      
+                     if(strstr($a, "{") && strstr($a, "}")){
+                          
+                         return $a;
+                          
+                     }
+                      
+                 }, $explode);
+                      
+                     $unsetArray = array_map(function($a){
+                 
+                         if(!strstr($a,"!"))
+                         {
+                              
+                             return $a;
+                              
+                         }
+                 
+                     }
+                         , $array);
+                          
+                         preg_match_all("#\{(.*?)\}#", $action,$finds);
+                 
+                         $find = $finds[1];
+                          
+                         $params = array();
+                          
+                          
+                 
+                         for($i=0;$i<count($array);$i++)
+                         {
+                 
+                         if(isset($url[$i]) && $array[$i] !== null)
+                         {
+                 
+                          
+                         $params[] = $url[$i];
+                 
+                         }
+                 
+                         }
+                 
+                 
+                             $unsetParams = array();
+                 
+                             for($a=0;$a<count($url);$a++)
+                             {
+                 
+                              
+                             if(isset($url[$a]) && $unsetArray[$a] !== null )
+                             {
+                              
+                             $unsetParams[] = $url[$a];
+                                  
+                             }
+                              
+                             }
+                 
+                 
+                             $this->unsetParams = $unsetParams;
+                 
+                             $this->params = $params;
+                 
+                 
+                             return (is_array($this->unsetParams) && is_array($this->params)) ? true:false;
+                 
+             }
+             
+           
+             
+            
+        
+        /*
          if(strstr($action, "{") && strstr($action, "}"))
          {
              
@@ -134,12 +222,14 @@ class Router
             
              
          }
+         
+         */
         
     }
     
  
     
-    private function callbackParsing($callback, array $parametres = array())
+    private function callbackParsing($callback)
     {
         
         // eðer çaðrýlabilir bir ifadeyse
@@ -147,7 +237,7 @@ class Router
         if(is_callable($callback))
         {
             
-            $this->runCallable($callback,$parametres);
+            $this->runCallable($callback);
             
         }
         
@@ -160,14 +250,14 @@ class Router
             if(is_string($callback[0]))
             {
                 
-                $this->callBackString($callback,$parametres);
+                $this->callBackString($callback);
                 
             }
             
             if(is_array($callback[0]))
             {
                 
-                $this->callBackArray($callback,$parametres);
+                $this->callBackArray($callback);
                 
             }
             
@@ -184,7 +274,7 @@ class Router
         if(is_string($callback))
         {
             
-            $this->runController($callback,$parametres);
+            $this->runController($callback);
             
         }
         
@@ -197,7 +287,7 @@ class Router
      * Callback olayýnýn 0. indisi string ise çaðrýlýr
      * @param unknown $callback
      */
-    private function callBackString($callback,$parametres)
+    private function callBackString($callback)
     {
         
         if($this->securityChecker($callback[0]))
@@ -206,7 +296,7 @@ class Router
             if(is_callable($callback[1]))
             {
         
-                $this->runCallable($callback[1],$parametres);
+                $this->runCallable($callback[1]);
         
             }else{
         
@@ -214,7 +304,7 @@ class Router
                 if(is_string($callback[1]))
                 {
         
-                    $this->runController($callback[1],$parametres);
+                    $this->runController($callback[1]);
         
                 }
         
@@ -251,16 +341,31 @@ class Router
             elseif (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' || !empty($_SERVER['HTTP_X_FORWARDED_SSL']) && $_SERVER['HTTP_X_FORWARDED_SSL'] == 'on') {
                 $isSecure = true;
             }
-            return  $isSecure ? true : false;
+           
             
         }
-        else{
-            
-            return  true;
-            
-        }
+       elseif($https =="AJAX"){
+           
+           if(filter_input(INPUT_SERVER, 'HTTP_X_REQUESTED_WITH') === 'xmlhttprequest')
+           {
+               
+               $isSecure = true;
+               
+               
+           }else{
+               
+               $isSecure = false;
+               
+           }
+           
+           
+       }else{
+           
+           $isSecure = true;
+           
+       }
         
-        
+       return  $isSecure ? true : false;
         
     }
     
@@ -268,12 +373,15 @@ class Router
      * Çaðrýlabilir ifade yürütmesi
      * @param unknown $callback
      */
-    private function runCallable($callback,$parametres)
+    private function runCallable($callback)
     {
+        
+        $parametres = $this->params;
+        
         
         $response = Singleton::make('\Myfc\Http\Response');
         
-        $parametres['response'] = $response;
+        $parametres[] = $response;
         
         return call_user_func_array($callback, $parametres);
         
@@ -283,9 +391,10 @@ class Router
      * Kontroller Yürütür
      * @param unknown $string
      */
-    private function runController($string,$paremetres)
+    private function runController($string)
     {
         
+        $parametres = $this->unsetParams;
         
         if(strstr($string, "@"))
         {

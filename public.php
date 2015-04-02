@@ -39,4 +39,11 @@
   
   define("LANGUAGE_PATH", PUBLIC_PATH.'language');
   
+  /**
+   * Sabitlerin tanýmlanmasý -> view dosyalarý
+   * @var unknown
+   */
+  
+  define('VIEW_PATH', APP_PATH.'Views/');
+  
   include SYSTEM_PATH.'bootstrap.php';

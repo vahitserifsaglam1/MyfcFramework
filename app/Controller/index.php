@@ -19,7 +19,7 @@
          
          parent::__construct();
          
-         echo "asdasd";
+         
          
      }
 

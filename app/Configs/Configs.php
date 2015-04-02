@@ -13,8 +13,9 @@ return [
         'Route' => 'Myfc\Route',
         'Session' => 'Myfc\Session',
         'Cache' => 'Myfc\Cache',
-        'Validate' => 'Myfc\Validate'
-    
+        'Validate' => 'Myfc\Validate',
+        'Mail'  => 'Myfc\Mail',
+     
     ],
     
     'serviceProviders' => [
