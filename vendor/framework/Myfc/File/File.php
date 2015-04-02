@@ -1,5 +1,7 @@
 <?php
 
+ namespace Myfc;
+
 use Myfc\Adapter;
 use Myfc\File\App\DirectoryIterator;
 use Myfc\File\App\Finder;
@@ -8,7 +10,7 @@ use Myfc\File\App\Finder;
  * @author vahitşerif
  * 
  */
-class Filesystem
+class File
 {
     
     public $folder;
@@ -59,10 +61,16 @@ class Filesystem
      * @param unknown $type
      * @param string $path
      */
-    public function getType($type,$path = '')
+    public function getType($type,$path = null)
     {
         
-        $path = $this->inPath($path);
+        if($path == null)
+        {
+            
+            $path = $this->inPath($path);
+            
+        }
+
         
         $array = $this->adapter->iterator->read($path);
         

@@ -55,6 +55,10 @@
       }
 
 
+      /**
+       * Sýnýfý baþlatýr
+       * @return \Myfc\Validate
+       */
 
       public static function boot(   )
       {
@@ -62,22 +66,34 @@
           return new static();
 
       }
-      public static function make($veri,array $filters = array(),array $rules = array())
+      
+      /**
+       * Gump kullanarak filtreleme yapar
+       * @param unknown $veri
+       * @param array $filters
+       * @param array $rules
+       * @return boolean|unknown
+       */
+      public function make($veri,array $filters = array(),array $rules = array())
       {
-          $thi =  new static(self::$options);
+          
           $s = $veri->gump->filter($veri,$filters);
 
-          $validate = $thi->gump->validate(
+          $validate = $this->gump->validate(
               $veri,$rules
           );
 
           if($validate) return true;else return $validate;
       }
 
-      public static function makro($name,Callable $call)
+      /**
+       * Sýnýfa ilerde çaðrýlabilmesi için fonksiyon eklemesi yapar
+       * @param unknown $name
+       * @param callable $call
+       */
+      public  function makro($name,Callable $call)
       {
-          $validate = new static(self::$options);
-          $validate = $validate->gump;
+          $validate = $this->gump;
           if(is_callable($call))
           {
               static::$functions[$name] = Closure::bind($call, null, get_class());
@@ -133,35 +149,9 @@
               }
           }
           }else{
-              $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','=',"or","select"),'',htmlentities(htmlspecialchars(strip_tags($validate)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
+              $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','='," or "," select ", " and ","  AND ", " OR ", " SELECT "),'',htmlentities(htmlspecialchars(strip_tags($validate)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
           }
            return $return;
-      }
-
-      /**
-       * @param $validate
-       * @return mixed
-       */
-      public static function validateOzsa($validate)
-      {
-          if(is_array($validate))
-          {
-              foreach($validate as $key => $value)
-              {
-
-                  if(is_array($value))
-                  {
-                      self::validateOzsa($value);
-                  }else{
-
-                      $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','=',"or","select"),'',htmlentities(htmlspecialchars(strip_tags($value)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
-
-                  }
-              }
-          }else{
-              $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','=',"or","select"),'',htmlentities(htmlspecialchars(strip_tags($validate)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
-          }
-          return $return;
       }
 
       public static function __callStatic($name,$params)

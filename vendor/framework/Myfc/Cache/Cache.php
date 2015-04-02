@@ -3,6 +3,7 @@
  namespace Myfc;
  
  use Myfc\Singleton;
+ use Myfc\Cache\CacheManager;
  
  use Myfc\Config;
 
@@ -28,7 +29,7 @@
 
             $this->adapter = Singleton::make('\Myfc\Adapter','Cache');
 
-            $this->adapter->addAdapter(new Cache\CacheManager($this->configs,$this->adapterList));
+            $this->adapter->addAdapter(new CacheManager($this->configs,$this->adapterList));
 
         }
 

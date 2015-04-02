@@ -14,6 +14,7 @@
      public static $files = array();
      protected static $templateInstalled = false;
      public static $templateArray;
+     public static $lang;
 
      public static function setTemplateArrays($array,$file)
      {
@@ -21,6 +22,7 @@
          self::templateInstall();
 
      }
+     
      public static function templateInstall()
      {
          if(!self::$templateInstalled)

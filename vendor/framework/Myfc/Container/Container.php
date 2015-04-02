@@ -64,7 +64,7 @@
        * @return unknown|boolean
        */
       
-      public function make($controller,$parametres = array())
+      public function makeController($controller,$parametres = array())
       {
           
           $controllerPath = APP_PATH."Controller/$controller.php";

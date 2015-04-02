@@ -32,4 +32,11 @@
   
   define("VENDOR_PATH","vendor/");
   
+  /**
+   * Sabitlerin tanýmlanmasý -> language(dil) klasörü
+   * @var unknown
+   */
+  
+  define("LANGUAGE_PATH", PUBLIC_PATH.'language');
+  
   include SYSTEM_PATH.'bootstrap.php';

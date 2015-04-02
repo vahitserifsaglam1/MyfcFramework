@@ -304,7 +304,7 @@ class Router
         if($method !== null)
         {
             
-            $controller = $this->container->make($controller);
+            $controller = $this->container->makeController($controller);
             
             if(method_exists($controller, $method) && is_callable(array($controller,$method)))
             {
@@ -315,7 +315,7 @@ class Router
             
         }else{
             
-               return  $controller = $this->container->make($controller,$paremetres);
+               return  $controller = $this->container->makeController($controller,$paremetres);
              
         }
         

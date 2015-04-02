@@ -3,6 +3,7 @@
 
      namespace Myfc\Http;
 
+     use Myfc\Redirect;
      use Myfc\Http\Response\Factory\ResponseFactory as Factory;
      use Symfony\Component\HttpFoundation\Response as Res;  
      use Myfc\Singleton;
@@ -17,6 +18,7 @@
      class Response
      {
 
+         public $redirect;
          /**
           * @var Factory
           *
@@ -35,6 +37,8 @@
           public function __construct($content = '', $status = 200, array $headers = array())
           {
 
+               $this->redirect = Redirect::boot();
+               
                $this->factory = new Factory( new Res(),new View(), Singleton::make('\Myfc\Redirect'));
 
               if($content !== '')

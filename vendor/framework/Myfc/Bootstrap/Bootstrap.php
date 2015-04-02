@@ -41,14 +41,16 @@
          $this->adapter->addAdapter(Singleton::make('\Myfc\Assets'));
          
          $this->adapter->addAdapter(Singleton::make('\Myfc\Http\Server'));
-         
-        
-         
+
          $this->getUrl = $this->adapter->assests->returnGet();
          
          $this->urlChecker();
          
          $this->sessionStart();
+         
+         $this->languageInstall();
+         
+         $this->runServiceProviders($configs['serviceProviders']);
          
          parent::__construct($this->adapter->server, $configs, $this->getUrl);
         
@@ -70,10 +72,47 @@
     
     }
     
+    /**
+     * Session sýnýfýný yapýlandýrýr
+     */
     private function sessionStart()
     {
         
         $this->adapter->addAdapter(new Starter());
+        
+    }
+    
+    /**
+     * Dil sýnýfýný yapýlandýrýr
+     */
+    
+    private function languageInstall()
+    {
+        
+        $this->adapter->addAdapter( Singleton::make(' \Myfc\Language'));
+        
+    }
+    
+    /**
+     * 
+     */
+    private function runServiceProviders(array $providers = array() )
+    {
+        
+          
+        foreach($providers as $pro)
+        {
+
+            if(class_exists($pro,true))
+            {
+                
+                $this->adapter->addAdapter(new $pro());
+                
+            }
+            
+            
+        }
+        
         
     }
     
