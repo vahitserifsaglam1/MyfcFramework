@@ -3,8 +3,8 @@ namespace Myfc;
 
  use Exception;
  use PDOStatement;
- use Myfc\DB\Creator\Pagination;
- use Myfc\DB\Creator\Excel;
+ use Myfc\Html\Pagination;
+ use Myfc\File\Excel;
 
  /**
   *

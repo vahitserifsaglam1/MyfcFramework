@@ -18,14 +18,34 @@
      private $where;
      
      private $put;
-     
+
+     /**
+      * Pattern eklemesi yapar
+      * @param unknown $pattern
+      */
+   
+     public function pattern($pattern)
+     {
+         
+         if(is_array($pattern))
+         {
+             
+             $this->where($pattern);
+             
+         }else{
+             
+             $this->where($pattern[0],$pattern[1]);
+             
+         }
+         
+     }
      /**
       * Where eklemesi yapar
       * @param unknown $params
       * @param string $check
       * @return \Myfc\Route
       */
-     
+        
      public function where($params = array(),$check = null)
      {
          
@@ -100,7 +120,29 @@
          return $this;
           
      }
-      
+
+     public function match($verbs, $action,$callback)
+     {
+         
+         if(!is_array($verbs))
+         {
+             
+             $verbs = array($verbs);
+             
+         }
+         
+         foreach($verbs as $verb)
+         {
+             
+             $verb = mb_check_encoding($verb, MB_CASE_LOWER);
+             
+             call_user_func_array(array($this,$verb), array($action,$callback));
+             
+         }
+         
+         return $this;
+         
+     }
      
      /**
       * Collection ekler

@@ -1,241 +1,469 @@
 <?php
+namespace Myfc\DB\Creator;
 
-namespace Html;
 /**
- * Class Pagination
- * @package Html
+ *
+ * @author vahitşerif
+ *        
  */
-    class Pagination
+class Pagination
+{
+
+     private $configs;
+     
+     private $_string;
+     
+     private $numeric;
+     
+     private $records;
+     
+     
+     const PAGINATION_CONFIGS = 'app/Configs/paginationConfigs.php';
+    /**
+     *  
+     *  Başlatıcı Sınıf
+     *  
+     *   Dosyayı parçalar
+     * 
+     */
+    public function __construct($parse)
     {
-        public $homeClass;
-        public $linkClass;
-        public $max = false;
-        public $min = false;
-        public $records = false;
-        public $activePage;
-        public $url;
-        public $file;
-        public $endUrl;
-        public $configs;
-        public $standartLink;
-        public $standartUrl;
-
-        /**
-         * @param null $page
-         * @param null $records
-         *
-         */
-
-        public function __construct( $records = null )
+        
+        
+        if(file_exists(static::PAGINATION_CONFIGS))
         {
-            $configs = require APP_PATH.'Configs/paginationConfigs.php';
-            $standart = require APP_PATH.'Configs/Configs.php';
-            $this->standartUrl = $standart['URL'];
-
-            extract($configs);
-            $this->configs = $configs;
-            $this->homeClass = $homeClass;
-            $this->linkClass = $linkClass;
-            $this->min = $min;
-            $this->max = $max;
-            $this->records = $records;
-            $this->url = \App\App::urlParse();
-            $sonurl = array_pop($this->url);
-            $this->endUrl = $sonurl;
-            $this->urlParser();
-            $this->standartLinkCreator();
-            return $this;
+            
+            $this->configs = require static::PAGINATION_CONFIGS;
+            
+        }else{
+            
+            die('Pagination ayarları çekilemedi, dosyanız silinmş');
+            
         }
-
-        public static function boot( $records = null )
+        
+        if(is_array($parse))
         {
-
-            return new static( $records );
-
+            
+            $this->parseArray($parse);
+            
         }
-
-        /**
-         * @param bool $return
-         * @return string
-         */
-
-        public function execute( $return = false )
+        if(is_string($parse))
         {
-           $msg = '';
-
-            $msg .= $this->homeCreator();
-
-            $msg .= $this->linkCreator();
-
-            $msg .= $this->homeEndCreator();
-
-            if($return) return $msg;else echo $msg;
+            
+            $this->parseString($parse);
+            
         }
-
-        /**
-         * @return string
-         */
-        public function homeCreator()
-        {
-           $return = '<div class = "'.$this->homeClass.'">'."\n";
-            return $return;
-        }
-
-        /**
-         * @return string
-         */
-
-        public function homeEndCreator()
-        {
-            return '</div>';
-        }
-
-
-        /**
-         * ****
-         */
-        public function linkCreator()
-        {
-
-            $msg = '';
-            $page = $this->activePage;
-            $min = $this->min;
-            $max = $this->max;
-            $records = $this->records;
-            ////////////////////////////
-            // Buraya ayar dosyasÄ±ndan veriler Ã§ekilecek
-            ////////////////////////////
-            if (!$min) $min = $this->configs['min'];
-            if (!$max) $max = $this->configs['max'];
-            ///////////////////////////////
-            // 1den kÃ¼Ã§Ã¼k,bÃ¼yÃ¼k kontrolu
-            ///////////////////////////////
-
-            $minpage = ($page - $min);
-            $minpage = ($minpage < 1) ? 1 : $minpage;
-            $maxpage = ($minpage + $max);
-            $maxpage = ($maxpage > $records) ? $records : $maxpage;
-
-            //////////////////////////
-
-            $end = $this->endUrl;
-
-            /////////////////////////
-
-
-
-            for($i = $minpage;$i<=$maxpage;$i++)
-            {
-
-                 $end = $end.'/'.$i;
-
-                 $msg .=  $this->linkAndMessageCreator($this->standartUrl,$i,$end);
-
-            }
-
-
-            return $msg;
-        }
-
-
-
-        /**
-         * @return string
-         */
-
-       public function standartLinkCreator()
-        {
-            $msg = '';
-            foreach($this->url as $key )
-            {
-                $msg .= $key.'/';
-
-            }
-            $this->standartLink = $msg;
-            return $msg;
-        }
-
-        /**
-         * @param $i
-         * @param $link
-         * @return string
-         */
-
-        public function linkAndMessageCreator($standart,$i,$link)
-        {
-
-                $msg = '<a class="'.$this->linkClass.'" href="'.$standart.$this->standartLink.$i.'">'.$i.'</a>';
-                return $msg;
-        }
-
-        /**
-         * @return null
-         */
-
-        public function urlParser()
-        {
-            $url = $this->url;
-            if(count($url) == 1 && $url[0] == '')
-            {
-                $url[0] = "index";
-            }
-            $this->url = $url;
-            return null;
-
-        }
-
-        /**
-         * @param bool $records
-         * @param bool $page
-         * @return $this
-         */
-
-        public function setRecords($records = false,$page = false)
-        {
-            if(!isset($this->records)) $this->records = $records;
-            if(!isset($this->activePage)) $this->activePage = $page;
-            return $this;
-        }
-
-        /**
-         * @param $max
-         * @return $this
-         */
-
-        public function setMax($max)
-        {
-            if(!isset($this->max)) $this->max = $max;
-            return $this;
-        }
-
-        /**
-         * @param $min
-         * @return $this
-         */
-
-        public function setMin($min)
-        {
-            if(!isset($this->min)) $this->min = $min;
-            return $this;
-        }
-
-        /**
-         * @param $min
-         * @param $max
-         * @return $this
-         */
-
-        public function setMaxAndMin($min,$max)
-        {
-            if(!isset($this->min))
-            {
-                $this->min = $min;
-            }
-            if(!isset($this->max))
-            {
-                $this->max = $max;
-            }
-            return $this;
-        }
-
+        
+        
     }
+    
+    /**
+     * Stati olarak sınıfı başlatmaya yarar
+     * @param unknown $parse
+     * @return \Myfc\DB\Creator\Pagination
+     */
+    
+    public static function boot($parse)
+    {
+        
+        return new static($parse);
+        
+    }
+    
+    /**
+     * ayarları değiştirir 
+     * @param array $configs
+     * @return \Myfc\DB\Creator\Pagination
+     */
+
+    public function setConfigs( array $configs )
+    {
+        
+        $this->configs = $configs;
+        
+        return $this;
+        
+    }
+    
+    /**
+     * Gelen veriyi parçalamakta kullanılır, veri return etmez(void)
+     * @param array $parse
+     */
+    
+    private function parseArray( array $parse )
+    {
+        
+        
+        if(is_string($parse[0]) && is_string($parse[1]) || is_numeric($parse[1]))
+        {
+      
+            if(strstr($parse[0], "{") && strstr($parse[0], "}"))
+            {
+               
+                $string = preg_match("#\{(.*?)\}#", $parse[0],$find);
+                
+                
+                
+                if($find)
+                {
+                    
+                    
+                    $clean = preg_replace("#\{(.*?)\}#", '', $parse[0]);
+
+                    
+                    
+                    $numeric = $find[array_search($parse[1], $find)];
+                    
+                  
+                    $this->_string= $clean;
+                    
+                    $this->numeric = $numeric;
+                    
+                   
+                  
+                }
+                
+               
+                
+            }
+            
+        }
+        
+        
+        if(is_array($parse[0]) && is_string($parse[1]) || is_numeric($parse[1]))
+        {
+            
+            $array = $parse[0];
+            
+            $numeric = $array[$parse[1]];
+            
+            $this->numeric = $numeric;
+            
+        }
+            
+        
+
+       
+    }
+    
+    /**
+     * Gelen veri stringse kullanılır, veri return etmez(void)
+     * @param string $string
+     */
+    private function parseString( $string = '' )
+    {
+        
+        if(is_string($string))
+        {
+        
+          $this->_string = $string;
+          
+          $this->numeric = 0;
+        
+        }
+        
+    }
+    
+    /**
+     * Class,id,data vs gibi html kodları oluşturmak için kullanılır
+     * @param array $array
+     * @return string
+     */
+    
+    private function creator(array $array)
+    {
+        
+        $msg = '';
+        
+        foreach($array as $key => $value)
+        {
+            
+            $msg .= "$key='$value' ";
+            
+        }
+        
+        return $msg;
+        
+    }
+    
+    /**
+     * Ebeveyn div in sınıflarını vs özellikleri için kullanılır
+     * @return string
+     */
+    private function parentCreator()
+    {
+        
+        $parents = $this->configs['parent'];
+        
+        $msg = $this->creator($parents);
+        
+        return $msg;
+        
+    }
+    
+    /**
+     * Çocuk div lerin sınıflarını vs özellikleri için kullanılır
+     * @return string
+     */
+    
+    private function childrenCreator()
+    {
+        
+        $childrens = $this->configs['children'];
+        
+        $msg = $this->creator($childrens);
+        
+        return $msg;
+        
+    }
+    
+    public function setRecords( $records = 0)
+    {
+        
+        $this->records = $records;
+        
+        return $this;
+        
+    }
+     
+    public function paginate( $return= false)
+    {
+
+         $parent = $this->parentCreator();
+        
+         $msg = "<div $parent >";
+         $records = $this->records;
+         $configs = $this->configs;
+         $count = $this->configs['count'];
+         
+         if(!isset($count) || !is_integer($count))
+         {
+             
+             $count = 50;
+             
+         }
+         
+         if(!$records)
+         {
+             
+             $records = 1;
+             
+         }
+         
+         if(isset($configs['max']) && isset($configs['max']))
+         {
+             
+             $max = $configs['max'];
+             
+             $min = $configs['min'];
+             
+         }else{
+             
+             $max = 100;
+             
+             $min = 15;
+             
+         }
+         
+         $link = $this->_string;
+         
+         $numeric = $this->numeric;
+         
+         if(!is_integer($numeric))
+         {
+             
+             $numeric = 0;
+             
+         }
+         
+ 
+         $ceil = ceil($records / $count);
+         
+         
+         $minpage = ($numeric - $min);
+         $minpage = ($minpage < 1) ? 1 : $minpage;
+         $maxpage = ($minpage + $max);
+         
+         $maxpage = ($maxpage > $ceil) ? $ceil : $maxpage;
+         
+         
+         
+         for($i = $minpage;$i<=$maxpage;$i++)
+         {
+         
+           
+         
+             $msg .=  $this->linkCreator($link,$i);
+         
+         }
+          
+         
+         $msg .= "</div>";
+        
+         if($return !== false)
+         {
+             
+             return $msg;
+             
+         }else{
+             
+             echo $msg;
+             
+         }
+   
+        
+    }
+    
+    private function linkCreator($link, $num)
+    {
+        
+        $son = substr($link, strlen($link)-1,strlen($link));
+        
+        $child = $this->childrenCreator();
+        
+        if($son == "/")
+        {
+            
+            $msg = "<a href='$link".$num."' $child />$num</a>";
+            
+        }else{
+            
+            $msg = "<a href='$link/$num' $child />$num</a>";
+            
+        }
+        
+        return $msg;
+        
+    }
+    
+    /**
+     * Aktif sayfayı dööndürür
+     * @return Ambigous <number, unknown, array>
+     */
+    
+    public function getActivePage()
+    {
+        
+        return  $this->numeric;
+        
+    }
+    
+    /**
+     * Açtif sayfa ataması yapar
+     * @param number $page
+     * @return \Myfc\DB\Creator\Pagination
+     */
+    
+    public function setActivePage( $page = 0)
+    {
+        
+        $this->numeric = $page;
+        
+        return $this;
+        
+    }
+    
+    /**
+     * Sayfalama yapılırkenki maxiumum sayfa sayısını belirler
+     * @param number $max
+     * @return \Myfc\DB\Creator\Pagination
+     */
+    public function setMax($max = 0)
+    {
+        
+        if(isset($this->configs['max']))
+        {
+            
+            $this->configs['max'] = $max;
+            
+        }
+        return $this;
+        
+    
+    }
+    
+    /**
+     * Sayfalama yaparken başlanacak sayıyı belirler
+     * @param number $min
+     * @return \Myfc\DB\Creator\Pagination
+     */
+    public function setMin($min = 0){
+        
+        if(isset($this->configs['min'])) 
+        {
+            
+            $this->configs['min'] = $min;
+            
+        }
+        
+        return $this;
+        
+    }
+    
+ 
+     /**
+      * Max ve min ataması yapar
+      * @param string $max
+      * @param string $min
+      * @return \Myfc\DB\Creator\Pagination
+      */
+ 
+    
+    public function setMaxAndMin($max = null, $min = null)
+    {
+        
+        if($max !== null) $this->setMax($max);
+        
+        if($min !== null) $this->setMin($min);
+        
+        return $this;
+        
+    }
+    
+    /**
+     * 
+     * @param number $count
+     * @return \Myfc\DB\Creator\Pagination
+     */
+    public function setCount($count = 0)
+    {
+        
+        if(isset($this->configs['count']))
+        {
+            
+            $this->configs['count'] = $count;
+            
+        }
+        
+        return $this;
+        
+    }
+    
+    /**
+     * 
+     * @return number
+     */
+    public function getCount()
+    {
+        
+        if(isset($this->configs['count'])) return $this->configs['count'];else return 50;
+        
+    }
+    
+    public function getStartPage()
+    {
+        
+        $numeric = $this->numeric;
+        
+        $cikart = ($numeric-1);
+        
+        if($cikart < 1) $cikart = 1;
+        
+        return $cikart;
+        
+    }
+    
+    
+}
+
+?>
