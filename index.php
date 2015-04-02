@@ -1,19 +1,19 @@
 <?php
+ 
+  /**
+   * 
+   * 
+   * Composer autoloader�n ba�lat�lmas�
+   * 
+   */
 
-/**
-  *
-  *   Ayarlamaların yapılacağı dosyanın çağrılması
-  *
-  *
- */
-
- $pathOptions = require_once 'public.php';
-
-/***
- *
- *    Başlangıç dosyasının yüklenmesi
- *
- */
-
- require_once $pathOptions['SystemPath']."Include.php";
-?>
+   include "vendor/autoload.php";
+   
+   /**
+    * 
+    * Sabitlerin tan�mlanmas�
+    * 
+    */
+   
+   include "public.php";
+   

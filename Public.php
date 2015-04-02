@@ -1,63 +1,35 @@
 <?php
 
-  ob_start();
+  /**
+   * 
+   *  Sabitlerin tanýmlanmasý -> app klasörü
+   *  @var unknown
+   */
 
-/**
- *  *************************************************
- *
- *   Ozsaframework baÅŸlangÄ±Ã§ sayfasÄ±
- *
- *   Gerekli dosyalarÄ±n yollarÄ± burada ayarlanÄ±r
- *
- *  ************************************************
- */
-  return  [
-
-     /**
-      *  ***************************
-      *
-      *    Frameworkun kurulduÄŸu dosya
-      *
-      *  ****************************
-      */
-          'base' => dirname(__FILE__),
-
-     /**
-      *  *********************************
-      *
-      *   Anasayfa DosyasÄ±
-      *
-      *  ********************************
-      */
-
- 	      'HomePage' => 'index.php',
-     /**
-      *  *********************************
-      *
-      *   App DosyasÄ±nÄ±n yolu
-      *
-      *  ********************************
-      */
- 	      'appPath' => 'app/',
-     /**
-      *  *********************************
-      *
-      *   Sistem dosyasÄ±nÄ±n yolu
-      *
-      *  ********************************
-      */
- 	      'SystemPath' => 'System/',
-
-     /**
-      *  ****************************
-      *
-      *   Public DosyasÄ±nÄ±n yolu
-      *
-      *  **********************
-      */
-         'PublicFiles' => 'Public/'
-
-      ];
-
-
-?>
+  define("APP_PATH", "app/");
+  
+  /**
+   *
+   *  Sabitlerin tanýmlanmasý -> public klasörü
+   *  @var unknown
+   */
+  
+  define("PUBLIC_PATH","public/");
+  
+  /**
+   *
+   *  Sabitlerin tanýmlanmasý -> system klasörü
+   *  @var unknown
+   */
+  
+  define("SYSTEM_PATH","system/");
+  
+  /**
+   *
+   *  Sabitlerin tanýmlanmasý -> vendor klasörü
+   *  @var unknown
+   */
+  
+  define("VENDOR_PATH","vendor/");
+  
+  include SYSTEM_PATH.'bootstrap.php';

@@ -1,29 +1,18 @@
 <?php
-
- return [
-
-     'URL' => 'http://localhost/ses/',
-
-
-
-     /**
-      *   Doğrulama ayarları i
-      *
-      *   autovalidate açık olursa modal larda otomatik doğrulama yapabilirsinşz
-      */
-
-
-     'Validate' =>
-
-
-        [
-
-           'autoValidate' => true,
-            'validateFolder' => __DIR__."/Validate"
-        ]
-
+return [
+    
+     'url' => 'localhost/MyfcFramework',
+     
+    
+     'alias' => [
+     
+          'Route' => 'Myfc\Route',
+          'Session' => 'Myfc\Session',
+          'Cache' => 'Myfc\Cache',
+          'Validate' => 'Myfc\Validate'
+          
+     ],
+    
+    'allIncludePath' => ''
+    
 ];
-
-
-
-?>
