@@ -74,10 +74,10 @@ class MainController
     public function __call($name,$parametres)
     {
         
-        array_map(function($a) use ($name,$parametres,$thi){
-             if(method_exists(array($thi->collection[$a],$name)) || is_callable(array($thi->collection[$a],$name))){
+        array_map(function($a) use ($name,$parametres,$this){
+             if(method_exists(array($this->collection[$a],$name)) || is_callable(array($this->collection[$a],$name))){
                  
-                 return call_user_func_array(array($thi->collection[$a],$name),$parametres);
+                 return call_user_func_array(array($this->collection[$a],$name),$parametres);
                  
              }
                 
