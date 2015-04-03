@@ -29,28 +29,7 @@
           $options = require APP_PATH.'Configs/validateConfigs.php';
           $this->set = $options;
           self::$options = $options;
-          $this->gump =  Desing\Single::make('\GUMP');#new GUMP;
-          if($this->autoValidate)
-          {
-               $appFolder = $options['validateFolder'];
-
-               $files = glob($appFolder."/*",GLOB_NOSORT);
-
-
-               $types = [];
-
-              foreach($files as $key)
-              {
-                  $notphp = str_replace(".php","",$key);
-                  $explode = explode("/",$notphp);
-                  $end = end($explode);
-                  $types[ $end ] = require $key;
-              }
-            $this->validateParams = $types;
-
-
-
-          }
+          $this->gump =  Desing\Single::make('\GUMP');#new GUMP;     
 
       }
 
@@ -88,10 +67,10 @@
 
       /**
        * Sýnýfa ilerde çaðrýlabilmesi için fonksiyon eklemesi yapar
-       * @param unknown $name
+       * @param String $name
        * @param callable $call
        */
-      public  function makro($name,Callable $call)
+      public  function makro($name = '',Callable $call)
       {
           $validate = $this->gump;
           if(is_callable($call))
@@ -107,7 +86,7 @@
        * @return bool
        * @throws Exception
        *
-       *  Ýsme göre dosyadan deðerler okunup kontrol edilmesi
+       *  Veriler okunup validate edilir
        */
       public function validate($veri,$param)
       {

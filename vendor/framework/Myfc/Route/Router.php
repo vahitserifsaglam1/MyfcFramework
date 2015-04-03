@@ -290,28 +290,42 @@ class Router
     private function callBackString($callback)
     {
         
-        if($this->securityChecker($callback[0]))
+        if($callback[0] == "AJAX" || $callback[0] == "HTTPS" || $callback[0] == "https://" )
         {
-        
-            if(is_callable($callback[1]))
+            if($this->securityChecker($callback[0]))
             {
-        
-                $this->runCallable($callback[1]);
-        
-            }else{
-        
-        
-                if(is_string($callback[1]))
+            
+                if(is_callable($callback[1]))
                 {
-        
-                    $this->runController($callback[1]);
-        
+            
+                    $this->runCallable($callback[1]);
+            
+                }else{
+            
+            
+                    if(is_string($callback[1]))
+                    {
+            
+                        $this->runController($callback[1]);
+            
+                    }
+            
                 }
-        
+            
+            
             }
-        
-        
-        }
+            
+        }elseif(strstr($callback[0],"@"))
+        {
+            
+            if($this->runCallable($callback[1]))
+            {
+                
+                $this->runController($callback[0]);
+                
+            }
+            
+        }    
         
     }
     
@@ -321,8 +335,13 @@ class Router
      */
     private function callBackArray(array $callback)
     {
-        
-        //
+       
+        if(is_string($callback[0]))
+        {
+            
+           
+            
+        }
         
     }
     /**

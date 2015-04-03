@@ -35,7 +35,7 @@
            if(static::$installed == false) static::boot();
            if($configs == null)
            {
-              $configs = Config::get('databaseConfigs','predis'); 
+              $configs = Config::get('strogeConfigs','predis'); 
            }
 
            try{

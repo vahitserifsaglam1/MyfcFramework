@@ -14,7 +14,7 @@
  *
  *  ***********************
  *
- *  MyfcFramework Mail gÃ¶nderme SÄ±nÄ±fÄ±
+ *  MyfcFramework Mail gönderme Sýnýfý
  *
  * @packpage PHPmailer
  *
@@ -65,7 +65,12 @@
 
      /**
       *
-      * @param PHPMailer $mail
+      * Baþlatýcý fonskiyon 
+      * 
+      *   $options ile mailConfigs den ayrý olarak ayar gönderebilirsiniz
+      *
+      * @param string $options
+      * 
       * @return mixed $this
       *
       */
@@ -88,7 +93,9 @@
            return $this;
      }
 
-     /**
+     /** 
+      *  Mailin gideceði ve mail le ilgili bilgiler parametre olarak girilebilir
+      * 
       * @param $adress
       * @param $name
       * @param string $subject
@@ -98,7 +105,7 @@
       *
       */
 
-     public function to($adress,$name,$subject = '',$msg = '',$body = '')
+     public function to($adress = '',$name ='',$subject = '',$msg = '',$body = '')
      {
          $this->toadress = $adress;
          $this->toname = $name;
@@ -109,6 +116,9 @@
      }
 
      /**
+      * 
+      *  mailin içeriðini girebilirsiniz, $content de bir .html dosyasýnýn yolu girilebilir yada direk içerikde girilebilir
+      * 
       * @param $content
       * @param string $body
       * @return $this
@@ -128,6 +138,9 @@
      }
 
      /**
+      *  
+      *  Maildeki body kýsmýný düzenler
+      * 
       * @param $body
       * @return mixed $this
       */
@@ -139,7 +152,10 @@
      }
 
      /**
+      *  Maile dosya ekler, $filepath dosya yoludur, $newname girilecek yeni isimdir( boþ býrakýlabilir )
+      * 
       * @param $filePath
+      * @param string $newname
       * @return $this
       */
 
@@ -154,6 +170,9 @@
      }
 
      /**
+      * 
+      *  Mailin kimden gittiðini belirten $adress ve $name deðiþkenleridir, girilmek zorundadýr
+      * 
       * @param $adress
       * @param $name
       * @return $this
@@ -167,6 +186,8 @@
      }
 
      /**
+      *  Mailin konusunu düzenler
+      * 
       * @param string $subject
       * @return $this
       */
@@ -189,19 +210,26 @@
      }
 
      /**
-      * @param $reply
-      * @param $name
+      * Maile cevabýn baþka bir maile yollanmasýný istiyorsanýz  $adress ve $name deðiþkenleri doldurulmalýdýr
+      * @param string $reply
+      * @param string $name
       * @return mixed $this
       */
 
-     public function reply($reply,$name)
+     public function reply($adress,$name = '')
      {
-          $this->replyadress = $reply;
+          $this->replyadress = $adress;
           $this->replyname = $name;
           return $this;
      }
 
      /**
+      * 
+      *  Mail gönderme fonksiyondur,  Facade altýnda static kullanýmda parametre olarak çaðrýlabilir bir fonksyon girilmelidir
+      *  
+      *  Sýnýf tarafýndan fonksiyona $this öðesi atanýr
+      * 
+      * @param callable $callable
       * @return bool
       * @throws Exception
       * @throws phpmailerException

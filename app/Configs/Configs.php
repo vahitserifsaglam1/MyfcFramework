@@ -15,6 +15,7 @@ return [
         'Cache' => 'Myfc\Cache',
         'Validate' => 'Myfc\Validate',
         'Mail'  => 'Myfc\Mail',
+        'Carbon' => 'Carbon\Carbon'
      
     ],
     

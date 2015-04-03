@@ -2,11 +2,11 @@
 
  namespace Myfc\Html;
 /**
- * Class Add
+ * Class Html
  *
  *  ******************************
  *
- *   OzsaFramework Add sÄ±nÄ±fÄ± : iÅŸlev ;
+ *   Myfcframework Add sýnýfý : iþlev ;
  *
  *   Add::div
  *
@@ -14,9 +14,9 @@
  *
  *   Add::a
  *
- *   Add dan sonraki fonksiyon ismiyle yeni bir html elementi oluÅŸturur
+ *   Add dan sonraki fonksiyon ismiyle yeni bir html elementi oluþturur
  */
-class Add
+class Html
 {
     /**
      * @param $name
@@ -27,7 +27,7 @@ class Add
      *   $name = div,a,p
      *
      *
-     *   Ã–rnek Ã‡Ä±ktÄ±
+     *  
      *
      *  <div class = 'form-class'>$content</div>
      */

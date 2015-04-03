@@ -1,17 +1,26 @@
 <?php 
 
+ /**
+  *  *******************************************************
+  *                
+  *                Sayfalama Ayarları
+  *                
+  *  *******************************************************
+  * 
+  */
 
  return [
      
-     'count' => '50',
+    
+     'count' => '50', // hersayfada gösterilecek içerik sayısı
   
-     'parent' => [
+     'parent' => [ //  Ana div in özellikleri (class,id vs...)
 	   
 	    'class' => 'pagination'
 	  
 	 ],
 	 
-	 'children' => [
+	 'children' => [ // çocuk divlerin özellikleri (class, id , vs...)
 	  
 	    'class' => 'pagi'
 	  

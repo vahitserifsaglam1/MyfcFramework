@@ -142,15 +142,6 @@
           }
           return (array_key_exists($index, $_POST)) ? $_POST[$index] : null;
       }
-      public static function redirect($url, $status = 303)
-      {
-          Response::this()
-              ->status($status)
-              ->header('Location', $url)
-              ->write($url)
-              ->send();
-      }
-
 
       public function getUri()
       {
