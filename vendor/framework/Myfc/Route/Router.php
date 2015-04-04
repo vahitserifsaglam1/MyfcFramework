@@ -107,12 +107,15 @@ class Router
                  $array = array_map(function($a){
                       
                      if(strstr($a, "{") && strstr($a, "}")){
-                          
+                           
+                         
                          return $a;
                           
                      }
                       
                  }, $explode);
+                 
+              
                       
                      $unsetArray = array_map(function($a){
                  
@@ -125,10 +128,16 @@ class Router
                  
                      }
                          , $array);
+                     
+                 
                           
+                  
                          preg_match_all("#\{(.*?)\}#", $action,$finds);
+                               
+                        
                  
                          $find = $finds[1];
+                         
                           
                          $params = array();
                           
@@ -141,7 +150,7 @@ class Router
                          {
                  
                           
-                         $params[] = $url[$i];
+                         $params[$array[$i]] = $url[$i];
                  
                          }
                  
@@ -157,17 +166,19 @@ class Router
                              if(isset($url[$a]) && $unsetArray[$a] !== null )
                              {
                               
-                             $unsetParams[] = $url[$a];
+                             $unsetParams[$unsetArray[$a]] = $url[$a];
                                   
                              }
                               
                              }
+                             
+                         
                  
+                             $this->unsetParams = $this->paramsWhereCheck($unsetParams);
+                
                  
-                             $this->unsetParams = $unsetParams;
-                 
-                             $this->params = $params;
-                 
+                             $this->params = $this->paramsWhereCheck($params);
+                            
                  
                              return (is_array($this->unsetParams) && is_array($this->params)) ? true:false;
                  
@@ -177,6 +188,41 @@ class Router
              
             
        
+        
+    }
+    
+    private function paramsWhereCheck(array $params = array())
+    {
+        $where = $this->collection['WHERE'][0];
+        
+        $parametres = array();
+        
+        foreach ($params as $param => $value)
+        {
+            
+  
+            preg_match_all("#\{(.*?)\}#", $param,$finds);
+           
+            $param = $finds[1][0];
+            
+            if(isset($where[$param]))
+            {
+                
+   
+               preg_match($where[$param], $value, $finded);
+               $parametres[] = $finded[0];
+           
+                
+            }else{
+                
+                $parametres[] = $value;
+                
+            }
+            
+        }
+        
+        return $parametres;
+     
         
     }
     
