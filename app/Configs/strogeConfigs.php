@@ -4,16 +4,16 @@
 
 
       'Cache' => [ // cache ayarlarý
-	      'driver'        => 'memcache',
+	      'driver'        => 'memcache', // -> apc,memcache[önerilen],file,predis
 		  'path'          => APP_PATH.'Stroge/Cache',
-		  'defaultDriver' => 'predis'
+		  'defaultDriver' => 'predis' // seçilen driver yüklü deðilse 
 	  ],
 	  
 	  'Session' => [ // session ayarlarý 
 	  
-	    'driver' => 'php',
+	    'driver' => 'php', // -> cacheBased,fileBased,php[önerilen]
 		'path'   =>  APP_PATH.'Stroge/Session',
-		'defaultDriver' => 'php'
+		'defaultDriver' => 'php' // seçilen driver yüklü deðilse 
 		
 	  ],
 

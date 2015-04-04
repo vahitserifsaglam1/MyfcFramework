@@ -26,10 +26,10 @@ class Singleton
         
     }
     
-    public static function make( $class )
+    public static function make( $class, $parametres = array() )
     {
         
-        $parametres = static::unsetFirstParametres(func_get_args());
+        $parametres = (!is_array($parametres)) ?  static::unsetFirstParametres(func_get_args()):$parametres;
         
         if( !isset( static::$classes[$class] ) )
         {

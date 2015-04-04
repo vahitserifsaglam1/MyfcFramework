@@ -8,12 +8,25 @@
   use Exception;
   
   use PredisAutoloader;
+  
+  /**
+   * 
+   * @author vahitþerif
+   *
+   */
 
   class  Installer
 
   {
+      /**
+       * 
+       * @var boolean 
+       */
       protected static $installed = false;
 
+        /**
+         *  Sýnýfý baþlatýr
+         */
         public function boot(  )
         {
             try{
@@ -30,6 +43,12 @@
 
         }
 
+        /**
+         * Yeni bir predis client i oluþturup döndürür
+         * @param string $configs
+         * @return \PredisClient
+         */
+        
        public static  function create( $configs = null)
        {
            if(static::$installed == false) static::boot();

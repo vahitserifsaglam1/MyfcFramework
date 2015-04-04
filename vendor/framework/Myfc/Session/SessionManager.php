@@ -34,7 +34,7 @@
 
       }
 
-      public function checkDriver( $driver )
+      private function checkDriver( $driver )
       {
 
           if( isset($this->driverList[$driver] ) )

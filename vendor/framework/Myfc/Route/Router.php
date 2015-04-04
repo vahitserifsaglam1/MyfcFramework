@@ -167,63 +167,7 @@ class Router
            
              
             
-        
-        /*
-         if(strstr($action, "{") && strstr($action, "}"))
-         {
-             
-             $url = $this->url;
-             
-             $url =  rtrim($url,"/");
-             
-             $url = explode("/",$url);
-            
-             
-             $action = rtrim($action,"/");
-             
-             $explode = explode("/", $action);
-
-    
-             preg_match_all("#\{(.*?)\}#", $action,$finds);
-             
-             $find = $finds[1];
-             
-             $cikart = count($explode)-count($find);
-             
-             $cikart = count($explode)-$cikart;
-             
-             
-             $exp = array_slice($url, $cikart, count($explode));
-             
-      
-             
-             $check = array_map(function($a)
-                 {
-                     
-                     if($b = $this->collection['WHERE'][$a])
-                     {
-                          
-                         if( preg_match($b, $a) )
-                         {
-                             
-                             return $a;
-                         }
-                          
-                     }else{
-                         
-                         return $a;
-                         
-                     }
-                     
-                 }  , $exp);
-             
-            
-               return $check;
-            
-             
-         }
-         
-         */
+       
         
     }
     

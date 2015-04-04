@@ -14,7 +14,7 @@
            {
             $this->cache = $cache;
            }else{
-              throw new \Exception('Cache sÄ±nÄ±fÄ±nÄ±z bulunamadÄ±');
+              throw new \Exception('Cache sınıfınız bulunamadı');
                die();
            }
 

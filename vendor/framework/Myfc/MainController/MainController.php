@@ -8,10 +8,15 @@ namespace Myfc;
  * @author vahitþerif
  *        
  */
+
 class MainController
 {
+    /**
+     * 
+     * @var array
+     */
 
-    private $collection;
+    private $collection = array();
     
     /**
      * Baþlatma Fonksiyon
@@ -27,10 +32,13 @@ class MainController
     }
     
     /**
-     * Modal çaðýrma iþlemi
-     * @param unknown $modal
+     * Modal Çaðýrma fonksiyonu
+     *  
+     *    $modal deðiþkenine atanan isimde bir modal arar ve bulursa çaðýrýr
+     * 
+     * @param string $modal
      */
-    protected function modal($modal)
+    protected function modal($modal = '')
     {
         
         $path = APP_PATH."Modals/$modal.php";
@@ -57,9 +65,12 @@ class MainController
     
     /**
      * Dinamik olarak deðer çaðrýlmasý
-     * @param unknown $name
+     * 
+     *   $name deðiþkenin aldýðý deðer $collection içinde varsa döndürülür
+     * 
+     * @param string $name
      */
-    public function __get($name)
+    public function __get($name = '')
     {
         
         if(isset($this->collection[$name]))
@@ -71,7 +82,16 @@ class MainController
         
     }
     
-    public function __call($name,$parametres)
+    /**
+     * 
+     *  Caðrýlan method sýnýfta yoksa tetiklenir
+     * 
+     * @param string $name
+     * @param array $parametres
+     * @return mixed
+     */
+    
+    public function __call($name = '',array $parametres)
     {
         
         array_map(function($a) use ($name,$parametres,$this){

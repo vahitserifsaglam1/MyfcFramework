@@ -1,106 +1,68 @@
 <?php
 
-  namespace Myfc;
+   namespace Myfc;
 
    use Myfc\Http\Request;
 
-   use Myfc\Redirect\Generator as urlGenarator;
-
    use Myfc\Redirect\Redirecter;
 
-   use Exceptions\ClassExceptions\MethodExceptions\undefinedMethodException;
-
-
-  class Redirect
+   use Myfc\Exceptions\ClassExceptions\undefinedClassException;
+  
+  class Redirect extends Redirecter
+  
   {
+      
+      
 
-      protected $generator;
-
-      protected $request;
-
-      protected static $static;
-
-      protected $message;
-
-      protected  $reditecter;
-
-      protected static $boot;
-
-
-     public function  __construct()
-     {
-
-         if(!$this->request)
-         {
-
-             $this->request = Request::this();
-
-
-         }
-
-
-         if(! $this->reditecter )
-         {
-
-             $this->reditecter = Redirecter::boot();
-
-         }
-
-     }
-
-
-    public static function boot(){
-
-      self::$static =  new static;
-
-      return self::$static;
-
-    }
-
-      /**
-       * @param $url
-       * @param int $time
-       */
-
-    public static function  intended( $url, $time=0 )
-    {
-
-       if( !static::$static )
-       {
-
-         static::boot();
-
-       }
-
-        if( $time>0 )
-        {
-            static::$static->reditecter->reflesh($url,$time);
-        }else{
-
-            static::$static->reditecter->location($url);
-        }
-
-
-
-
-
-    }
-
-      public function __call( $name, $params )
+      
+      public function __construct()
       {
 
-          if( method_exists($this->reditecter,$name))
-          {
-
-              return call_user_func_array(array($this->reditecter,$name),$params);
-
-          }
-          else{
-
-              throw new undefinedMethodException(  "$name  adÄ±nda bir fonksiyon bulunamadÄ±");
-
-          }
-
+          $url = Config::get('Configs', 'url');
+          
+          $request = Request::this();
+          
+          parent::__construct($request, $url);
+          
+      }
+      
+      public static function boot()
+      {
+          
+          return new static();
+          
+      }
+      
+      /**
+       * bekleme yapmadan yönlendirme yapar
+       * @param string $href
+       */
+      
+      public function location($href= '')
+      {
+          
+          $this->redirect('location', func_get_args());
+          
+      }
+      
+      /**
+       * Zamana göre yönlendirme yapar
+       * @param string $href
+       * @param number $time
+       */
+      public function refresh($href = '', $time = 2)
+      {
+          
+          $this->redirect('refresh', func_get_args());
+          
+      }
+      
+      
+      public function __call($method, $parametres)
+      {
+          
+          throw new undefinedClassException(sprint_f("%s adýnda bir method bulunamadý ",$method));
+          
       }
 
 

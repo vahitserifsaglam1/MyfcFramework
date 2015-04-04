@@ -9,20 +9,65 @@
 
  {
 
+     /**
+      * 
+      * @var array
+      */
      public static $js = array();
+     
+     /**
+      * 
+      * @var array
+      */
      public static $css = array();
+     
+     /**
+      * 
+      * @var array
+      */
      public static $template = array();
+     
+     /**
+      * 
+      * @var array
+      */
+     
      public static $files = array();
+     
+     /**
+      * 
+      * @var boolean
+      */
      protected static $templateInstalled = false;
+     
+     /**
+      * 
+      * @var array
+      */
      public static $templateArray;
+     
      public static $lang;
+     
+     /**
+      *  
+      *   Template için barýndýrýlan $templateArray için $file deðiþkenine göre atama yapar
+      * 
+      * @param array $array
+      * @param string $file
+      */
 
-     public static function setTemplateArrays($array,$file)
+     public static function setTemplateArrays(array $array ,$file = '')
      {
          self::$templateArray[$file] = $array;
          self::templateInstall();
 
      }
+     
+     /**
+      * 
+      *  Template kurulumu yapýlýr
+      * 
+      */
      
      public static function templateInstall()
      {
@@ -42,6 +87,12 @@
 
      }
      
+     /**
+      * 
+      * Language sýnýfý yüklenir
+      * 
+      */
+     
      private static function installLanguage()
      {
          
@@ -50,7 +101,7 @@
      }
      /**
       * 
-      * @param unknown $path -> View dosyasýnýn adý .php olmadan
+      * @param string $path -> View dosyasýnýn adý .php olmadan
       * @param array $params -> içeri enjeckte edilecek parametreler
       * @param string $rendefiles ->css, js, template, languea ayarlamalarý yapýlan yer
       * @param array $templateArray -> template in ayarlarý ve tanýmlamalarý
@@ -142,10 +193,18 @@
 
          return null;
      }
+     
+  
      public static function templateLoader($options = array(),$file,$arrays)
      {
          Engine::templateInstaller($options,$arrays,$file);
      }
+     
+     /**
+      * css,js,files,language dosyalarý parçalanmaya baþlanýr
+      * @param array $filess
+      * @return multitype:multitype:
+      */
      public static function renderFiles(array $filess = array())
      {
         
@@ -169,7 +228,13 @@
          return self::createHead($files);
      }
 
-     public static function createHead($files)
+     /**
+      * <head /head> taglarý için css,js,files kodlarý oluþturulur
+      * @param array $files
+      * @return multitype:multitype:
+      */
+     
+     private static function createHead(array $files)
      {
 
 
@@ -188,7 +253,13 @@
          return $return;
 
      }
-     public static function createFiles($files)
+     
+     /**
+      * createHead fonksiyonuna döndürülmek üzere files deðiþkeni oluþtururlur
+      * @param array $files
+      * @return string
+      */
+     private static function createFiles(array $files)
      {
 
          $s = '<?php ';
@@ -200,7 +271,15 @@
          $s .= '?>';
          return $s;
      }
-     public static function createCss($files)
+     
+     /**
+      * 
+      * createHead fonksiyonuna döndürülmek üzere css deðiþkeni oluþtururlur
+      * 
+      * @param array $files
+      * @return string
+      */
+     private static function createCss(array $files)
      {
          $s = '';
          foreach($files as $key)
@@ -210,7 +289,15 @@
 
          return $s;
      }
-     public static function createJs($files)
+     
+     /**
+      *
+      * createHead fonksiyonuna döndürülmek üzere js deðiþkeni oluþtururlur
+      *
+      * @param array $files
+      * @return string
+      */
+     private static function createJs($files)
      {
          $s = '';
          foreach($files as $key)
@@ -220,6 +307,13 @@
          return $s;
      }
      
+     /**
+      *
+      * createHead fonksiyonuna döndürülmek üzere language deðiþkeni oluþtururlur
+      *
+      * @param array $files
+      * @return array
+      */
      public static function createLanguage(array $language)
      {
          

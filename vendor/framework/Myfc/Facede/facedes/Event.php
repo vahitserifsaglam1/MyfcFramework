@@ -14,13 +14,13 @@ use Myfc\Facade;
 
 
   
- class Carbon extends Facade{
+ class Event extends Facade{
      
      
      public static function getFacadeClass()
      {
          
-         return "Carbon";
+         return "Event";
          
      }
      

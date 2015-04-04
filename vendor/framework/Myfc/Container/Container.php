@@ -21,6 +21,8 @@
       
       public $get;
       
+      public $maked = array();
+      
       /**
        * Sınıfı başlatır
        * @param \Myfc\Http\Server $server
@@ -29,6 +31,8 @@
        */
       
       public function __construct( Server $server, array $ayarlar, array $get){
+          
+          
           
           $this->server = $server;
           
@@ -59,8 +63,51 @@
       }
       
       /**
-       * Contoller oluşturur
-       * @param unknown $controller
+       * Modal, Controller yada herhangi bir sınıf çağırmak için kullanılır
+       *  
+       *   $className = "controller@asdsad" : asdsad  controlleri çağrılır
+       *   
+       *   $className = "modal@asdads"  : asdads modalı çağrılır ( sadece include edilir )
+       * 
+       * @param string $className
+       * @param array $parametres
+       */
+      
+      public function make($className = '', array $parametres = array())
+      {
+          
+          if(strstr($className, "@"))
+          {
+              
+              $class = explode("@", $className);
+              
+              if($class[0] == "controller")
+              {
+                  
+                 return $this->makeController($class[1], $parametres);
+                  
+              }elseif($class[0] == "modal")
+              {
+                  
+                  return $this->makeModal($classs[1], $parametres );
+                  
+              }
+              
+          }else{
+              
+              
+              return $this->makeClass($className, $parametres);
+              
+          }
+          
+          
+          
+      }
+      
+      /**
+       * Contoller çağırır, yeni bir instance oluştururu
+       * @param string $controller
+       * @param array $parametres
        * @return unknown|boolean
        */
       
@@ -68,6 +115,8 @@
       {
           
           $controllerPath = APP_PATH."Controller/$controller.php";
+          
+          $this->maked[] = $controller;
           
           if(file_exists($controllerPath))
           {
@@ -83,6 +132,50 @@
           
       }
       
+      /**
+       * Modal çağırır , instance oluşturmaz.
+       * @param string $modalName
+       * @param array $parametres
+       * @return boolean
+       */
+      
+      public function makeModal($modalName = '', array $parametres = array() )
+      {
+          
+          $modalPath = APP_PATH.'Modals/'.$modalName.'.php';
+          
+          $this->maked[] = $modalName;
+          
+          if(file_exists($modalPath))
+          {
+              
+              include $modalPath;
+              
+              return true;
+              
+          }else{
+              
+              return false;
+              
+          }
+          
+      }
+      
+      /**
+       * girilen parametrelere göre yeni bir sınıf çağrılır
+       * @param string $className
+       * @param array $parametres
+       * @return object
+       */
+      public function makeClass($className = '', array $parametres = array() )
+      {
+          
+          $this->maked[] = $className;
+          
+          return (new ReflectionClass($controller))->newInstanceArgs($parametres);
+          
+      }
+      
       private function runRoute()
       {
           
@@ -92,6 +185,22 @@
           
           $router->run($this, Route::getCollection());
           
+      }
+      
+      /**
+       * Singleton sınıfıyla iletişime geçerek yeni bir tekil sınıf oluşturur
+       * @param string $className
+       * @param array $parametres
+       * @return object
+       */
+      public function singleton($className, $parametres = array() )
+      {
+          
+          $this->maked[] = $className;
+          
+          if(!is_array($parametres)) $parametres = array($parametres);
+          
+          return Singleton::make($className, $parametres);
       }
       
    

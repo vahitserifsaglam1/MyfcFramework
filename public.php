@@ -46,4 +46,11 @@
   
   define('VIEW_PATH', APP_PATH.'Views/');
   
+  /**
+   * Sabitlerin tanýmlanmasý
+   * @var unknown
+   */
+  
+  define("REPORTING", E_ALL);
+  
   include SYSTEM_PATH.'bootstrap.php';
