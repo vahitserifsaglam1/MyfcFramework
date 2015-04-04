@@ -23,7 +23,7 @@ class Router
     
     private $params;
     
-    public function run(Bootstrap $container, $collection)
+    public function run(Bootstrap $container, array $collection = array() )
     {
         
         $this->container = $container;
@@ -45,7 +45,6 @@ class Router
     private function startParsing()
     {
         
-        $collection = $this->collection;
         
         $this->methodParsing($this->method);
         
@@ -61,19 +60,29 @@ class Router
     
     {
         
+        
          $selected = $this->collection[$method];
          
-         foreach($selected as $select)
-         {
          
-              if($this->actionParsing($select['action'])){
+         if($selected !== null )
+         {
+             
+             
+             foreach($selected as $select)
+             {
                   
-                  $this->callbackParsing($select['callback']);
+                 if($this->actionParsing($select['action'])){
+             
+                     $this->callbackParsing($select['callback']);
+             
+                 }
+             
                   
-              }
-              
+             }
              
          }
+         
+       
         
     }
     

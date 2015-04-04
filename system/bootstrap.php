@@ -1,6 +1,7 @@
 <?php
 
-  use Myfc\Bootstrap;
+ 
+  use Myfc\Singleton;
   
   include APP_PATH.'Lib/helpers.php';
 
@@ -9,6 +10,5 @@
    *   Baþlatýcý sýnýf
    * 
    */
-   
-
-    $app = new Bootstrap();
+  
+   $app =  Singleton::make('\Myfc\Bootstrap');

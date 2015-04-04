@@ -19,6 +19,7 @@
 class Form
 {
     
+    public static $functions;
     /**
      * Formun baþlangýcý
      * @param string $name

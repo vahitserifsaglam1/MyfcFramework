@@ -33,6 +33,7 @@
     public function __construct()
     {
         
+        
          $configs = Config::get('Configs');
          
          $this->configs = $configs;

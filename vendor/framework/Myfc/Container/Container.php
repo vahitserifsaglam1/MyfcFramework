@@ -12,6 +12,8 @@
   
   use ReflectionClass;
   
+  use Closure;
+  
   class Container{
       
       
@@ -20,6 +22,8 @@
       public $ayarlar;
       
       public $get;
+      
+      protected $bind;
       
       public $maked = array();
       
@@ -40,7 +44,6 @@
           
           $this->get = $get;
          
-          
           $this->facedeRegister( $ayarlar['alias'] );
           
           $this->adapter->assests->returnGet();
@@ -63,6 +66,73 @@
       }
       
       /**
+       * Sýnýfa yeni fonksiyon eklemekte kullanýlýr
+       * @param string $name
+       * @param callable $function
+       * @return \Myfc\Container
+       */
+      
+      public function bind($name = '', callable $function)
+      {
+          
+          $this->bind[$name] = Closure::bind($function, null, get_class());
+          
+          return $this;
+          
+      }
+      
+      /**
+       * 
+       * @param string $name
+       * @param array $parametres
+       * @return mixed
+       */
+      
+      public function call($name, array $parametres)
+      {
+          
+          if($this->isBinded($name))
+          {
+              
+              return $this->callBind($name, $parametres);
+              
+          }
+          
+      }
+      
+      /**
+       * Bind edilip edilmediðine bakar
+       * @param string $name
+       * @return boolean
+       */
+      private function isBinded($name = '')
+      {
+          
+          return isset($this->bind[$name]);
+          
+      }
+      
+      /**
+       * Bind çaðýrýr
+       * @param string $name
+       * @param array $parametres
+       * @return mixed
+       */
+      private function callBind($name,array $parametres)
+      {
+          
+         if(is_callable($this->bind[$name]))
+         {
+             
+             return call_user_func_array($this->bind[$name], $parametres);
+             
+         }
+          
+      }
+      
+      
+      /**
+       *
        * Modal, Controller yada herhangi bir sýnýf çaðýrmak için kullanýlýr
        *  
        *   $className = "controller@asdsad" : asdsad  controlleri çaðrýlýr
@@ -203,6 +273,19 @@
           return Singleton::make($className, $parametres);
       }
       
+      /**
+       * Dinamik olarak method çaðýrma iþlemi
+       * @param string $name
+       * @param array $parametres
+       * @return \Myfc\mixed
+       */
+      
+      public function __call($name, array $parametres = [])
+      {
+          
+          return $this->call($name, $parametres);
+          
+      }
    
       
   }
