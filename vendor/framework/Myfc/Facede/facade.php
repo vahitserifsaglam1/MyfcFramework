@@ -102,7 +102,7 @@
 
            $instanceName = static::getFacedeRoot();
            
-            
+   
            if(!is_object($instanceName))
            {
                
@@ -117,11 +117,11 @@
                
            }
            
-          
            
+           return call_user_func_array(array($instance,$method), $parametres);
            
-           $reflectionMethod = new ReflectionMethod($instance,$method);
-           return  $reflectionMethod->invokeArgs($instance,$parametres);
+          /* $reflectionMethod = new ReflectionMethod($instance,$method);
+           return  $reflectionMethod->invokeArgs($instance,$parametres); */
 
       }
 

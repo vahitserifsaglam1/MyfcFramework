@@ -17,15 +17,15 @@ return [
     
 
     'alias' => [
-         
-        'Route' => 'Myfc\Route',
+        
         'Session' => 'Myfc\Session',
         'Cache' => 'Myfc\Cache',
         'Validate' => 'Myfc\Validate',
         'Mail'  => 'Myfc\Mail',
         'Carbon' => 'Carbon\Carbon',
         'Redirect' => 'Myfc\Redirect',
-        'Event'  => 'Myfc\Event'
+        'Event'  => 'Myfc\Event',
+        'Route' => 'Myfc\Route'
      
     ],
     

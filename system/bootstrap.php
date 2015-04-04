@@ -2,6 +2,7 @@
 
  
   use Myfc\Singleton;
+
   
   include APP_PATH.'Lib/helpers.php';
 
@@ -11,4 +12,9 @@
    * 
    */
   
+
+  
    $app =  Singleton::make('\Myfc\Bootstrap');
+   
+   
+  

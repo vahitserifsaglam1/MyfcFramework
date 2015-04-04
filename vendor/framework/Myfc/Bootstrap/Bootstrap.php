@@ -13,6 +13,7 @@
  use Myfc\Container;
  use Myfc\Http\Server;
  use Myfc\Config;
+ use Myfc\Facade\Session;
 
  class Bootstrap extends Container
  {
@@ -49,7 +50,7 @@
          $this->getUrl = $this->adapter->assests->returnGet();
          
          parent::__construct($this->adapter->server, $configs, $this->getUrl);
-
+         
          
     } 
     
@@ -63,19 +64,22 @@
      */
     private function runServiceProviders(array $providers = array() )
     {
-        
+     
           
         foreach($providers as $pro)
         {
 
-                
-                $this->maked[] = new $pro($this);
+                $this->maked[] = $pro;
+                new $pro($this);
                
             
         }
         
+      
+        
         
     }
+
     
     
    

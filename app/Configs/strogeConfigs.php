@@ -13,7 +13,7 @@
 	  
 	    'driver' => 'php', // -> cacheBased,fileBased,php[önerilen]
 		'path'   =>  APP_PATH.'Stroge/Session',
-		'defaultDriver' => 'php' // seçilen driver yüklü deðilse 
+		'default' => 'php' // seçilen driver yüklü deðilse 
 		
 	  ],
 
