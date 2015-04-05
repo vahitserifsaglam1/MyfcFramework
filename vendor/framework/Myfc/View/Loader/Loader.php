@@ -2,54 +2,19 @@
 
    namespace Myfc\View;
    
-   use Myfc\Config;
+   use Myfc\View;
+
 
   class Loader
 
   {
-       protected $viewPath;
 
-       public function __construct()
-       {
-           $this->viewPath = VIEW_PATH;
-       }
 
-      public function load($name, $allInclude = false,$variables = array() )
+      public function load($path,array $params = array(),$rendefiles = '', array $templateArray = array(),$autoload = true)
       {
 
-          $config = Config::get('Configs','allIncludePath');
-          
-          if(strstr($name,'.php') )
-          {
+          return View::render($path,$params,$rendefiles,$templateArray, $autoload);
 
-              $path = $this->viewPath.$name;
-
-          }
-          else{
-
-              $path = $this->viewPath.$name.'.php';
-
-          }
-          extract($variables);
-          if( $allInclude )
-
-          {
-
-              include $this->viewPath.$config.'header.php';
-
-              include $path;
-
-              include $this->viewPath.$config.'footer.php';
-
-          }
-
-          else
-
-          {
-
-              include $path;
-
-          }
       }
 
   }

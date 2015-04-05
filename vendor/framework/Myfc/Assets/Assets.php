@@ -23,8 +23,6 @@
       public $get;
       public $files;
       public $configs;
-      public static $getS;
-      public static $postS;
 
       /**
        * @param bool $validate
@@ -71,7 +69,7 @@
 
       /**
        * 
-       *   Ayarları atama yapar
+       *   Ayarlarï¿½ atama yapar
        * 
        * @return mixed
        */
@@ -85,7 +83,7 @@
 
       /**
        * 
-       *  Post verilerini Döndürür
+       *  Post verilerini Dï¿½ndï¿½rï¿½r
        * 
        * @return mixed
        */
@@ -99,7 +97,7 @@
 
       /**
        *  
-       *  Get verilerini döndürür
+       *  Get verilerini dï¿½ndï¿½rï¿½r
        * 
        * @return mixed
        */
@@ -113,7 +111,7 @@
       /**
        * 
        * 
-       * Gump sınıfını kullanarak xss açığını kapatır
+       * Gump sï¿½nï¿½fï¿½nï¿½ kullanarak xss aï¿½ï¿½ï¿½ï¿½nï¿½ kapatï¿½r
        * 
        * 
        * @param array $params
@@ -125,31 +123,7 @@
            return GUMP::xss_clean($params);
 
       }
- 
-       /**
-        *  Get verilerini static olarak çekmeye yarar
-        *  
-        */
-      
-       public static function returnGetStatic()
-       {
-           
-           return static::$getS;
-           
-       }
-       
-       /**
-        * 
-        *  Post verilerini static olarak çekmeye yarar
-        *  
-        */
-       
-       public static function returnPostStatic()
-       {
 
-           return static::$postS;
-
-       }
 
       /**
        * @param $name
@@ -212,7 +186,6 @@
           $_POST = array();
           $_POST[] = $post;
           $this->post = $post;
-          static::$postS = $post;
 
       }
 
@@ -225,7 +198,6 @@
           $get = $this->xss_clean( (array) $get);
           $_GET = $get;
           $this->get = $get;
-          static::$getS = $get;
 
       }
       public function getName()
@@ -240,10 +212,31 @@
       }
 
       /**
+       * get den url indisini Ã§Ä±kartÄ±p dÃ¶ndÃ¼rÃ¼r
+       * @return array
+       */
+
+      public function returnGetWithoutUrl()
+      {
+
+          if(isset($this->get['url'])){
+
+              unset($this->get['url']);
+
+
+
+          }
+
+          return $this->get;
+
+      }
+
+      /**
        * @return mixed
        */
       public function returnRequest()
       {
+          $returns = array();
           if($this->post) $returns['POST'] = $this->post;
           if($this->get) $returns['GET'] = $this->get;
           return $returns;

@@ -107,7 +107,7 @@
       * @param array $templateArray -> template in ayarlar� ve tan�mlamalar�
       * @return NULL
       */
-     public static function render($path,array $params = array(),$rendefiles = '', array $templateArray = array())
+     public static function render($path,array $params = array(),$rendefiles = '', array $templateArray = array(),$autoload = true)
      {
 
          
@@ -184,7 +184,7 @@
 
              $headerPath = $hconfigs.'header.php';
 
-             if(file_exists($headerPath)){
+             if(file_exists($headerPath) && $autoload){
 
                  include $headerPath;
 
@@ -194,7 +194,7 @@
 
              $footerPath = $hconfigs.'footer.php';
 
-             if(file_exists($footerPath)){
+             if(file_exists($footerPath) && $autoload){
 
                  include $footerPath;
 
