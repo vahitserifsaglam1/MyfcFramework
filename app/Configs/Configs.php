@@ -25,7 +25,8 @@ return [
         'Carbon' => 'Carbon\Carbon',
         'Redirect' => 'Myfc\Redirect',
         'Event'  => 'Myfc\Event',
-        'Route' => 'Myfc\Route'
+        'Route' => 'Myfc\Route',
+        'Assets' => 'Myfc\Assets';
      
     ],
     
