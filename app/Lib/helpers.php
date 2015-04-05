@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Debug\Dumper;
+use Myfc\Support\Arr;
+use Myfc\Support\Str;
 
 if ( ! function_exists('append_config'))
 {
@@ -359,19 +357,7 @@ if ( ! function_exists('class_uses_recursive'))
 	}
 }
 
-if ( ! function_exists('collect'))
-{
-	/**
-	 * Create a collection from the given value.
-	 *
-	 * @param  mixed  $value
-	 * @return \Illuminate\Support\Collection
-	 */
-	function collect($value = null)
-	{
-		return new Collection($value);
-	}
-}
+
 
 if ( ! function_exists('data_get'))
 {
@@ -426,21 +412,7 @@ if ( ! function_exists('data_get'))
 	}
 }
 
-if ( ! function_exists('dd'))
-{
-	/**
-	 * Dump the passed variables and end the script.
-	 *
-	 * @param  mixed
-	 * @return void
-	 */
-	function dd()
-	{
-		array_map(function($x) { (new Dumper)->dump($x); }, func_get_args());
 
-		die;
-	}
-}
 
 if ( ! function_exists('e'))
 {
