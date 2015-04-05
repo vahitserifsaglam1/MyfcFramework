@@ -22,7 +22,7 @@
       public $maked = array();
       
       /**
-       * S�n�f� ba�lat�r
+       * sınıfı başlatır
        * @param \Myfc\Http\Server $server
        * @param array $ayarlar
        * @param array $get
@@ -37,14 +37,12 @@
           $this->ayarlar = $ayarlar;
           
           $this->get = $get;
-         
-          $this->facedeRegister( $ayarlar['alias'] );
+
           
           $this->adapter->assests->returnGet();
 
-          $this->runEvents();
-
           $this->runRoute();
+
       }
       
       /**
@@ -56,7 +54,7 @@
           
  
           
-          Facade::$instance = $alias;          
+
           
        
       }
@@ -260,33 +258,7 @@
           
       }
       
-      private function runRoute()
-      {
-          
-          include APP_PATH.'Route.php';
-          
-          $router = new Router;
-          
-          $router->run($this, Route::getCollection());
-          
-      }
 
-      private function runEvents()
-      {
-
-
-          #$this->singleton('\Myfc\Event', $this);
-
-          $eventPath = APP_PATH.'Events.php';
-
-          if(file_exists($eventPath))
-          {
-
-              include $eventPath;
-
-          }
-
-      }
       
       /**
        * Singleton s�n�f�yla ileti�ime ge�erek yeni bir tekil s�n�f olu�turur
@@ -302,6 +274,16 @@
           if(!is_array($parametres)) $parametres = array($parametres);
           
           return Singleton::make($className, $parametres);
+      }
+
+      private function runRoute()
+      {
+
+          include APP_PATH.'Route.php';
+
+          $router = new Router($this, Route::getCollection());
+
+
       }
       
       /**

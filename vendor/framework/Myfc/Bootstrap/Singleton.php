@@ -28,12 +28,12 @@ class Singleton
     
     public static function make( $class, $parametres = array() )
     {
-        
+
         $parametres = (!is_array($parametres)) ?  static::unsetFirstParametres(func_get_args()):$parametres;
         
         if( !isset( static::$classes[$class] ) )
         {
-            
+
             self::$classes[$class] = (new ReflectionClass($class))->newInstanceArgs($parametres);
             self::$classCount++;
             

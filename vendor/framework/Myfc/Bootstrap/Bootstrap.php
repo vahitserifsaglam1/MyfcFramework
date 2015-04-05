@@ -4,7 +4,7 @@
  
  /**
   * 
-  *  Myfc Framework ba�lat�c� s�n�f
+  *  Myfc Framework başlatıcı sınıf
   *  
   */
  

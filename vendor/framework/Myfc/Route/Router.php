@@ -6,6 +6,28 @@ namespace Myfc;
 /**
  *
  * @author vahitşerif
+ *
+ *  ***********************************************
+ *
+ *  Route işleme sınıfı
+ *
+ *  ***********************************************
+ *
+ *  İzin verilen kullanımlar
+ *
+ *  Route::get($eslesme, $callableFunction())
+ *
+ *  Route::get($eslesme, "controller@methodname")
+ *
+ *  Route::get($eslesme, array('HTTPS', $callableFunction())
+ *
+ *  Route::get($eslesme, array('AJAX', $callableFunction())
+ *
+ *  Route::get($eslesme, array("controller@methodname", $callableFunction())
+ *
+ *  Route::get($eslesme, array(array($eventname, $parametres), $callableFunction())
+ *
+ *  Route::get($eslesme, array("event|eventname", $parametres))
  *        
  */
 class Router
@@ -22,10 +44,18 @@ class Router
     private $unsetParams;
     
     private $params;
+
+    public function __construct(Bootstrap $bootstrap = null, array $collection = array())
+    {
+
+         $this->run($bootstrap, $collection);
+
+    }
     
     public function run(Bootstrap $container, array $collection = array() )
     {
-        
+
+
         $this->container = $container;
         
         $this->collection = $collection;
@@ -399,8 +429,32 @@ class Router
                 
             }
             
-        }    
+        }elseif(strstr($callback[0],"|")){
+
+            if($event=  $this->eventParser($callback[0])){
+
+                $this->runEvent($event, $callback[1]);
+
+            }
+
+
+
+        }
         
+    }
+
+    /**
+     * Event parçalama işlemi yapar
+     * @param $string
+     * @return mixed
+     */
+    private function eventParser($string)
+    {
+
+          list(, $event) = explode("|",$string);
+
+          return $event;
+
     }
     
     /**

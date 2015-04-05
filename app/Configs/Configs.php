@@ -32,11 +32,14 @@ return [
     //start dosyaları
     
     'serviceProviders' => [
-        
+
+        'Myfc\Providers\Facade\Register',
         'Myfc\Providers\Url\Checker',
         'Myfc\Session\Starter',
         'Myfc\Providers\Error\Reporting',
         'Myfc\Providers\Language\Installer',
+        'Myfc\Providers\Event\Installer',
+        #'Myfc\Providers\Route\Runner'
         
         
         ]

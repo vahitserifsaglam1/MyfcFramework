@@ -25,7 +25,7 @@
        *
        *   Sınıfı KOntrol eder
        */
-      public static function resolveFacede()
+      protected static function resolveFacede()
       {
 
           return static::resolveFacedeClassName(static::getFacadeClass());
@@ -36,7 +36,7 @@
        * @throws \Exception
        *  Alt sınıflarda sınıfın ismini döndürmesi için kullanılır
        */
-      public  static function getFacadeClass(){
+      protected  static function getFacadeClass(){
 
           throw new \Exception("Facede sınıfı kendi kendini çağıramaz");
 
@@ -48,7 +48,7 @@
        *  Sınıfın olup olmadığını kontrol ediyor
        */
 
-      public static function resolveFacedeClassName($name)
+      protected static function resolveFacedeClassName($name)
       {
 
          
