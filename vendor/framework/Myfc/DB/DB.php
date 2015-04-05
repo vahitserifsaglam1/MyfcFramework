@@ -69,9 +69,18 @@ namespace Myfc;
      private $lastError;
  
      private $lastErrorString;
+
+     private $driverList = array(
+
+         'pdo' => 'Myfc\DB\Connector\pdo',
+         'mysql' => 'Myfc\DB\Connector\mysql',
+         'sqlite' => 'Myfc\DB\Connector\sqlite',
+         'mangodb' => 'Myfc\DB\Connector\mangodb'
+
+     );
  
      /**
-      * S�n�f�n tutulacacağı static de�i�ken
+      * Sınıfın tutulacağı static değişken
       * @var unknown
       */
  
@@ -185,8 +194,13 @@ namespace Myfc;
              $selected = $configs['Connections'][$connect];
  
              $driver = $selected['driver'];
- 
-             $connectorName = 'Myfc\DB\Connector\\'.$driver;
+
+             if(isset($this->driverList[$driver]))
+             {
+
+                 $connectorName = $this->driverList[$driver];
+
+             }
  
  
              $this->connector = new $connectorName($selected , $connect);
@@ -203,11 +217,74 @@ namespace Myfc;
  
  
      }
+
+     /**
+      * @param string $name
+      * @param callable $callable
+      * @param bool $autocheck
+      * @return $this
+      *
+      *  Sınıfa yeni bir connector ekler
+      *
+      */
+     public function extension($name = '', callable $callable = null, $autocheck = true)
+     {
+
+         if(!isset($this->driverList[$name]))
+         {
+
+             $response = $callable();
+             if(is_object($response))
+             {
+
+                 $this->driverList[$name] = get_class($response);
+
+             }elseif(is_string($response)){
+
+                 $this->driverList[$name] = $response;
+
+             }
+
+             if($autocheck === true){
+
+                 $this->driver($name);
+
+             }
+
+         }
+
+         return $this;
+
+     }
+
+     /**
+      *
+      *  Sınıfın kullacağını driver ı seçer
+      *
+      * @param string $name
+      * @return $this|bool
+      */
+     public function driver($name = ''){
+
+
+         if(isset($this->driverList[$name])) {
+
+             $this->configs['Connection'] = $name;
+
+             return $this;
+
+                 }else{
+
+             return false;
+
+         }
+
+     }
  
      /**
       * Where Sorgusu Ekler
       *
-      *  �rnek Kullan�m : $db->where( array('id' => 1 ) )
+      *  Örnek Kullanım : $db->where( array('id' => 1 ) )
       *
       * @param array $where
       * @return \Myfc\DB

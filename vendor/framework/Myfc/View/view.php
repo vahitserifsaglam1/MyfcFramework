@@ -50,7 +50,7 @@
      
      /**
       *  
-      *   Template için barýndýrýlan $templateArray için $file deðiþkenine göre atama yapar
+      *   Template iï¿½in barï¿½ndï¿½rï¿½lan $templateArray iï¿½in $file deï¿½iï¿½kenine gï¿½re atama yapar
       * 
       * @param array $array
       * @param string $file
@@ -65,7 +65,7 @@
      
      /**
       * 
-      *  Template kurulumu yapýlýr
+      *  Template kurulumu yapï¿½lï¿½r
       * 
       */
      
@@ -89,7 +89,7 @@
      
      /**
       * 
-      * Language sýnýfý yüklenir
+      * Language sï¿½nï¿½fï¿½ yï¿½klenir
       * 
       */
      
@@ -101,10 +101,10 @@
      }
      /**
       * 
-      * @param string $path -> View dosyasýnýn adý .php olmadan
-      * @param array $params -> içeri enjeckte edilecek parametreler
-      * @param string $rendefiles ->css, js, template, languea ayarlamalarý yapýlan yer
-      * @param array $templateArray -> template in ayarlarý ve tanýmlamalarý
+      * @param string $path -> View dosyasï¿½nï¿½n adï¿½ .php olmadan
+      * @param array $params -> iï¿½eri enjeckte edilecek parametreler
+      * @param string $rendefiles ->css, js, template, languea ayarlamalarï¿½ yapï¿½lan yer
+      * @param array $templateArray -> template in ayarlarï¿½ ve tanï¿½mlamalarï¿½
       * @return NULL
       */
      public static function render($path,array $params = array(),$rendefiles = '', array $templateArray = array())
@@ -180,12 +180,29 @@
          
          if(file_exists($path))
          {
-             
+             $hconfigs = Config::get('Configs','allIncludePath');
+
+             $headerPath = $hconfigs.'header.php';
+
+             if(file_exists($headerPath)){
+
+                 include $headerPath;
+
+             }
+
              include $path;
+
+             $footerPath = $hconfigs.'footer.php';
+
+             if(file_exists($footerPath)){
+
+                 include $footerPath;
+
+             }
              
          }else{
              
-             throw new \Exception( sprintf("%s view dosyasý bulunamadý", $path));
+             throw new \Exception( sprintf("%s view dosyasï¿½ bulunamadï¿½", $path));
              
          }
 
@@ -201,7 +218,7 @@
      }
      
      /**
-      * css,js,files,language dosyalarý parçalanmaya baþlanýr
+      * css,js,files,language dosyalarï¿½ parï¿½alanmaya baï¿½lanï¿½r
       * @param array $filess
       * @return multitype:multitype:
       */
@@ -229,7 +246,7 @@
      }
 
      /**
-      * <head /head> taglarý için css,js,files kodlarý oluþturulur
+      * <head /head> taglarï¿½ iï¿½in css,js,files kodlarï¿½ oluï¿½turulur
       * @param array $files
       * @return multitype:multitype:
       */
@@ -255,7 +272,7 @@
      }
      
      /**
-      * createHead fonksiyonuna döndürülmek üzere files deðiþkeni oluþtururlur
+      * createHead fonksiyonuna dï¿½ndï¿½rï¿½lmek ï¿½zere files deï¿½iï¿½keni oluï¿½tururlur
       * @param array $files
       * @return string
       */
@@ -274,7 +291,7 @@
      
      /**
       * 
-      * createHead fonksiyonuna döndürülmek üzere css deðiþkeni oluþtururlur
+      * createHead fonksiyonuna dï¿½ndï¿½rï¿½lmek ï¿½zere css deï¿½iï¿½keni oluï¿½tururlur
       * 
       * @param array $files
       * @return string
@@ -292,7 +309,7 @@
      
      /**
       *
-      * createHead fonksiyonuna döndürülmek üzere js deðiþkeni oluþtururlur
+      * createHead fonksiyonuna dï¿½ndï¿½rï¿½lmek ï¿½zere js deï¿½iï¿½keni oluï¿½tururlur
       *
       * @param array $files
       * @return string
@@ -309,7 +326,7 @@
      
      /**
       *
-      * createHead fonksiyonuna döndürülmek üzere language deðiþkeni oluþtururlur
+      * createHead fonksiyonuna dï¿½ndï¿½rï¿½lmek ï¿½zere language deï¿½iï¿½keni oluï¿½tururlur
       *
       * @param array $files
       * @return array
