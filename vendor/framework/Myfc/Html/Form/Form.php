@@ -12,7 +12,7 @@
    *    
    * **************************************************
    * 
-   * @author vahitþerif
+   * @author vahitï¿½erif
    *
    */
 
@@ -20,15 +20,14 @@ class Form
 {
     
     public static $functions;
+
     /**
-     * Formun baþlangýcý
      * @param string $name
-     * @param unknown $paramatres
+     * @param string|array $paramatres
      * @param string $type
-     * @param string $return
+     * @param bool $return
      * @return string
      */
-    
     public static function open($name = '',$paramatres,$type='POST',$return = false)
     {
 
@@ -44,8 +43,8 @@ class Form
     }
     
     /**
-     * Submit butonunun oluþturulmasý
-     * @param unknown $params
+     * Submit butonunun oluÅŸturulmasÄ±
+     * @param string|array $params
      * @return string
      */
     public static function submit($params)
@@ -60,12 +59,12 @@ class Form
     }
     
     /**
-     * Form elemanlarýndan input tun oluþturulmasý
-     * @param unknown $name
+     * Form elemanlarÄ±ndan input tun oluï¿½turulmasï¿½
+     * @param string $name
      * @param array $params
      * @return string
      */
-    public static function input($name,$params)
+    public static function input($name = '',$params)
     {
         if(is_array($params))
         {
@@ -77,7 +76,7 @@ class Form
     }
     
     /**
-     * Form elemanlarýndan input -> text in oluþturulmasý
+     * Form elemanlarÄ±ndan input -> text in oluÅŸturulmasÄ±
      * @param string $name
      * @param string|array $value
      * @return string
@@ -95,12 +94,12 @@ class Form
     }
     
     /**
-     * form elemanlarýndan textarean ýn oluþturulmasý
-     * @param unknown $name
-     * @param unknown $params
+     * form elemanlarï¿½ndan textarean Ä±n oluÅŸturulmasÄ±
+     * @param string $name
+     * @param string|array $params
      * @param string $value
      */
-    public static function textarea($name,$params,$value = "")
+    public static function textarea($name,$params = array(),$value = "")
     {
         if(is_array($params))
         {
@@ -111,11 +110,11 @@ class Form
     }
     
     /**
-     * Sýnýfa fonksiyon eklemek
-     * @param unknown $name
-     * @param unknown $return
+     * SÄ±nÄ±fa fonksiyon eklemek
+     * @param string $name
+     * @param callable $return
      */
-    public static function makro($name,$return)
+    public static function makro($name = '',callable $return)
     {
         if(is_callable($return))
         {
@@ -127,13 +126,13 @@ class Form
     }
     
     /**
-     * Formda kullanýlan select elementinin oluþturulmasý
-     * @param unknown $name
+     * Formda kullanï¿½lan select elementinin oluÅŸturulmasÄ±
+     * @param string $name
      * @param string|array $params
      * @param array $options
      * @return string
      */
-    public static function select($name,$params,array $options = array())
+    public static function select($name = '',$params,array $options = array())
     {
         $msg = "";
         if(is_array($params))
@@ -157,7 +156,7 @@ class Form
     }
     
     /**
-     * Form kapatýlýr
+     * Form kapatÄ±lÄ±r
      * @param boolean $return
      * @return string
      */
@@ -168,12 +167,12 @@ class Form
     }
     
     /**
-     * Dinamik olarak fonksiyon çaðrýlmasý
+     * Dinamik olarak fonksiyon oluÅŸturulmasÄ±
      * @param string $name
      * @param array $parametres
      * @return mixed
      */
-    public static function __callStatic($name = '',array $parametres)
+    public static function __callStatic($name = '',array $parametres = array() )
     {
         if(isset(self::$functions[$name]))
         {
@@ -190,10 +189,20 @@ class Form
      * @return string
      * 
      */
-    private static function render(array $params, $son = "")
+    private static function render(array $params, $son = " ")
     {
         
-        
+        $msg = "";
+
+
+        foreach($params as $key => $value)
+        {
+
+         $msg .= "$key = $value".$son;
+
+        }
+
+        return rtrim($msg,$son);
         
     }
 }

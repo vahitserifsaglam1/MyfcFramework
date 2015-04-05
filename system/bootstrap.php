@@ -13,7 +13,6 @@
    */
   
 
-  
    $app =  Singleton::make('\Myfc\Bootstrap');
    
    

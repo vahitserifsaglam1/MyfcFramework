@@ -29,7 +29,7 @@ return [
      
     ],
     
-    //start dosyasý 
+    //start dosyalarÄ±
     
     'serviceProviders' => [
         
@@ -37,7 +37,6 @@ return [
         'Myfc\Session\Starter',
         'Myfc\Providers\Error\Reporting',
         'Myfc\Providers\Language\Installer',
-        'Myfc\Providers\Event\Installer'
         
         
         ]

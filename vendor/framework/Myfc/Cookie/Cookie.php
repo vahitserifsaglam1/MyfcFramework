@@ -5,7 +5,7 @@
     class Cookie{
         
         /**
-         * Tüm cookileri temizler
+         * TÃ¼m cookieleri temizler
          */
 		
         public static function flush()
@@ -23,7 +23,7 @@
         }
 
         /**
-         * cookie atamasý yapar, $name deðeri zorunludur ve string dir, $time integer girilmelidir
+         * cookie atamasÄ± yapar, $name deÄŸeri zorunludur ve string dir, $time integer girilmelidir
          * @param string $name
          * @param mixed $value
          * @param integer $time
@@ -37,7 +37,7 @@
         
         /**
          *  
-         *  Girilen $name deðiþkenine göre cookie olup olmadýðýný kontrol eder varsa cookie i döndürür yoksa false döner
+         *  Girilen $name deÄŸerine gÃ¶re cookie olup olmadÄ±ÄŸÄ±nÄ± kontrol eder varsa cookie i dï¿½ndï¿½rï¿½r yoksa false dï¿½ner
          *  
          * @param string $name
          * @return mixed|boolean
@@ -53,7 +53,7 @@
 
         /**
          * 
-         *  girilen $name deðiþkeni varsa silinir yoksa exception oluþtururlur 
+         *  girilen $name deÄŸiÅŸkeni varsa silinir yoksa exception oluï¿½tururlur
          * 
          * @param string $name
          * @throws Exception

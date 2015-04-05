@@ -2,8 +2,6 @@
 
  namespace Myfc;
  
- use ReflectionMethod;
- 
  use Myfc\Singleton;
 
   class Facade{
@@ -100,8 +98,10 @@
       public static function __callStatic( $method, $parametres )
       {
 
+
+
            $instanceName = static::getFacedeRoot();
-           
+
    
            if(!is_object($instanceName))
            {

@@ -4,17 +4,14 @@
  
  /**
   * 
-  *  Myfc Framework başlatıcı sınıf
+  *  Myfc Framework baï¿½latï¿½cï¿½ sï¿½nï¿½f
   *  
   */
  
  use Myfc\Adapter;
  use Myfc\Singleton;
  use Myfc\Container;
- use Myfc\Http\Server;
  use Myfc\Config;
- use Myfc\Facade\Session;
-
  class Bootstrap extends Container
  {
     
@@ -27,7 +24,7 @@
     
     /**
      * 
-     * Adapter atamaları yapar
+     * Adapter atamalarï¿½ yapar
      * 
      */
     
@@ -52,16 +49,13 @@
          parent::__construct($this->adapter->server, $configs, $this->getUrl);
          
          
-    } 
-    
+    }
 
 
-
-    /**
-     * 
-     *  Servis hazırlayıcılarını hazırlar
-     * 
-     */
+     /**
+      * Servis hazÄ±rlayÄ±cÄ±larÄ± kullanÄ±lÄ±r hale getirir
+      * @param array $providers
+      */
     private function runServiceProviders(array $providers = array() )
     {
      

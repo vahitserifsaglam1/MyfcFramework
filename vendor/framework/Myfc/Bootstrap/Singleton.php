@@ -4,7 +4,7 @@
  use ReflectionClass;
 /**
  *
- * @author Vahit Þerif Saðlam
+ * @author Vahit Åžerif SaÄŸlam
  *        
  */
 class Singleton
@@ -16,7 +16,7 @@ class Singleton
      
     /**
      *  
-     *   Baþlatýcý fonksiyon
+     *   Baï¿½latï¿½cï¿½ fonksiyon
      * 
      */
     public function __construct()
@@ -28,9 +28,6 @@ class Singleton
     
     public static function make( $class, $parametres = array() )
     {
-        
-    
- 
         
         $parametres = (!is_array($parametres)) ?  static::unsetFirstParametres(func_get_args()):$parametres;
         
@@ -55,7 +52,7 @@ class Singleton
     
     
     /**
-     * Sýnýfýn ilk parametresini silmekde kullanýlacak
+     * Sï¿½nï¿½fï¿½n ilk parametresini silmekde kullanï¿½lacak
      * @param array $array
      */
     

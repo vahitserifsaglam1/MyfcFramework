@@ -1,17 +1,11 @@
 <?php  
 
   namespace Myfc;
-  
-  use Myfc\Facade;
-  
+
   use Myfc\Facade\Route;
-  
   use Myfc\Router;
-  
   use Myfc\Http\Server;
-  
   use ReflectionClass;
-  
   use Closure;
   
   class Container{
@@ -28,7 +22,7 @@
       public $maked = array();
       
       /**
-       * Sýnýfý baþlatýr
+       * Sï¿½nï¿½fï¿½ baï¿½latï¿½r
        * @param \Myfc\Http\Server $server
        * @param array $ayarlar
        * @param array $get
@@ -47,7 +41,9 @@
           $this->facedeRegister( $ayarlar['alias'] );
           
           $this->adapter->assests->returnGet();
-          
+
+          $this->runEvents();
+
           $this->runRoute();
       }
       
@@ -66,7 +62,7 @@
       }
       
       /**
-       * Sýnýfa yeni fonksiyon eklemekte kullanýlýr
+       * Sï¿½nï¿½fa yeni fonksiyon eklemekte kullanï¿½lï¿½r
        * @param string $name
        * @param callable $function
        * @return \Myfc\Container
@@ -101,7 +97,7 @@
       }
       
       /**
-       * Bind edilip edilmediðine bakar
+       * Bind edilip edilmediï¿½ine bakar
        * @param string $name
        * @return boolean
        */
@@ -113,7 +109,7 @@
       }
       
       /**
-       * Bind çaðýrýr
+       * Bind ï¿½aï¿½ï¿½rï¿½r
        * @param string $name
        * @param array $parametres
        * @return mixed
@@ -133,17 +129,17 @@
       
       /**
        *
-       * Modal, Controller yada herhangi bir sýnýf çaðýrmak için kullanýlýr
+       * Modal, Controller yada herhangi bir sï¿½nï¿½f ï¿½aï¿½ï¿½rmak iï¿½in kullanï¿½lï¿½r
        *  
-       *   $className = "controller@asdsad" : asdsad  controlleri çaðrýlýr
+       *   $className = "controller@asdsad" : asdsad  controlleri ï¿½aï¿½rï¿½lï¿½r
        *   
-       *   $className = "modal@asdads"  : asdads modalý çaðrýlýr ( sadece include edilir )
+       *   $className = "modal@asdads"  : asdads modalï¿½ ï¿½aï¿½rï¿½lï¿½r ( sadece include edilir )
        * 
        * @param string $className
        * @param array $parametres
        */
       
-      public function make($className = '', array $parametres = array())
+      public function make($className = '', array $parametres = array(), $autoInstance = true)
       {
           
           if(strstr($className, "@"))
@@ -154,12 +150,12 @@
               if($class[0] == "controller")
               {
                   
-                 return $this->makeController($class[1], $parametres);
+                 return $this->makeController($class[1], $parametres, $autoInstance);
                   
               }elseif($class[0] == "modal")
               {
                   
-                  return $this->makeModal($classs[1], $parametres );
+                  return $this->makeModal($class[1], $parametres,$autoInstance );
                   
               }
               
@@ -175,13 +171,13 @@
       }
       
       /**
-       * Contoller çaðýrýr, yeni bir instance oluþtururu
+       * Contoller ï¿½aï¿½ï¿½rï¿½r, yeni bir instance oluï¿½tururu
        * @param string $controller
        * @param array $parametres
        * @return unknown|boolean
        */
       
-      public function makeController($controller,$parametres = array())
+      public function makeController($controller,$parametres = array(), $autoInstance = true)
       {
           
           $controllerPath = APP_PATH."Controller/$controller.php";
@@ -192,8 +188,16 @@
           {
               
               include $controllerPath;
-              
-              return (new ReflectionClass($controller))->newInstanceArgs($parametres);
+
+              if($autoInstance) {
+                  return (new ReflectionClass($controller))->newInstanceArgs($parametres);
+
+              }else{
+
+                  return true;
+
+              }
+
               
           }else{
               
@@ -203,13 +207,13 @@
       }
       
       /**
-       * Modal çaðýrýr , instance oluþturmaz.
+       * Modal ï¿½aï¿½ï¿½rï¿½r , instance oluï¿½turmaz.
        * @param string $modalName
        * @param array $parametres
        * @return boolean
        */
       
-      public function makeModal($modalName = '', array $parametres = array() )
+      public function makeModal($modalName = '', array $parametres = array(), $autoInstance = false )
       {
           
           $modalPath = APP_PATH.'Modals/'.$modalName.'.php';
@@ -220,8 +224,18 @@
           {
               
               include $modalPath;
-              
-              return true;
+
+
+              if($autoInstance)
+              {
+                  return (new ReflectionClass($modalName))->newInstanceArgs($parametres);
+              }else{
+
+                  return true;
+
+              }
+
+
               
           }else{
               
@@ -232,7 +246,7 @@
       }
       
       /**
-       * girilen parametrelere göre yeni bir sýnýf çaðrýlýr
+       * girilen parametrelere gï¿½re yeni bir sï¿½nï¿½f ï¿½aï¿½rï¿½lï¿½r
        * @param string $className
        * @param array $parametres
        * @return object
@@ -242,7 +256,7 @@
           
           $this->maked[] = $className;
           
-          return (new ReflectionClass($controller))->newInstanceArgs($parametres);
+          return (new ReflectionClass($className))->newInstanceArgs($parametres);
           
       }
       
@@ -256,16 +270,33 @@
           $router->run($this, Route::getCollection());
           
       }
+
+      private function runEvents()
+      {
+
+
+          #$this->singleton('\Myfc\Event', $this);
+
+          $eventPath = APP_PATH.'Events.php';
+
+          if(file_exists($eventPath))
+          {
+
+              include $eventPath;
+
+          }
+
+      }
       
       /**
-       * Singleton sýnýfýyla iletiþime geçerek yeni bir tekil sýnýf oluþturur
+       * Singleton sï¿½nï¿½fï¿½yla iletiï¿½ime geï¿½erek yeni bir tekil sï¿½nï¿½f oluï¿½turur
        * @param string $className
        * @param array $parametres
        * @return object
        */
       public function singleton($className, $parametres = array() )
       {
-          
+
           $this->maked[] = $className;
           
           if(!is_array($parametres)) $parametres = array($parametres);
@@ -274,7 +305,7 @@
       }
       
       /**
-       * Dinamik olarak method çaðýrma iþlemi
+       * Dinamik olarak method ï¿½aï¿½ï¿½rma iï¿½lemi
        * @param string $name
        * @param array $parametres
        * @return \Myfc\mixed

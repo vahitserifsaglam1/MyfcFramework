@@ -26,7 +26,7 @@
      
      
      /**
-      * Y�nlendirme i�lemi yapan fonksiyon
+      * Y�nlendirme işlemi yapan fonksiyon
       * @param string $type
       * @param array $params
       * @return boolean
@@ -34,13 +34,14 @@
      
      public function redirect($type = '' ,array $params = array())
      {
-         
+
+
          switch($type)
          {
              
              case 'location':
                  
-                   if($url = $this->urlStatusCheck($params[0]))
+                   if($url = $this->otherPageUrlCheck($this->urlStatusCheck($params[0])))
                    {
                        
                         header("Location:$url");
@@ -56,7 +57,7 @@
              case 'refresh':
                  
           
-                   if($url = $this->urlStatusCheck($params[0]))
+                   if($url = $this->otherPageUrlCheck($this->urlStatusCheck($params[0])))
                    {
                        
                         header("Refresh:{$params[1]},url=$url");
@@ -88,15 +89,43 @@
          }
          
      }
-     
+
      /**
-      * Girilen url in status code sinin 200 olup olmad���n� kontrol eder
+      *  Çağırlan sayfanın dışardan bir sayfa olup olmadığını kontrol eder
+      *
+      * @param string $url
+      * @return string
+      */
+
+     private function otherPageUrlCheck($url = '')
+     {
+
+         $baslangic = substr($url, 0, 10);
+
+         if(strstr($baslangic, "http://") ||strstr($baslangic, "http://www.") || strstr($baslangic, "www.") || strstr($baslangic, "https://")
+           || strstr($baslangic, "https://www"))
+         {
+
+
+             return $url;
+
+         }else{
+
+             return $this->url.$url;
+
+         }
+
+     }
+
+     /**
+      * Girilen url in status code sinin 200 olup olmadığını ve
       * @param string $url
       * @return Ambigous <boolean, string>
       */
      private function urlStatusCheck($url = '')
      {
-         
+
+
          $res = $this->request->get($url);
          
          $statusCode =  $res->getStatusCode();

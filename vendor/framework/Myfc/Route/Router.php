@@ -2,10 +2,10 @@
 namespace Myfc;
  
  use Myfc\Bootstrap;
-
+ use Myfc\Facade\Event as Events;
 /**
  *
- * @author vahitşerif
+ * @author vahitÅŸerif
  *        
  */
 class Router
@@ -39,7 +39,7 @@ class Router
     }
     
     /**
-     * Parçalama işlemi Başlar
+     * ParÃ§alama iÅŸlemi baÅŸlar
      */
     
     private function startParsing()
@@ -52,7 +52,7 @@ class Router
     }
     
     /**
-     * Yapılan tipe göre parçalanmaya başlanır
+     * Yapï¿½lan tipe gï¿½re parï¿½alanmaya baï¿½lanï¿½r
      * @param unknown $method
      */
     
@@ -87,7 +87,7 @@ class Router
     }
     
     /**
-     * Link kontrolu başlangıç
+     * Link kontrolu baï¿½langï¿½ï¿½
      * @param unknown $action
      * @return unknown
      */
@@ -95,84 +95,30 @@ class Router
     {
        
 
-             $url = explode("/",rtrim($this->url,"/"));
-            
-             $action = rtrim($action,"/");
-             
-             $explode = explode("/",$action);
-             
-             
-             if(count($url) && count($explode))
-             {
-                 $array = array_map(function($a){
-                      
-                     if(strstr($a, "{") && strstr($a, "}")){
-                           
-                         
-                         return $a;
-                          
-                     }
-                      
-                 }, $explode);
-                 
-              
-                      
-                     $unsetArray = array_map(function($a){
-                 
-                         if(!strstr($a,"!"))
-                         {
-                              
-                             return $a;
-                              
-                         }
-                 
-                     }
-                         , $array);
-                     
-                 
-                          
+              $url = explode("/",rtrim($this->url,"/"));
+
+              $action = rtrim($action,"/");
+
+              $explode = explode("/",$action);
+
+              // url ve parametrelerin karÅŸÄ±laÅŸtÄ±rÄ±lÄ±p dizi oluÅŸturulmasÄ±
+              $array = $this->urlParsingArray($url, $explode);
+
+              // url ve paremetrelerin karÅŸÄ±laÅŸtÄ±rÄ±lÄ±p nulllarÄ±n Ã§Ä±karÄ±lmasÄ±
+
+              $unsetArray = $this->urlParsingWithoutNulls($array);
+
                   
                          preg_match_all("#\{(.*?)\}#", $action,$finds);
                                
-                        
+                        $params = $this->paramsCreate($url, $array);
+
                  
                          $find = $finds[1];
-                         
-                          
-                         $params = array();
-                          
-                          
-                 
-                         for($i=0;$i<count($array);$i++)
-                         {
-                 
-                         if(isset($url[$i]) && $array[$i] !== null)
-                         {
-                 
-                          
-                         $params[$array[$i]] = $url[$i];
-                 
-                         }
-                 
-                         }
-                 
-                 
-                             $unsetParams = array();
-                 
-                             for($a=0;$a<count($url);$a++)
-                             {
-                 
-                              
-                             if(isset($url[$a]) && $unsetArray[$a] !== null )
-                             {
-                              
-                             $unsetParams[$unsetArray[$a]] = $url[$a];
-                                  
-                             }
-                              
-                             }
-                             
-                         
+
+
+                       $unsetParams = $this->paramsCreateWithoutNulls($url,$unsetArray);
+
                  
                              $this->unsetParams = $this->paramsWhereCheck($unsetParams);
                 
@@ -183,13 +129,135 @@ class Router
                              return (is_array($this->unsetParams) && is_array($this->params)) ? true:false;
                  
              }
-             
-           
-             
-            
-       
-        
+
+
+    /**
+     *
+     *  url ve paremetrelerin karÅŸÄ±laÅŸtÄ±rÄ±lÄ±p dizi oluÅŸturulmasÄ±
+     *
+     * @param array $url
+     * @param array $explode
+     * @return array
+     */
+
+    private function urlParsingArray( array $url , array $explode)
+    {
+
+
+
+        if(count($url) && count($explode)) {
+            $array = array_map(function ($a) {
+
+                if (strstr($a, "{") && strstr($a, "}")) {
+
+
+                    return $a;
+
+                }
+
+            }, $explode);
+
+            return $array;
+
+        }
+
     }
+
+    /**
+     *
+     *  Parametrelerden null olanlarÄ±n Ã§Ä±kartÄ±lmasÄ±
+     *
+     * @param array $array
+     * @return array
+     */
+
+    private function urlParsingWithoutNulls(array $array)
+    {
+
+
+        $unsetArray = array_map(function($a){
+
+            if(!strstr($a,"!"))
+            {
+
+                return $a;
+
+            }
+
+        }
+            , $array);
+
+        return $unsetArray;
+
+    }
+
+    /**
+     *  Parametrelerin oluÅŸturulmasÄ±
+     * @param array $url
+     * @param array $array
+     * @return array
+     */
+    private function paramsCreate(array $url, array $array)
+    {
+
+        $params = array();
+
+
+
+        for($i=0;$i<count($array);$i++)
+        {
+
+            if(isset($url[$i]) && $array[$i] !== null)
+            {
+
+
+                $params[$array[$i]] = $url[$i];
+
+            }
+
+        }
+
+        return $array;
+
+    }
+
+    /**
+     *
+     *  Parametreler oluÅŸturulurken null olanlarÄ±n Ã§Ä±kartÄ±lmasÄ±
+     *
+     * @param array $url
+     * @param array $unsetArray
+     * @return array
+     */
+
+    private function paramsCreateWithoutNulls(array $url, array $unsetArray)
+    {
+
+        $unsetParams = array();
+
+        for($a=0;$a<count($url);$a++)
+        {
+
+
+            if(isset($url[$a]) && $unsetArray[$a] !== null )
+            {
+
+                $unsetParams[$unsetArray[$a]] = $url[$a];
+
+            }
+
+        }
+
+         return $unsetParams;
+
+
+    }
+
+    /**
+     * parametrelerde where tanÄ±mÄ±na uyanlarÄ±n karÅŸÄ±laÅŸtÄ±rÄ±lmasÄ±
+     * @param array $params
+     * @return array
+     */
     
     private function paramsWhereCheck(array $params = array())
     {
@@ -203,21 +271,28 @@ class Router
   
             preg_match_all("#\{(.*?)\}#", $param,$finds);
            
-            $param = $finds[1][0];
-            
-            if(isset($where[$param]))
+            if(isset($finds[1][0]))
             {
-                
-   
-               preg_match($where[$param], $value, $finded);
-               $parametres[] = $finded[0];
-           
-                
-            }else{
-                
-                $parametres[] = $value;
-                
+
+                $param = $finds[1][0];
+
+                if(isset($where[$param]))
+                {
+
+
+                    preg_match($where[$param], $value, $finded);
+                    $parametres[] = $finded[0];
+
+
+                }else{
+
+                    $parametres[] = $value;
+
+                }
+
             }
+            
+
             
         }
         
@@ -225,13 +300,16 @@ class Router
      
         
     }
-    
- 
+
+    /**
+     * Callback kÄ±smÄ±nÄ±n parÃ§alanmasÄ±
+     * @param $callback
+     */
     
     private function callbackParsing($callback)
     {
-        
-        // eğer çağrılabilir bir ifadeyse
+
+        // *>eÄŸer Ã§aÄŸrÄ±labilir se
         
         if(is_callable($callback))
         {
@@ -240,35 +318,32 @@ class Router
             
         }
         
-        // çağrılabilir bitiş
-        
-        // eğer dizi ise
+       //
+
+        // -> eÄŸer bir dizi ise
         if(is_array($callback))
         {
-            
+
             if(is_string($callback[0]))
             {
-                
+
                 $this->callBackString($callback);
                 
             }
             
             if(is_array($callback[0]))
             {
-                
+
                 $this->callBackArray($callback);
                 
             }
-            
-            
-            
-            
+
             
         }
         
-        // dizi bitiş
+        //
         
-        // eğer string ise
+        // -> eÄŸer string bir ifade ise
         
         if(is_string($callback))
         {
@@ -277,18 +352,18 @@ class Router
             
         }
         
-        // string bitiş
+        //
         
         
     }
     
     /**
-     * Callback olayının 0. indisi string ise çağrılır
-     * @param unknown $callback
+     * Callback olayï¿½nï¿½n 0. indisi string ise Ã§aÄŸrÄ±lÄ±r
+     * @param string $callback
      */
-    private function callBackString($callback)
+    private function callBackString($callback ='')
     {
-        
+
         if($callback[0] == "AJAX" || $callback[0] == "HTTPS" || $callback[0] == "https://" )
         {
             if($this->securityChecker($callback[0]))
@@ -329,22 +404,24 @@ class Router
     }
     
     /**
-     * callback olayının 0. indisi array ise çağrılır
+     * callback olayï¿½nï¿½n 0. indisi array ise ï¿½aï¿½rï¿½lï¿½r
      * @param array $callback
      */
     private function callBackArray(array $callback)
     {
+
+        $callback = $callback[0];
        
-        if(is_string($callback[0]))
+        if(is_string($callback[0]) && is_array($callback[1]))
         {
             
-           
+            $this->runEvent($callback[0],$callback[1]);
             
         }
         
     }
     /**
-     * Https den girilip girilmediğini algılar
+     * Https den girilip girilmediï¿½ini algï¿½lar
      * @param unknown $https
      */
     private function securityChecker($https){
@@ -386,10 +463,13 @@ class Router
        return  $isSecure ? true : false;
         
     }
-    
+
     /**
-     * Çağrılabilir ifade yürütmesi
-     * @param unknown $callback
+     *
+     *  Callable bir fonksiyonu Ã§aÄŸÄ±rÄ±r
+     *
+     * @param $callback
+     * @return mixed
      */
     private function runCallable($callback)
     {
@@ -404,10 +484,13 @@ class Router
         return call_user_func_array($callback, $parametres);
         
     }
-    
+
     /**
-     * Kontroller Yürütür
-     * @param unknown $string
+     *
+     *  Kontroller Ã§aÄŸÄ±rÄ±r ve girilen parametreleri atar
+     *
+     * @param $string
+     * @return mixed
      */
     private function runController($string)
     {
@@ -448,6 +531,35 @@ class Router
         
        
         
+    }
+
+    /**
+     *
+     *  Event yÃ¼rÃ¼tmekte kullanÄ±lÄ±r
+     *
+     * @param string $eventName
+     * @param array $parametres
+     * @return bool
+     */
+    private function runEvent($eventName = '', array $parametres)
+    {
+
+
+
+        if(Events::hasListeners($eventName))
+        {
+
+            return Events::fire($eventName, $parametres);
+
+        }else{
+
+            return false;
+
+        }
+
+
+
+
     }
     
     

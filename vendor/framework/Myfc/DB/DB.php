@@ -9,7 +9,7 @@ namespace Myfc;
 
  /**
   *
-  * @author vahitþerif
+  * @author vahitï¿½erif
   *        
   */
 
@@ -71,16 +71,16 @@ namespace Myfc;
      private $lastErrorString;
  
      /**
-      * Sýnýfýn tutulacaðý static deðiþken
+      * Sï¿½nï¿½fï¿½n tutulacacaÄŸÄ± static deï¿½iï¿½ken
       * @var unknown
       */
  
      private static $instance;
      /**
       *
-      *   Baþlatýcý Fonksiyon
+      *   BaÅŸlatÄ±cÄ± Fonksiyon
       *
-      *   Seçilen tabloyu parametro olarak atýyabilir yada çaðrýldýðý sýnýftaki isimden veya bir deðiþkenden çekebilirsiniz
+      *   SeÃ§ilen tabloyu parametre olarak $table ile iletebilir, veya herhangi bir sÄ±nÄ±ftan Ã§ekebilirisniz
       *
       */
      public function __construct( $table = '' )
@@ -116,11 +116,11 @@ namespace Myfc;
          if(file_exists(static::CONFIG_PATH))
          {
               
-             $this->configs = require static::CONFIG_PATH;
+             $this->configs = Config::get('databaseConfigs');
               
          }else{
               
-             throw new Exception('veritabaný ayar dosyanýz silinmiþ');
+             throw new Exception('veritabanï¿½ ayar dosyanï¿½z silinmiï¿½');
               
          }
           
@@ -130,9 +130,9 @@ namespace Myfc;
      }
  
      /**
-      * Static olarak sýnýfý baþlatýr
+      * Static olarak sÄ±nfÄ± baÅŸalatÄ±r
       * @param string $table
-      * @return \Myfc\unknown
+      * @return \Myfc\DB
       */
  
      public static function boot( $table = '')
@@ -150,7 +150,7 @@ namespace Myfc;
      }
  
      /**
-      * Seçilen Tabloyu Deðiþtirir
+      * Seï¿½ilen Tabloyu Deï¿½iï¿½tirir
       * @param string $table
       * @return \Myfc\DB
       */
@@ -165,9 +165,9 @@ namespace Myfc;
      }
  
      /**
-      * Veri tabaný baðlantýsý yapar
+      * Veri tabanÄ± baÄŸlantÄ±sÄ± yapar
       *
-      *  Hiçbir veri döndürmez
+      *  HiÃ§bir veri dÃ¶ndÃ¼rmez
       */
      private function connect()
      {
@@ -179,10 +179,10 @@ namespace Myfc;
          $connect = $configs['Connection'];
  
  
-         if(isset($configs[$connect]))
+         if(isset($configs['Connections'][$connect]))
          {
  
-             $selected = $configs[$connect];
+             $selected = $configs['Connections'][$connect];
  
              $driver = $selected['driver'];
  
@@ -194,7 +194,7 @@ namespace Myfc;
          }else{
  
  
-             throw new Exception('yanlýþ sürücü seçilmiþ, sürücü ayarlarý'.static::CONFIG_PATH.' dosyasýnda bulunamadý');
+             throw new Exception('yanlÄ±ÅŸ sÃ¼rÃ¼cÃ¼ seÃ§ilmiÅŸ'.static::CONFIG_PATH.' dosyasÄ±nda bulunamadÄ±');
  
          }
  
@@ -207,7 +207,7 @@ namespace Myfc;
      /**
       * Where Sorgusu Ekler
       *
-      *  Örnek Kullaným : $db->where( array('id' => 1 ) )
+      *  ï¿½rnek Kullanï¿½m : $db->where( array('id' => 1 ) )
       *
       * @param array $where
       * @return \Myfc\DB
@@ -233,7 +233,7 @@ namespace Myfc;
      }
  
      /**
-      * Sorguya where tanýmý ekler(or)
+      * Sorguya where tanï¿½mï¿½ ekler(or)
       * @param unknown $where
       * @return \Myfc\DB
       */
@@ -279,9 +279,9 @@ namespace Myfc;
      }
  
      /**
-      * Özelleþtirilebilir Where sorgusu Ekler (çoðul ekleme için)
+      * ï¿½zelleï¿½tirilebilir Where sorgusu Ekler (ï¿½oï¿½ul ekleme iï¿½in)
       *
-      *  Örnek Kullaným : $db->addSpecialWhere( array( $id , '<' $ids ), ... )
+      *  ï¿½rnek Kullanï¿½m : $db->addSpecialWhere( array( $id , '<' $ids ), ... )
       *
       * @param array $array
       * @return \Myfc\DB
@@ -301,9 +301,9 @@ namespace Myfc;
      }
  
      /**
-      * Özelleþtirilebilir where sorgusu ekler (tekil ekleme için )
+      * ï¿½zelleï¿½tirilebilir where sorgusu ekler (tekil ekleme iï¿½in )
       *
-      *   Örnek Kullaným : $db->addSpecial($id,'<',$ids)
+      *   ï¿½rnek Kullanï¿½m : $db->addSpecial($id,'<',$ids)
       *
       * @param unknown $ilk
       * @param unknown $orta
@@ -321,7 +321,7 @@ namespace Myfc;
      }
  
      /**
-      * Ýçeri çekilecek diðer tabloyu ekler
+      * ï¿½ï¿½eri ï¿½ekilecek diï¿½er tabloyu ekler
       * @param string $wid
       * @return \Myfc\DB
       */
@@ -336,9 +336,9 @@ namespace Myfc;
      }
  
      /**
-      * Sorguda kullanýlacak parametreleri ekler
+      * Sorguda kullanï¿½lacak parametreleri ekler
       *
-      *  Örnek Kullaným : $db->set( array('id' => 1 ) )
+      *  ï¿½rnek Kullanï¿½m : $db->set( array('id' => 1 ) )
       *
       * @param array $array
       * @return \Myfc\DB
@@ -359,9 +359,9 @@ namespace Myfc;
      }
  
      /**
-      * Sorguda çekilecek sutunlarý ekler
+      * Sorguda ï¿½ekilecek sutunlarï¿½ ekler
       *
-      *  Örnek Kullaným : $db->get(array('column1','column2))
+      *  ï¿½rnek Kullanï¿½m : $db->get(array('column1','column2))
       *
       * @param array $array
       * @return \Myfc\DB
@@ -382,7 +382,7 @@ namespace Myfc;
      /**
       * Sorguya Join ekler
       *
-      *   Örnek Kullaným: $db->join( array ( 'INNER JOIN' => array('kitap','fakulte','id)
+      *   ï¿½rnek Kullanï¿½m: $db->join( array ( 'INNER JOIN' => array('kitap','fakulte','id)
       *
       * @param array $join
       * @return \Myfc\DB
@@ -403,7 +403,7 @@ namespace Myfc;
       *
       *  Sorguya Like ekler
       *
-      *   Örnek kullaným :$db->like(array('id' => 5))
+      *   ï¿½rnek kullanï¿½m :$db->like(array('id' => 5))
       *
       * @param string $array
       * @return \Myfc\DB
@@ -434,9 +434,9 @@ namespace Myfc;
  
      /**
       *
-      *  Örnek Kullaným : $db->addSpecialLike( array( array('%',$id','%'), ...))
+      *  ï¿½rnek Kullanï¿½m : $db->addSpecialLike( array( array('%',$id','%'), ...))
       *
-      * Sorguya Özel Like ekler
+      * Sorguya ï¿½zel Like ekler
       * @param array $array
       */
  
@@ -456,7 +456,7 @@ namespace Myfc;
      }
  
      /**
-      * Limit atamasý yapar
+      * Limit atamasï¿½ yapar
       * @param unknown $limit
       * @return \Myfc\DB
       */
@@ -482,7 +482,7 @@ namespace Myfc;
      /**
       * Sorguya tekil special like ekler
       *
-      *  Örnek Kullaným : $db->specialLike('%',$id,'')
+      *  ï¿½rnek Kullanï¿½m : $db->specialLike('%',$id,'')
       *
       * @param unknown $bas
       * @param unknown $orta
@@ -517,7 +517,7 @@ namespace Myfc;
          return $this;
  
      }
-     /** Veri tabanýndan veri çekme iþlemi için çekilecek verilerin seçilmesi  */
+     /** Veri tabanï¿½ndan veri ï¿½ekme iï¿½lemi iï¿½in ï¿½ekilecek verilerin seï¿½ilmesi  */
      public function addGet( $name )
      {
  
@@ -762,7 +762,7 @@ namespace Myfc;
      }
  
      /**
-      * Fetch Yapmak için Kullanýr seçilen moda göre iþlem yapýlacak türü belirler
+      * Fetch Yapmak iï¿½in Kullanï¿½r seï¿½ilen moda gï¿½re iï¿½lem yapï¿½lacak tï¿½rï¿½ belirler
       * @param unknown $query
       * @param unknown $mode
       * @return mixed|boolean
@@ -870,7 +870,7 @@ namespace Myfc;
  
      /**
       *
-      * Ýçerik ekleme iþinde kullanýlýr
+      * ï¿½ï¿½erik ekleme iï¿½inde kullanï¿½lï¿½r
       *
       */
  
@@ -886,7 +886,7 @@ namespace Myfc;
  
      /**
       * @return PDOStatement
-      * Ýçerik Güncelleme Ýþleminde Kullanýlýr
+      * ï¿½ï¿½erik Gï¿½ncelleme ï¿½ï¿½leminde Kullanï¿½lï¿½r
       */
  
      public function update()
@@ -899,7 +899,7 @@ namespace Myfc;
  
      /**
       * @return PDOStatement
-      * Silme Ýþleminde kullanlýr
+      * Silme ï¿½ï¿½leminde kullanlï¿½r
       */
  
      public function delete()
@@ -911,7 +911,7 @@ namespace Myfc;
      }
  
      /**
-      * Seçilenleri birleþtirip okuma iþlemi yapar
+      * Seï¿½ilenleri birleï¿½tirip okuma iï¿½lemi yapar
       * @param string $fetch
       * @return boolean
       */
@@ -960,7 +960,7 @@ namespace Myfc;
  
          //select son
  
-         //limit baþlangýç
+         //limit baï¿½langï¿½ï¿½
  
          $limit =  $this->limiter($limit);
  
@@ -1048,7 +1048,7 @@ namespace Myfc;
      }
  
      /**
-      * Hata mesajýný döndürür
+      * Hata mesajï¿½nï¿½ dï¿½ndï¿½rï¿½r
       * @return boolean|string
       */
  
@@ -1070,7 +1070,7 @@ namespace Myfc;
      }
  
      /**
-      * Son oluþan hatayý döndürür
+      * Son oluï¿½an hatayï¿½ dï¿½ndï¿½rï¿½r
       * @return mixed
       */
  
@@ -1090,7 +1090,7 @@ namespace Myfc;
      }
  
      /**
-      * Ýçeriði temizlemek için
+      * ï¿½ï¿½eriï¿½i temizlemek iï¿½in
       * @return NULL
       */
  
@@ -1108,7 +1108,7 @@ namespace Myfc;
      }
  
      /**
-      * Otomatik sayfalama iþlemi için kullanýlýr
+      * Otomatik sayfalama iï¿½lemi iï¿½in kullanï¿½lï¿½r
       * @see Pagination
       * @param unknown $parse
       * @param PDOStatement $query
@@ -1242,7 +1242,7 @@ namespace Myfc;
      }
  
      /**
-      * Kayýt sayýsýný döndürür
+      * Kayï¿½t sayï¿½sï¿½nï¿½ dï¿½ndï¿½rï¿½r
       * @return number|boolean
       */
      public function count()
@@ -1293,7 +1293,7 @@ namespace Myfc;
  
  
      /**
-      * Dinamik olarak çaðýrma iþlemi
+      * Dinamik olarak ï¿½aï¿½ï¿½rma iï¿½lemi
       * @param unknown $name
       * @param unknown $params
       * @return mixed
@@ -1316,7 +1316,7 @@ namespace Myfc;
      }
  
      /**
-      * Dinamik olarak static method çaðýrmasý yapar
+      * Dinamik olarak static method ï¿½aï¿½ï¿½rmasï¿½ yapar
       * @param unknown $method
       * @param unknown $parameters
       * @return mixed

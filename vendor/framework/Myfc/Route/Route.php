@@ -1,11 +1,7 @@
 <?php
  
  namespace Myfc;
- 
- 
- use Myfc\Singleton;
- use Myfc\Container;
- 
+
  class Route
  {
      
@@ -79,8 +75,8 @@
      
      /**
       * Post eklemesi yapar
-      * @param unknown $action
-      * @param unknown $callback
+      * @param string $action
+      * @param mixed $callback
       * @return \Myfc\Route
       */
      public function post($action,$callback)
@@ -231,7 +227,7 @@
      }
      
      /**
-      * Collectionlarý Döndürür
+      * Collectionlarï¿½ Dï¿½ndï¿½rï¿½r
       * @return multitype:NULL
       */
      public function getCollection()

@@ -2,43 +2,46 @@
 
   return [
 
+      'Cache' => [
 
-      'Cache' => [ // cache ayarlarý
-	      'driver'        => 'memcache', // -> apc,memcache[önerilen],file,predis
-		  'path'          => APP_PATH.'Stroge/Cache',
-		  'defaultDriver' => 'predis' // seçilen driver yüklü deðilse 
-	  ],
+          'driver' => 'memcache',
+          'default' => 'predis',
+          'memcache' => [
+
+              'host' => '127.0.0.1',
+              'port' => 11211
+
+          ]
+
+      ],
 	  
-	  'Session' => [ // session ayarlarý 
+	  'Session' => [ // session ayarlarÄ±
 	  
-	    'driver' => 'php', // -> cacheBased,fileBased,php[önerilen]
+	    'driver' => 'php', // -> cacheBased,fileBased,php[Ã¶nerilen]
 		'path'   =>  APP_PATH.'Stroge/Session',
-		'default' => 'php' // seçilen driver yüklü deðilse 
+		'default' => 'php' // seÃ§ilen driver yÃ¼klÃ¼ deÄŸilse
 		
 	  ],
 
-      'Cookie' => [ // cookie ayarlarý
+      'Cookie' => [ // cookie ayarlarÄ±
 
 
 
       ],
       
-      'predis' => [ // predis ayarlarý [ standart ayarlardýr, dokumanamanýz önerilir ]
-           
+      'predis' => [ // predis ayarlarÄ± [ standart ayarlardÄ±r, dokumanamanÄ±z Ã¶nerilir ]
+
           'cluster' => false,
-           
+
           'default' => [
-               
+
               'scheme'   => 'tcp',
               'host'     => '127.0.0.1',
               'port'     =>  6379,
               'database' =>  0,
-               
+
           ]
-           
+
       ]
 	  
-  ]
- 
-
-?>
+  ];
