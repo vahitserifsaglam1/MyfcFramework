@@ -219,15 +219,87 @@
       public function returnGetWithoutUrl()
       {
 
+          $get = $this->get;
+
           if(isset($this->get['url'])){
 
-              unset($this->get['url']);
-
+              unset($get);
 
 
           }
 
-          return $this->get;
+          return $get;
+
+      }
+
+      /**
+       * Get verisinden değeri boş olanları silerek döndürür
+       * @return array
+       */
+      public function returnGetWithoutNulls(){
+
+
+          $array = array();
+
+          foreach($this->get as $key => $value){
+
+              if($value !== ""){
+
+                  $array[$key] = $value;
+
+              }
+
+          }
+
+          return $array;
+
+      }
+
+
+      /**
+       * Getden boş varmı kontrol eder
+       * @return bool
+       */
+      public function checkGetForNulls(){
+
+
+          $var = false;
+
+          foreach($this->get as $key => $value){
+
+              if($value === ""){
+
+                  $var = true;
+                  break;
+
+              }
+
+          }
+
+          return $var;
+
+      }
+
+      /**
+       * Post da boş varmı kontrol eder
+       * @return bool
+       */
+      public function checkPostForNulls(){
+
+          $var = false;
+
+          foreach($this->post as $key => $value){
+
+              if($value === ""){
+
+                  $var = true;
+                  break;
+
+              }
+
+          }
+
+          return $var;
 
       }
 

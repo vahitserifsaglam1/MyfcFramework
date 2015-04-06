@@ -281,7 +281,7 @@
 
           include APP_PATH.'Route.php';
 
-          $router = new Router($this, Route::getCollection());
+          new Router($this, Route::getCollection());
 
 
       }

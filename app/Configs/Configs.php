@@ -26,7 +26,8 @@ return [
         'Redirect' => 'Myfc\Redirect',
         'Event'  => 'Myfc\Event',
         'Route' => 'Myfc\Route',
-        'Assets' => 'Myfc\Assets'
+        'Assets' => 'Myfc\Assets',
+        'Crypt' => 'Myfc\Crypt'
      
     ],
     
