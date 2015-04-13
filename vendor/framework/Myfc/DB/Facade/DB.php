@@ -38,12 +38,12 @@
                    
               }
               
-              $this->instance = Database::boot($selectedTable);
+              $this->instance = new Database($selectedTable);
               
               
           }else{
               
-              $this->instance = Database::boot('');
+              $this->instance = new Database('');
               
           }
            

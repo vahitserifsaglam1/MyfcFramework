@@ -30,8 +30,21 @@
          */
         public static function set($name = '',$value,$time= 3600)
         {
-			
-            setcookie($name,$value,time()+$time);
+			if(is_string($value)){
+                setcookie($name,$value,time()+$time);
+            }
+
+            if(is_array($value)){
+
+                foreach($value as $values){
+
+                    setcookie("$name[$values]",$values ,time()+$time);
+
+                }
+
+
+
+            }
 			
         }
         

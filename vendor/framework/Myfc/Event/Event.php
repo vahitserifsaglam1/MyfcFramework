@@ -21,7 +21,7 @@
      private $wildcards = array();
      
      /**
-      * Sýralanan eventler
+      * Sï¿½ralanan eventler
       * @var array
       */
      
@@ -51,7 +51,7 @@
      
      /**
       * 
-      *  Event dinlemek için yeni bir dinleyici oluþturur
+      *  Event dinlemek iï¿½in yeni bir dinleyici oluï¿½turur
       * 
       * @param string $event
       * @param mixed $listener
@@ -80,7 +80,7 @@
      
      /**
       * 
-      *  Wildcardlar için kurulum yapar
+      *  Wildcardlar iï¿½in kurulum yapar
       * 
       * @param string $event
       * @param mixed $listener
@@ -93,7 +93,7 @@
      }
      
      /**
-      * Listener oluþturur
+      * Listener oluï¿½turur
       * @param unknown $listener
       * @return unknown
       */
@@ -120,7 +120,7 @@
      }
      
      /**
-      * Çaðrýlabilir sýnýf fonksiyono oluþturur
+      * ï¿½aï¿½rï¿½labilir sï¿½nï¿½f fonksiyono oluï¿½turur
       * @param unknown $listener
       * @param Container $container
       * @return multitype:NULL multitype:\Myfc\Ambigous
@@ -136,7 +136,7 @@
      }
      
      /**
-      * Çaðrýlabilir fonksiyonu sýnýf method olarak parçalar
+      * ï¿½aï¿½rï¿½labilir fonksiyonu sï¿½nï¿½f method olarak parï¿½alar
       * @param unknown $listener
       * @return multitype:Ambigous <string, unknown> Ambigous <>
       */
@@ -150,7 +150,7 @@
      
      /**
       * 
-      *  Listeners varmý yokmu diye kontrol eder , true yada false döner
+      *  Listeners varmï¿½ yokmu diye kontrol eder , true yada false dï¿½ner
       * 
       * @param boolean $eventName
       */
@@ -168,7 +168,7 @@
 	}
 	
 	/**
-	 * Wildcart listenerslarý alýr
+	 * Wildcart listenerslarï¿½ alï¿½r
 	 * @param unknown $eventName
 	 * @return multitype:
 	 */
@@ -208,7 +208,7 @@
 	}
 	
 	/**
-	 * Listener olup olmadýðýný kontrol eder
+	 * Listener olup olmadï¿½ï¿½ï¿½nï¿½ kontrol eder
 	 * @param string $eventName
 	 */
      public function hasListeners($eventName)
@@ -232,7 +232,7 @@
              
              $cevap = call_user_func_array($listener, $payload);
              
-             if ( ! is_null($cevap) && $halt)
+             if ( ! is_null($cevap) && $cevap &&  $halt)
              {
                  array_pop($this->firing);
              
@@ -260,7 +260,7 @@
      }
      
      /**
-      * En son çaðrýlan itemi getirir
+      * En son ï¿½aï¿½rï¿½lan itemi getirir
       * @return mixed
       */
      public function firing()

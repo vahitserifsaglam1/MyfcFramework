@@ -1,20 +1,20 @@
 <?php
 namespace Myfc\Facade;
-
+use Myfc\Facade;
 /**
  *
- * @author vahitþerif
+ * @author vahitï¿½erif
  *        
  */
-class App
+class App extends Facade
 {
 
     /**
      */
-    public function __construct()
+    public  static function getFacadeClass()
     {
         
-        return "Bootstrap";
+        return "App";
         
     }
 }

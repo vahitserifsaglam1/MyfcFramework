@@ -6,7 +6,7 @@
 
  class Assets extends Facade{
 
-     public function getFacadeClass()
+     public static function getFacadeClass()
      {
 
          return "Assets";

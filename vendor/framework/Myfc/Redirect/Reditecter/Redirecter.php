@@ -71,9 +71,9 @@
                  break;
                  
              default:
-                 
-          
-                   if($url = $this->urlStatusCheck($params[0]))
+
+
+                 if($url = $this->otherPageUrlCheck($this->urlStatusCheck($params[0])))
                    {
                        
                         header("Location:$url");
@@ -126,11 +126,7 @@
      {
 
 
-         $res = $this->request->get($url);
-         
-         $statusCode =  $res->getStatusCode();
-         
-         return ($statusCode) ? $url:false;
+        return $url;
          
          
      }

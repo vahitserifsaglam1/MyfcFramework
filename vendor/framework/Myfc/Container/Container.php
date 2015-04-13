@@ -3,8 +3,8 @@
   namespace Myfc;
 
   use Myfc\Facade\Route;
-  use Myfc\Router;
   use Myfc\Http\Server;
+  use Myfc\Router;
   use ReflectionClass;
   use Closure;
   
@@ -44,20 +44,7 @@
           $this->runRoute();
 
       }
-      
-      /**
-       * Facadeleri kaydeder
-       * @param array $alias
-       */
-      private function facedeRegister( array $alias )
-      {
-          
- 
-          
 
-          
-       
-      }
       
       /**
        * S�n�fa yeni fonksiyon eklemekte kullan�l�r
@@ -213,14 +200,14 @@
       
       public function makeModal($modalName = '', array $parametres = array(), $autoInstance = false )
       {
+
           
           $modalPath = APP_PATH.'Modals/'.$modalName.'.php';
-          
+
           $this->maked[] = $modalName;
           
           if(file_exists($modalPath))
           {
-              
               include $modalPath;
 
 
@@ -283,6 +270,13 @@
 
           new Router($this, Route::getCollection());
 
+
+      }
+
+      public function base(){
+
+          $url = $this->ayarlar['url'];
+          return '<base href="'.$url.'">';
 
       }
       

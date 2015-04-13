@@ -107,7 +107,7 @@
       * @param array $templateArray -> template in ayarlar� ve tan�mlamalar�
       * @return NULL
       */
-     public static function render($path,array $params = array(),$rendefiles = '', array $templateArray = array(),$autoload = true)
+     public static function render($path,array $params = array(),$rendefiles = '', $templateArray = array(),$autoload = true)
      {
 
          
@@ -177,12 +177,16 @@
          {
              $path = VIEW_PATH.$path.'.php';
          }
-         
+
+
          if(file_exists($path))
          {
              $hconfigs = Config::get('Configs','allIncludePath');
 
-             $headerPath = $hconfigs.'header.php';
+             $headerPath = VIEW_PATH.$hconfigs.'header.php';
+
+
+
 
              if(file_exists($headerPath) && $autoload){
 
@@ -192,7 +196,7 @@
 
              include $path;
 
-             $footerPath = $hconfigs.'footer.php';
+             $footerPath = VIEW_PATH.$hconfigs.'footer.php';
 
              if(file_exists($footerPath) && $autoload){
 
@@ -206,7 +210,7 @@
              
          }
 
-         
+
 
          return null;
      }

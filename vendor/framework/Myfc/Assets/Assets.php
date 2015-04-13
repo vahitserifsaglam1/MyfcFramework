@@ -90,8 +90,17 @@
       
       public function returnPost()
       {
-          
-          return $this->post;
+
+          if($_POST === $this->post){
+
+
+              return $this->post;
+
+          }else{
+
+              return $_POST;
+
+          }
           
       }
 
@@ -103,9 +112,18 @@
        */
       public function returnGet()
       {
-          
-          return $this->get;
-          
+
+          if($_GET === $this->get){
+
+              return $this->get;
+
+          }else{
+
+              return $_GET;
+
+          }
+
+
       }
 
       /**
@@ -223,7 +241,7 @@
 
           if(isset($this->get['url'])){
 
-              unset($get);
+              unset($get['url']);
 
 
           }

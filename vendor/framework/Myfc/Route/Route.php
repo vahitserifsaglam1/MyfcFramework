@@ -130,7 +130,7 @@
          foreach($verbs as $verb)
          {
              
-             $verb = mb_check_encoding($verb, MB_CASE_LOWER);
+             $verb = mb_convert_case($verb, MB_CASE_LOWER);
              
              call_user_func_array(array($this,$verb), array($action,$callback));
              
@@ -138,6 +138,12 @@
          
          return $this;
          
+     }
+
+     public function any($action,$callback){
+
+         $this->match(array('GET','PUT','POST','DELETE'), $action,$callback);
+         return $this;
      }
      
      /**

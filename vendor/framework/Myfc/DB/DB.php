@@ -18,7 +18,7 @@ namespace Myfc;
  
      private $selectedTable;
  
-     private $where;
+     private $where = array();
  
      private $join;
  
@@ -147,14 +147,7 @@ namespace Myfc;
      public static function boot( $table = '')
      {
  
-         if(!static::$instance)
-         {
- 
-             static::$instance = new static($table);
- 
-         }
- 
-         return static::$instance;
+         return new static($table);
  
      }
  
@@ -649,7 +642,7 @@ namespace Myfc;
      private function mixer(array $array,$end)
      {
          $s = "";
- 
+
          foreach($array as $key => $value)
          {
              $s .= $key.'='. "'$value'".$end;
@@ -663,10 +656,10 @@ namespace Myfc;
  
      private function specialer( array $special = array() )
      {
-         $s = "AND ";
+         $s = " AND ";
          foreach($special as $array ){
  
-             $s .= $array[0].$array[1]."'{$array[2]}' AND ";
+             $s .= $array[0].' '.$array[1].' '."'{$array[2]}' AND ";
  
          }
          return rtrim($s," AND ");
@@ -679,21 +672,24 @@ namespace Myfc;
       *
       */
  
-     private function wherer($array)
+     private function wherer(array $array = array())
      {
          $s = "";
- 
+
          foreach($array as $a)
          {
- 
+
+
              foreach ( $a as $whereKey => $whereValue) {
+
                  $whereValue = $this->connector->quote($whereValue);
-                 $s .= $whereKey . '=' . "$whereValue AND";
+                 $s .= $whereKey . '=' . "$whereValue AND ";
              }
- 
-             $s =  rtrim($s, " AND ");
+
  
          }
+
+         $s = rtrim($s, " AND ");
  
          if(is_array($this->or_where[$this->selectedTable]))
          {
@@ -749,7 +745,7 @@ namespace Myfc;
          foreach($specialer as $array ){
  
              $a = $this->connector->quote($array[2]);
-             $s .= $array[0].$array[1]."'{$a}' OR ";
+             $s .= $array[0].' '.$array[1].' '."'{$a}' OR ";
  
          }
          return rtrim($s," OR ");
@@ -1173,15 +1169,9 @@ namespace Myfc;
  
      public function flush()
      {
-         $this->set = array();
-         $this->get = array();
-         $this->where = array();
-         $this->join = array();
-         $this->limit = array();
-         $this->like = array();
-         $this->specialLike = array();
-         $this->specialWhere = array();
-         return null;
+
+         return new static($this->selectedTable);
+
      }
  
      /**

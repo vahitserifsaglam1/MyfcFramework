@@ -12,7 +12,7 @@ namespace Myfc;
  use Myfc\Facade\Carbon;
 /**
  *
- * @author vahitþerif
+ * @author vahitï¿½erif
  *        
  */
 class Auth extends DB
@@ -38,7 +38,7 @@ class Auth extends DB
     }
     
     /**
-     * Auth sýnýfýnýn sorgularda kullanacaðý veritabaný tablosunu seçer
+     * Auth sï¿½nï¿½fï¿½nï¿½n sorgularda kullanacaï¿½ï¿½ veritabanï¿½ tablosunu seï¿½er
      *   
      *  
      * @param string $table
@@ -54,11 +54,11 @@ class Auth extends DB
     }
     
     /**
-     * Girilen verilere göre veritanýndan sorgulama yapýlýr 
+     * Girilen verilere gï¿½re veritanï¿½ndan sorgulama yapï¿½lï¿½r 
      *   
-     *    Eðer $param1 array girilmediyse $param2 ile birlikte username, password þeklinde array oluþtururlur
+     *    Eï¿½er $param1 array girilmediyse $param2 ile birlikte username, password ï¿½eklinde array oluï¿½tururlur
      *    
-     *    Eðer $rememberMe true ise cookie atamasý yapar
+     *    Eï¿½er $rememberMe true ise cookie atamasï¿½ yapar
      *    
      * @param string|array $param1
      * @param string $param2
@@ -105,7 +105,7 @@ class Auth extends DB
     }
     
     /**
-     * Giriþ yapýlýp yapýlmadýðýný kontrol eder, Session da ve Cookie de $this->key i arar
+     * Giriï¿½ yapï¿½lï¿½p yapï¿½lmadï¿½ï¿½ï¿½nï¿½ kontrol eder, Session da ve Cookie de $this->key i arar
      * @return boolean
      */
     
@@ -132,13 +132,31 @@ class Auth extends DB
         
         
     }
+
+    public function clear()
+    {
+
+        $key = $this->key;
+        if (Session::get($key)) {
+
+            Session::delete($key);
+
+        }
+        if (Cookie::get($key)) {
+
+            Cookie::delete($key);
+
+
+        }
+
+    }
     
     
     /**
      * 
-     *   Girilen $array ý veritabanýnda seçilen tabloya ekler
+     *   Girilen $array ï¿½ veritabanï¿½nda seï¿½ilen tabloya ekler
      *   
-     *    Ýþlem baþarýlý olursa true, eðer baþarýsýz olursa false olur.
+     *    ï¿½ï¿½lem baï¿½arï¿½lï¿½ olursa true, eï¿½er baï¿½arï¿½sï¿½z olursa false olur.
      * 
      * @param array $array
      * @return boolean
