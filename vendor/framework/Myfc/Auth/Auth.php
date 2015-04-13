@@ -5,7 +5,7 @@ namespace Myfc;
  
  use Myfc\Singleton;
  
- use Myfc\Facade\Session;
+ use Myfc\Facade\Session as Sessions;
  
  use Myfc\Cookie;
  
@@ -83,7 +83,7 @@ class Auth extends DB
             
             $keys = array_values($param1);
             
-            Session::set($this->key,$keys[0]);
+            Sessions::set($this->key,$keys[0]);
             
             $time = 60*60;
             
@@ -114,7 +114,7 @@ class Auth extends DB
         
         $key = $this->key;
         
-        if(Session::get($key))
+        if(Sessions::get($key))
         {
             
             return true;
@@ -137,9 +137,9 @@ class Auth extends DB
     {
 
         $key = $this->key;
-        if (Session::get($key)) {
+        if (Sessions::get($key)) {
 
-            Session::delete($key);
+            Sessions::delete($key);
 
         }
         if (Cookie::get($key)) {
