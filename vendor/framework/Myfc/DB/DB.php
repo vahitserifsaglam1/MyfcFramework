@@ -39,6 +39,8 @@ namespace Myfc;
      private $connector;
  
      private $or_where;
+
+     private $order;
  
      private $special_or_where;
  
@@ -301,9 +303,22 @@ namespace Myfc;
          return $this;
  
      }
+
+     /**
+      * Sorguya order tanımı ekler
+      * @param $id
+      * @param string $type
+      * @return $this
+      */
+     public function order($id, $type = 'DESC'){
+
+         $this->order[$this->selectedTable][] = array($id,$type);
+         return $this;
+
+     }
  
      /**
-      * Sorguya where tan�m� ekler(or)
+      * Sorguya where tanımı ekler(or)
       * @param unknown $where
       * @return \Myfc\DB
       */
@@ -800,11 +815,19 @@ namespace Myfc;
              $li = $this->connector->quote($l[2]);
              $msg .= "{$l[0]} LIKE '{$l[1]}{$li}{$l[3]}, ";
  
- 
+
          }
  
          return rtrim($msg, ",");
  
+     }
+
+     private function orderer(array $order){
+
+         $s = '';
+
+         return "ORDER BY {$order[0]} {$order[1]}";
+
      }
  
      /**
@@ -998,7 +1021,7 @@ namespace Myfc;
          $join  = $this->join[$table];
          $limit = $this->limit[$table];
          $with =  $this->with[$table];
- 
+         $order = $this->order[$table];
          //where baslangic
  
          if(is_array($where))
@@ -1023,6 +1046,12 @@ namespace Myfc;
  
              $join = $this->wither($with,$where);
  
+         }
+
+         if(is_array($order)){
+
+             $order = $this->orderer($order[0]);
+
          }
  
          //join son
@@ -1058,6 +1087,12 @@ namespace Myfc;
              if( isset( $where ) && is_string( $where )) $msg .= ' AND '.$like;
              else $msg .= ' WHERE '.$like;
          }
+
+         if(isset($order) && is_string($order)){
+
+             $msg .= $order;
+
+         }
  
          if ( isset($limit ) && !is_array($limit) )
          {
@@ -1080,9 +1115,11 @@ namespace Myfc;
  
  
              if($fetch === true) {
- 
-                  
-                 return $this->fetcher( $query, $this->fetchName);
+
+
+                 $return =  $this->fetcher( $query, $this->fetchName);
+                 $this->flush();
+                 return $return;
  
              }else{
  
@@ -1107,6 +1144,30 @@ namespace Myfc;
  
  
      }
+     
+     /**
+      * 
+      * Tablodaki herşeyi döndürür
+      * @return type
+      */
+     
+     public function all(){
+         
+         $table = $this->selectedTable;
+         
+         $query = "SELECT * FROM $table";
+         
+         $query = $this->query($query);
+         
+         return $query->fetchAll();
+         
+     }
+     
+     
+     /**
+      * Query sorgusunu döndürür
+      * @return type
+      */
  
      public function returnQuery()
      {
@@ -1121,7 +1182,7 @@ namespace Myfc;
      }
  
      /**
-      * Hata mesaj�n� d�nd�r�r
+      * Hata mesajını döndürür
       * @return boolean|string
       */
  
@@ -1143,7 +1204,7 @@ namespace Myfc;
      }
  
      /**
-      * Son olu�an hatay� d�nd�r�r
+      * Son oluşan hatayı döndürür
       * @return mixed
       */
  
@@ -1170,7 +1231,17 @@ namespace Myfc;
      public function flush()
      {
 
-         return new static($this->selectedTable);
+         $this->where = array();
+         $this->specialWhere = array();
+         $this->specialLike = array();
+         $this->limit = array();
+         $this->join = array();
+         $this->set = array();
+         $this->get = array();
+         $this->or_where = array();
+         $this->special_or_where = array();
+         $this->order = array();
+         return $this;
 
      }
  

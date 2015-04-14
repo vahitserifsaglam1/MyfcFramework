@@ -53,6 +53,12 @@
 
 
      }
+     
+     public function make ( array $file = [], $uploadsPath ='public/files/uploads', $maxsize = null ){
+         
+         return new static($file, $uploadsPath, $maxsize);
+         
+     }
 
      public function setMaxSize( $maxsize = null )
      {

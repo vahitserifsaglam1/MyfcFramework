@@ -118,7 +118,7 @@
      }
 
      /**
-      * Girilen url in status code sinin 200 olup olmadığını ve
+      * Girilen url in status code nin 200 olup olmadığını ve
       * @param string $url
       * @return Ambigous <boolean, string>
       */
@@ -126,7 +126,17 @@
      {
 
 
-        return $url;
+          $check = $this->request->get($url);
+
+          if($check->getStatusCode() === 200){
+
+              return $url;
+
+          }else{
+
+              return null;
+
+          }
          
          
      }

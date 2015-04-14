@@ -4,6 +4,17 @@ namespace Myfc;
 
 use Myfc\Bootstrap;
 
+/**
+ * Class App
+ * @package Myfc
+ *
+ *  MyfcFramework App sınıfı
+ *
+ *  Sınıflarda facede kısmı çağrılacak
+ *
+ *  Bootsrap sınıfının çağrılmasından oluşacak sınıfı kapatmak için kullanılacak
+ */
+
 class App{
 
     private $bootstrap;

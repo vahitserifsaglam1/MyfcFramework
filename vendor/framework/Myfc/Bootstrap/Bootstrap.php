@@ -58,8 +58,6 @@
       */
     private function runServiceProviders(array $providers = array() )
     {
-     
-          
         foreach($providers as $pro)
         {
 
@@ -69,10 +67,21 @@
             
         }
         
-      
-        
-        
     }
+
+     /**
+      * @return int
+      * @throws \Exception
+      *
+      *  Myfc frameworkun versionunu döndürür
+      *
+      */
+
+     private function version(){
+
+         if(defined("VERSION")) return VERSION;else throw new \Exception("MyfcFramework versionu bulunamadı");
+
+     }
 
     
     

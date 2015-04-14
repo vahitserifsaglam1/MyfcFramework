@@ -1,0 +1,10 @@
+<?php
+
+
+include "vendor/autoload.php";
+
+use Myfc\Console;
+
+$app = new Console($argv, $argc);
+
+$app->start();

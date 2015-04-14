@@ -4,11 +4,19 @@ namespace Myfc;
 
  class Benchmark
  {
+
+     /**
+      * @var $memoryusage         Ram KullanÄ±mÄ±nÄ± Ã–lÃ§er
+      */
       public $memoryusage;
+
+     /**
+      * @var $microtime           ZamanÄ± Ã¶lÃ§er
+      */
       public $microtime;
 
       /**
-       * Mikrotime ölçer
+       * Yeni bir zaman dilimi oluÅŸturur
        * @param unknown $name
        * @return \Myfc\Benchmark
        */
@@ -20,7 +28,7 @@ namespace Myfc;
       }
       
       /**
-       * zaman Farkýný ölçer
+       * zaman Farkï¿½nï¿½ ï¿½lï¿½er
        * @param unknown $baslangic
        * @param unknown $son
        * @param number $decimals
@@ -37,7 +45,7 @@ namespace Myfc;
       }
       
       /**
-       * Ram kullanýmýný ölçer
+       * Ram kullanï¿½mï¿½nï¿½ ï¿½lï¿½er
        * @param unknown $name
        * @return \Myfc\Benchmark
        */
@@ -48,7 +56,7 @@ namespace Myfc;
      }
      
      /**
-      * Ram kullanýmýný karþýlaþtýrýr
+      * Ram kullanï¿½mï¿½nï¿½ karï¿½ï¿½laï¿½tï¿½rï¿½r
       * @param unknown $start
       * @param unknown $finish
       * @return Ambigous <number, boolean>
@@ -61,7 +69,7 @@ namespace Myfc;
      }
      
      /**
-      * Ýnclude edilen dosyalarý getirir
+      * ï¿½nclude edilen dosyalarï¿½ getirir
       * @return multitype:
       */
      public function included_files()

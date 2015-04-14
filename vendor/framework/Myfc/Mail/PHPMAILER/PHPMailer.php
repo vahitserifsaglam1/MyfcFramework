@@ -1,5 +1,5 @@
 <?php
- namespace Mail\PHPMAILER;
+ namespace Myfc\Mail\PHPMAILER;
   
 class PHPMailer
 {

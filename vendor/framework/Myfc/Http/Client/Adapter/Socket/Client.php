@@ -1,6 +1,6 @@
 <?php
 
-  namespace Http\Client\Socket;
+  namespace Myfc\Http\Client\Socket;
 
   class Client{
 

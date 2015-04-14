@@ -156,7 +156,7 @@
       }
       
       /**
-       * Contoller �a��r�r, yeni bir instance olu�tururu
+       * Contoller çağırırı yeni bir instance
        * @param string $controller
        * @param array $parametres
        * @return unknown|boolean
@@ -171,8 +171,11 @@
           
           if(file_exists($controllerPath))
           {
-              
-              include $controllerPath;
+
+              if(!class_exists($controller,false)){
+
+                  include $controllerPath;
+              }
 
               if($autoInstance) {
                   return (new ReflectionClass($controller))->newInstanceArgs($parametres);
@@ -208,8 +211,12 @@
           
           if(file_exists($modalPath))
           {
-              include $modalPath;
 
+              if(!class_exists($modalName,false)){
+
+                  include $modalPath;
+
+              }
 
               if($autoInstance)
               {

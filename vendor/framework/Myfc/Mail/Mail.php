@@ -3,7 +3,7 @@
 
  namespace Myfc;
  
- use Myfc\Mail\PHPMAILER\PHPMailer;
+ use Myfc\Mail\PHPMailer\PHPMailer;
 /**
  * Class Mail
  *
@@ -14,7 +14,7 @@
  *
  *  ***********************
  *
- *  MyfcFramework Mail gönderme Sýnýfý
+ *  MyfcFramework Mail gï¿½nderme Sï¿½nï¿½fï¿½
  *
  * @packpage PHPmailer
  *
@@ -65,9 +65,9 @@
 
      /**
       *
-      * Baþlatýcý fonskiyon 
+      * BaÅŸlatÄ±cÄ± fonskiyon
       * 
-      *   $options ile mailConfigs den ayrý olarak ayar gönderebilirsiniz
+      *   $options ile mailConfigs den ayrï¿½ olarak ayar gï¿½nderebilirsiniz
       *
       * @param string $options
       * 
@@ -77,7 +77,7 @@
 
      public function __construct($options = '')
      {
-           $mail = new Myfc\Mail\PHPMAILER\PHPMailer();
+           $mail = new PHPMailer();
            if($options !== '')
            {
                $this->configs = $options;
@@ -94,7 +94,7 @@
      }
 
      /** 
-      *  Mailin gideceði ve mail le ilgili bilgiler parametre olarak girilebilir
+      *  Mailin gideceï¿½i ve mail le ilgili bilgiler parametre olarak girilebilir
       * 
       * @param $adress
       * @param $name
@@ -117,7 +117,7 @@
 
      /**
       * 
-      *  mailin içeriðini girebilirsiniz, $content de bir .html dosyasýnýn yolu girilebilir yada direk içerikde girilebilir
+      *  mailin iï¿½eriï¿½ini girebilirsiniz, $content de bir .html dosyasï¿½nï¿½n yolu girilebilir yada direk iï¿½erikde girilebilir
       * 
       * @param $content
       * @param string $body
@@ -139,7 +139,7 @@
 
      /**
       *  
-      *  Maildeki body kýsmýný düzenler
+      *  Maildeki body kï¿½smï¿½nï¿½ dï¿½zenler
       * 
       * @param $body
       * @return mixed $this
@@ -152,7 +152,7 @@
      }
 
      /**
-      *  Maile dosya ekler, $filepath dosya yoludur, $newname girilecek yeni isimdir( boþ býrakýlabilir )
+      *  Maile dosya ekler, $filepath dosya yoludur, $newname girilecek yeni isimdir( boï¿½ bï¿½rakï¿½labilir )
       * 
       * @param $filePath
       * @param string $newname
@@ -171,7 +171,7 @@
 
      /**
       * 
-      *  Mailin kimden gittiðini belirten $adress ve $name deðiþkenleridir, girilmek zorundadýr
+      *  Mailin kimden gittiï¿½ini belirten $adress ve $name deï¿½iï¿½kenleridir, girilmek zorundadï¿½r
       * 
       * @param $adress
       * @param $name
@@ -186,7 +186,7 @@
      }
 
      /**
-      *  Mailin konusunu düzenler
+      *  Mailin konusunu dï¿½zenler
       * 
       * @param string $subject
       * @return $this
@@ -210,7 +210,7 @@
      }
 
      /**
-      * Maile cevabýn baþka bir maile yollanmasýný istiyorsanýz  $adress ve $name deðiþkenleri doldurulmalýdýr
+      * Maile cevabï¿½n baï¿½ka bir maile yollanmasï¿½nï¿½ istiyorsanï¿½z  $adress ve $name deï¿½iï¿½kenleri doldurulmalï¿½dï¿½r
       * @param string $reply
       * @param string $name
       * @return mixed $this
@@ -225,9 +225,9 @@
 
      /**
       * 
-      *  Mail gönderme fonksiyondur,  Facade altýnda static kullanýmda parametre olarak çaðrýlabilir bir fonksyon girilmelidir
+      *  Mail gï¿½nderme fonksiyondur,  Facade altï¿½nda static kullanï¿½mda parametre olarak ï¿½aï¿½rï¿½labilir bir fonksyon girilmelidir
       *  
-      *  Sýnýf tarafýndan fonksiyona $this öðesi atanýr
+      *  Sï¿½nï¿½f tarafï¿½ndan fonksiyona $this ï¿½ï¿½esi atanï¿½r
       * 
       * @param callable $callable
       * @return bool

@@ -27,7 +27,9 @@ return [
         'Event'  => 'Myfc\Event',
         'Route' => 'Myfc\Route',
         'Assets' => 'Myfc\Assets',
-        'Crypt' => 'Myfc\Crypt'
+        'Crypt' => 'Myfc\Crypt',
+        'Console' => 'Myfc\Console',
+        'Upload' => 'Myfc\File\Upload'
      
     ],
     

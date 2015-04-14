@@ -2,7 +2,7 @@
 
   /**
    * 
-   *  Sabitlerin tanýmlanmasý -> app klasörü
+   *  Sabitlerin tanï¿½mlanmasï¿½ -> app klasï¿½rï¿½
    *  @var unknown
    */
 
@@ -10,7 +10,7 @@
   
   /**
    *
-   *  Sabitlerin tanýmlanmasý -> public klasörü
+   *  Sabitlerin tanï¿½mlanmasï¿½ -> public klasï¿½rï¿½
    *  @var unknown
    */
   
@@ -18,7 +18,7 @@
   
   /**
    *
-   *  Sabitlerin tanýmlanmasý -> system klasörü
+   *  Sabitlerin tanï¿½mlanmasï¿½ -> system klasï¿½rï¿½
    *  @var unknown
    */
   
@@ -26,31 +26,34 @@
   
   /**
    *
-   *  Sabitlerin tanýmlanmasý -> vendor klasörü
+   *  Sabitlerin tanï¿½mlanmasï¿½ -> vendor klasï¿½rï¿½
    *  @var unknown
    */
   
   define("VENDOR_PATH","vendor/");
   
   /**
-   * Sabitlerin tanýmlanmasý -> language(dil) klasörü
+   * Sabitlerin tanï¿½mlanmasï¿½ -> language(dil) klasï¿½rï¿½
    * @var unknown
    */
   
   define("LANGUAGE_PATH", PUBLIC_PATH.'language');
   
   /**
-   * Sabitlerin tanýmlanmasý -> view dosyalarý
+   * Sabitlerin tanï¿½mlanmasï¿½ -> view dosyalarï¿½
    * @var unknown
    */
   
   define('VIEW_PATH', APP_PATH.'Views/');
   
   /**
-   * Sabitlerin tanýmlanmasý
+   * Sabitlerin tanï¿½mlanmasï¿½
    * @var unknown
    */
   
   define("REPORTING", E_ALL);
+
+
+  define("VERSION", 1);
   
   include SYSTEM_PATH.'bootstrap.php';

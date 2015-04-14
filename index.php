@@ -3,7 +3,7 @@
   /**
    * 
    * 
-   * Composer autoloaderýn baþlatýlmasý
+   * Composer autoloader yÃ¼klenmesi
    * 
    */
 
@@ -11,7 +11,7 @@
    
    /**
     * 
-    * Sabitlerin tanýmlanmasý
+    * Sabitlerin tanï¿½mlanmasï¿½
     * 
     */
    

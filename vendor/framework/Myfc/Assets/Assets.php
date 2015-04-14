@@ -98,7 +98,7 @@
 
           }else{
 
-              return $_POST;
+              return $this->clean($_POST);
 
           }
           
@@ -119,7 +119,7 @@
 
           }else{
 
-              return $_GET;
+              return $this->clean($_GET);
 
           }
 
@@ -330,6 +330,18 @@
           if($this->post) $returns['POST'] = $this->post;
           if($this->get) $returns['GET'] = $this->get;
           return $returns;
+      }
+
+      /**
+       * @param array $array
+       * @return array
+       * Xss açığını kapatır
+       */
+
+      public function clean(array $array){
+
+          return  $this->xss_clean( (array) $array);
+
       }
       
       

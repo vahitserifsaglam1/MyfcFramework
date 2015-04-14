@@ -233,7 +233,7 @@
      }
      
      /**
-      * Collectionlar� D�nd�r�r
+      * Collectionları döndürür
       * @return multitype:NULL
       */
      public function getCollection()

@@ -4,11 +4,6 @@
  use Myfc\View;
 
 
- Route::get('index', function(){
-
-   
- });
-
 
 
 ?>

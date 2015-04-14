@@ -47,6 +47,12 @@ class Router
     private $unsetParams;
     
     private $params;
+    
+    /**
+     * Başlatıcı method;
+     * @param Bootstrap $bootstrap
+     * @param array $collection
+     */
 
     public function __construct(Bootstrap $bootstrap = null, array $collection = array())
     {
@@ -54,6 +60,13 @@ class Router
          $this->run($bootstrap, $collection);
 
     }
+    
+    /**
+     * 
+     * Route olayını yütür
+     * @param Bootstrap $container
+     * @param array $collection
+     */
     
     public function run(Bootstrap $container, array $collection = array() )
     {
@@ -120,7 +133,7 @@ class Router
     }
     
     /**
-     * Link kontrolu ba�lang��
+     * Link kontrolu 
      * @param unknown $action
      * @return unknown
      */
@@ -132,16 +145,18 @@ class Router
         $url = explode("/", rtrim($this->url, "/"));
 
 
-        $action = rtrim($action, "/");
+        $action = ltrim(rtrim($action, "/"),"/");
 
         $explode = explode("/", $action);
 
 
         if(strstr($action,"{")){
 
+            
 
             if($params = $this->urlChecker($urlString,$url,$explode)){
 
+           
 
                   $this->params = $this->paramsWhereCheck($params['finded']);
                   $this->unsetParams = $this->paramsWhereCheck($params['finded']);
@@ -188,10 +203,11 @@ class Router
 
 
                $baslangicS = substr($ex,0,$baslangic);
-
+  
 
                if(isset($url[$i])){
 
+                 
                    $param = substr($url[$i],$baslangic,strlen($url[$i]));
 
                    preg_match("#\{(.*?)\}#", $ex,$finds);
@@ -209,6 +225,11 @@ class Router
                    $metin = $baslangicS.$param;
 
 
+               }else{
+                   
+                  $metin = "";
+                   
+                   
                }
 
            }else{
@@ -222,10 +243,12 @@ class Router
 
        }
 
-
         $actionUrlString = implode("/",$array);
+       
+        $urlActionEsitString = substr($urlString, 0,strlen($actionUrlString));
+        
 
-        if($actionUrlString === $urlString){
+        if($actionUrlString === $urlActionEsitString){
 
             return [
                 'params' => $params,

@@ -4,8 +4,9 @@ namespace Myfc;
  use Myfc\File;
 /**
  *
- * @author vahit�erif
- *        
+ * @author vahit�erif
+ *
+ * Myfc Framework Language sınıfı
  */
 class Language
 {
