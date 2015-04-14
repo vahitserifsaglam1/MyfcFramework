@@ -186,3 +186,586 @@
 [14-Apr-2015 16:02:48 Europe/Berlin] PHP Catchable fatal error:  Object of class Myfc\Http\Response could not be converted to string in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 10
 [14-Apr-2015 16:02:49 Europe/Berlin] PHP Catchable fatal error:  Object of class Myfc\Http\Response could not be converted to string in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 10
 [14-Apr-2015 16:02:49 Europe/Berlin] PHP Catchable fatal error:  Object of class Myfc\Http\Response could not be converted to string in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 10
+[14-Apr-2015 19:47:41 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(99): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container- in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:49:07 Europe/Berlin] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The file "C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\SecurityGeoLite2-Country.mmdb" does not exist or is not readable.' in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php:46
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(52): MaxMind\Db\Reader->__construct('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->__construct('C:\\xampp\\htdocs...')
+#2 [internal function]: Myfc\Security\IP->getResult()
+#3 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#6 [internal function]: Myfc\Container->{closure}(Object(Myfc\Http\Response))
+#7 C:\xampp\htdocs\MyfcFramewor in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php on line 46
+[14-Apr-2015 19:49:08 Europe/Berlin] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The file "C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\SecurityGeoLite2-Country.mmdb" does not exist or is not readable.' in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php:46
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(52): MaxMind\Db\Reader->__construct('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->__construct('C:\\xampp\\htdocs...')
+#2 [internal function]: Myfc\Security\IP->getResult()
+#3 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#6 [internal function]: Myfc\Container->{closure}(Object(Myfc\Http\Response))
+#7 C:\xampp\htdocs\MyfcFramewor in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php on line 46
+[14-Apr-2015 19:49:31 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:49:42 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:50:22 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:50:22 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:50:22 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:50:23 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(105): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:51:37 Europe/Berlin] PHP Notice:  Undefined variable: database in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php on line 99
+[14-Apr-2015 19:51:37 Europe/Berlin] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'The file "" does not exist or is not readable.' in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php:46
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(52): MaxMind\Db\Reader->__construct(NULL)
+#1 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(99): GeoIp2\Database\Reader->__construct(NULL)
+#2 [internal function]: Myfc\Security\IP->getResult()
+#3 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#6 [internal function]: Myfc\Container->{closure}(Object(Myfc\Http\Response))
+#7 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Route\Router.php(547): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\MyfcFra in C:\xampp\htdocs\MyfcFramework\vendor\maxmind-db\reader\src\MaxMind\Db\Reader.php on line 46
+[14-Apr-2015 19:51:49 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:51:50 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:51:51 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:51:51 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:23 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:24 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:25 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(102): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:42 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:43 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:43 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:56 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:56 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 19:52:56 Europe/Berlin] PHP Fatal error:  Uncaught exception 'GeoIp2\Exception\AddressNotFoundException' with message 'The address ::1 is not in the database.' in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php:205
+Stack trace:
+#0 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(176): GeoIp2\Database\Reader->getRecord('Country', 'Country', '::1')
+#1 C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php(87): GeoIp2\Database\Reader->modelFor('Country', 'Country', '::1')
+#2 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\IP.php(103): GeoIp2\Database\Reader->country('::1')
+#3 [internal function]: Myfc\Security\IP->getResult()
+#4 C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Facede\facade.php(121): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade::__callStatic('getResult', Array)
+#6 C:\xampp\htdocs\MyfcFramework\app\Route.php(9): Myfc\Facade\IP::getResult()
+#7 [internal function]: Myfc\Container in C:\xampp\htdocs\MyfcFramework\vendor\geoip2\geoip2\src\GeoIp2\Database\Reader.php on line 205
+[14-Apr-2015 20:37:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Myfc\Facade\CSRF::active() in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 8
+[14-Apr-2015 20:38:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:38 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:51 Europe/Berlin] PHP Notice:  Undefined variable: random in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\Csrf.php on line 55
+[14-Apr-2015 20:38:51 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:38:51 Europe/Berlin] PHP Notice:  Undefined variable: random in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Security\Csrf.php on line 58
+[14-Apr-2015 20:39:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:08 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:08 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:09 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:10 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:10 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:10 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:10 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:30 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:31 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:31 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:56 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:56 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:56 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:56 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:39:57 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:26 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:26 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:27 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:27 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:27 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:27 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:38 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:38 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:50 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:50 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:51 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:51 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:40:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:00 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:00 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:00 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:00 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:01 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:02 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:02 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:02 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:02 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:03 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:03 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:19 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:20 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:20 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:29 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:29 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:30 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:30 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:30 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:30 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:31 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:41:31 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:52 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:53 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:42:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:03 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:03 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:04 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:04 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:12 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:12 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:12 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:12 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:13 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:39 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:40 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:41 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:42 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:42 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:42 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:43:42 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:34 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:43 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:43 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:43 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:44:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 24 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:54 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:46:55 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 1 to 56 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:04 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:05 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:06 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:07 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:15 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:16 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:16 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:16 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of size 8 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:25 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:32 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_get_iv_size(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 155
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_create_iv(): Cannot create an IV with a size of less than 1 or greater than 2147483647 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 64
+[14-Apr-2015 20:47:33 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Module initialization failed in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:44 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:45 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:46 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87
+[14-Apr-2015 20:47:47 Europe/Berlin] PHP Warning:  mcrypt_encrypt(): Key of size 0 not supported by this algorithm. Only keys of sizes 16, 24 or 32 supported in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Crypt\Crypt.php on line 87

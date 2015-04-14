@@ -29,7 +29,9 @@ return [
         'Assets' => 'Myfc\Assets',
         'Crypt' => 'Myfc\Crypt',
         'Console' => 'Myfc\Console',
-        'Upload' => 'Myfc\File\Upload'
+        'Upload' => 'Myfc\File\Upload',
+        'IP'     => 'Myfc\Security\IP',
+        'CSRF'   => 'Myfc\Security\Csrf'
      
     ],
     

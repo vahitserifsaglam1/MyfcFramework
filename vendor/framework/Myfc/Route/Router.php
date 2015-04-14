@@ -20,17 +20,17 @@ namespace Myfc;
  *
  *  Route::get($eslesme, "controller@methodname")
  *
- *  Route::get($eslesme, array('HTTPS', $callableFunction())
+ *  Route::get($eslesme, array('HTTPS', $callableFunction()) -> https ile girilip girilmediğine bakar
  *
- *  Route::get($eslesme, array('AJAX', $callableFunction())
+ *  Route::get($eslesme, array('AJAX', $callableFunction()) -> yapılan isteğin ajax isteği olup olmadığına bakar
  *
- *  Route::get($eslesme, array("controller@methodname", $callableFunction())
+ *  Route::get($eslesme, array("controller@methodname", $callableFunction()) -> fonksiyondan  bir veri dönerse controller ateşlenir
  *
  *  Route::get($eslesme, array(array($eventname, $parametres), $callableFunction())
  *
  *  Route::get($eslesme, array("event|eventname", $parametres))
   *
-  * Route::get($eslesme, array('controller@method', array($event,$parametres)
+  * Route::get($eslesme, array('controller@method', array($event,$parametres) eğer eventden bir veri dönerse controller ateşlenir
  *        
  */
 class Router
@@ -612,7 +612,17 @@ class Router
         if(Events::hasListeners($eventName))
         {
 
-           return Events::fire($eventName, $parametres);
+           $fire =  Events::fire($eventName, $parametres);
+           
+           if($fire[0]){
+               
+               return $fire;
+               
+           }else{
+               
+               return false;
+               
+           }
 
 
         }else{

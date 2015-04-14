@@ -84,7 +84,7 @@ class Crypt {
 
         $value  = $this->returnCleanAndHexedValue($value);
 
-        return mcrypt_encrypt($this->alogirtym,$this->securityKey, $value,$this->mode, $iv );
+        return @mcrypt_encrypt($this->alogirtym,$this->securityKey, $value,$this->mode, $iv );
 
     }
 

@@ -8,5 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'MaxMind' => array($vendorDir . '/maxmind-db/reader/src'),
+    'JsonSerializable' => array($vendorDir . '/geoip2/geoip2/compat'),
+    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
+    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
+    'GeoIp2' => array($vendorDir . '/geoip2/geoip2/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),
 );
