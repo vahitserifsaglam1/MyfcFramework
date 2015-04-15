@@ -2,9 +2,8 @@
 
   namespace Myfc;
 
-  use Myfc\Facade\Route;
   use Myfc\Http\Server;
-  use Myfc\Router;
+  use Myfc\Facade\Route;
   use ReflectionClass;
   use Closure;
   
@@ -275,7 +274,7 @@
 
           include APP_PATH.'Route.php';
 
-          new Router($this, Route::getCollection());
+          Route::run($this);
 
 
       }

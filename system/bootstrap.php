@@ -5,10 +5,12 @@
 
   
   include APP_PATH.'Lib/helpers.php';
+  
+  include APP_PATH.'Lib/functions.php';
 
   /**
    *  
-   *   Başlatıcı sınıf
+   *   BaÅŸlatÄ±cÄ± sÄ±nÄ±f
    * 
    */
   

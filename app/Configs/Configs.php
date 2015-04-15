@@ -1,21 +1,36 @@
 <?php
 return [
     
+    /*
+     * 
+     *  ********************** Standart URL Tanımını yapar 
+     * 
+     *  Düzenlenmesi gerek 
+     * 
+     */
      'url' => 'localhost/MyfcFramework',
     
-     'page' => [
-     
-          'charset' => 'utf-8',
-         
-          'language' => 'tr'
-          
-     ],
-     
-
+    /* Default timezone atamasını İstanbula yapar */
+    
+     'timezone' => 'Europe/Istanbul',
+ 
+    /**
+     * View sınıfında eğer son parametreye true verirseniz header ve footer dosyalarını çeker
+     * O dosyaların view dosyasındaki yolunu girmelisiniz
+     *  
+     *  Örnek : 'inc/'
+     * 
+     */
     
     'allIncludePath' => '',
     
-
+    /*
+     * Framework içinde kullanılacak facede sınıflarını hazırlar
+     *  
+     *  Örnek facade : Myfc\Facade\Session,
+     *                 Myfc\Facade\Cookie
+     *   
+     */
     'alias' => [
         
         'Session' => 'Myfc\Session',
@@ -31,11 +46,16 @@ return [
         'Console' => 'Myfc\Console',
         'Upload' => 'Myfc\File\Upload',
         'IP'     => 'Myfc\Security\IP',
-        'CSRF'   => 'Myfc\Security\Csrf'
+        'CSRF'   => 'Myfc\Security\Csrf',
+        'View'   => 'Myfc\View'],
      
-    ],
-    
-    //start dosyaları
+    /*
+     * 
+     *  MyfcFrameworkun başlatılırken gerekli ayarlamalarını yapar
+     *  
+     *  Bootstrap sınıfı içinde runServiceProviders() fonksiyonunda oluşturulurlar
+     * 
+     */
     
     'serviceProviders' => [
 
@@ -45,11 +65,5 @@ return [
         'Myfc\Providers\Error\Reporting',
         'Myfc\Providers\Language\Installer',
         'Myfc\Providers\Event\Installer',
-        #'Myfc\Providers\Route\Runner'
-        
-        
-        ]
-    
-    
-    
-];
+        #'Myfc\Providers\Route\Runner',
+        'Myfc\Providers\Config' ] ];

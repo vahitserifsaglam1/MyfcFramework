@@ -44,7 +44,9 @@ class Classer {
                     $this->bind[$class] = $class;
                 }
 		return $this;
-	}
+
+        }
+
 
         /**
          * Fonksiyon çağırır

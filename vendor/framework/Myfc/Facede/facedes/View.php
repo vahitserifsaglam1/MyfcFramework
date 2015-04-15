@@ -9,16 +9,14 @@
 namespace Myfc\Facade;
 use Myfc\Facade;
 /**
- * Description of Csrf
+ * Description of View
  *
  * @author vahitşerif
  */
-class CSRF extends Facade{
-   
-    public final static function getFacadeClass(){
-        
-        return "CSRF";
-        
+class View extends Facade {
+    
+    public static function getFacadeClass() {
+        return "View";
     }
     
 }

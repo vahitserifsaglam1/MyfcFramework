@@ -50,7 +50,7 @@ class Csrf extends Crypt{
       * @return \Myfc\Security\Csrf
       */
      public function active(){
-         $rand = md5(rand(1,999999999));
+         $rand = md5(rand(1567,999999999));
          $random = $this->encode(base64_encode($rand));
          $message = $this->encode($this->ip).self::AYRAC.$random;
          $crypted = $this->encode(base64_encode($message));

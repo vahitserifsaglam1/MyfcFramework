@@ -1,362 +1,246 @@
 <?php
- 
- namespace Myfc;
- 
- use Myfc\Template\Engine;
- use Myfc\Singleton;
 
- class View
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
- {
+namespace Myfc;
 
-     /**
-      * 
-      * @var array
-      */
-     public static $js = array();
-     
-     /**
-      * 
-      * @var array
-      */
-     public static $css = array();
-     
-     /**
-      * 
-      * @var array
-      */
-     public static $template = array();
-     
-     /**
-      * 
-      * @var array
-      */
-     
-     public static $files = array();
-     
-     /**
-      * 
-      * @var boolean
-      */
-     protected static $templateInstalled = false;
-     
-     /**
-      * 
-      * @var array
-      */
-     public static $templateArray;
-     
-     public static $lang;
-     
-     /**
-      *  
-      *   Template i�in bar�nd�r�lan $templateArray i�in $file de�i�kenine g�re atama yapar
-      * 
-      * @param array $array
-      * @param string $file
-      */
+use Myfc\Singleton;
+use Myfc\Template\Engine;
+use Myfc\Language;
 
-     public static function setTemplateArrays(array $array ,$file = '')
-     {
-         self::$templateArray[$file] = $array;
-         self::templateInstall();
-
-     }
-     
-     /**
-      * 
-      *  Template kurulumu yap�l�r
-      * 
-      */
-     
-     public static function templateInstall()
-     {
-         if(!self::$templateInstalled)
-         {
-             Engine::Installer();
-             self::$templateInstalled = true;
-         }
-         foreach(self::$templateArray as $key => $value)
-         {
-
-
-             self::templateLoader(array(),$key,$value);
-
-
-         }
-
-     }
-     
-     /**
-      * 
-      * Language s�n�f� y�klenir
-      * 
-      */
-     
-     private static function installLanguage()
-     {
-         
-         static::$lang = Singleton::make('\Myfc\Language');
-         
-     }
-     /**
-      * 
-      * @param string $path -> View dosyas�n�n ad� .php olmadan
-      * @param array $params -> i�eri enjeckte edilecek parametreler
-      * @param string $rendefiles ->css, js, template, languea ayarlamalar� yap�lan yer
-      * @param array $templateArray -> template in ayarlar� ve tan�mlamalar�
-      * @return NULL
-      */
-     public static function render($path,array $params = array(),$rendefiles = '', $templateArray = array(),$autoload = true)
-     {
-
-         
-         static::installLanguage();
-         if(isset($params) && !empty($params))
-         {
-             $params = $params;
-         }
-         if(is_array($rendefiles))
-         {
-             $lang  = $rendefiles['language'];
-             
-            
-             unset($rendefiles['language']);
-             $rende = self::renderFiles($rendefiles);
-           
-             $lang = static::createLanguage($lang);
-             
-
-         }else{
-             $rende = array();
-         }
-         
-        
-         
-         $extra = array_merge($params,$rende);
-         
-         if(isset($lang) && is_array($lang))
-         {
-             
-             $extra = array_merge($extra,$lang);
-             
-         }
-           
-
-         extract($extra);
-
-         ob_start();
-
-         if( isset($files) && is_string($files) )
-         {
-             file_put_contents($path,$files);
-         }
-         if(isset($rendefiles['templates'])) $templates = $rendefiles['templates'];
-         
-         
-
-         if(isset($templates))
-         {
-
-             Engine::Installer();
-             self::$templateInstalled = true;
-             if( is_array($templates) )
-             {
-
-                 foreach($templates as $tfiles)
-                 {
-
-                     Engine::templateInstaller(array(),$templateArray,$tfiles);
-
-                 }
-
-             }
-         }
-
-         if(!strstr($path,'.php'))
-         {
-             $path = VIEW_PATH.$path.'.php';
-         }
-
-
-         if(file_exists($path))
-         {
-             $hconfigs = Config::get('Configs','allIncludePath');
-
-             $headerPath = VIEW_PATH.$hconfigs.'header.php';
-
-
-
-
-             if(file_exists($headerPath) && $autoload){
-
-                 include $headerPath;
-
-             }
-
-             include $path;
-
-             $footerPath = VIEW_PATH.$hconfigs.'footer.php';
-
-             if(file_exists($footerPath) && $autoload){
-
-                 include $footerPath;
-
-             }
-             
-         }else{
-             
-             throw new \Exception( sprintf("%s view dosyas� bulunamad�", $path));
-             
-         }
-
-
-
-         return null;
-     }
-     
-  
-     public static function templateLoader($options = array(),$file,$arrays)
-     {
-         Engine::templateInstaller($options,$arrays,$file);
-     }
-     
-     /**
-      * css,js,files,language dosyalar� par�alanmaya ba�lan�r
-      * @param array $filess
-      * @return multitype:multitype:
-      */
-     public static function renderFiles(array $filess = array())
-     {
-        
-         $files = array(
-             'css' => array(),
-             'js' => array(),
-             'files' => array(),
-             'language' => array()
-         );
-
-         foreach($filess as $key => $value)
-         {
-
-             foreach ( $value as $k )
-             {
-
-                 $files[$key][] = $k;
-             }
-         }
-
-         return self::createHead($files);
-     }
-
-     /**
-      * <head /head> taglar� i�in css,js,files kodlar� olu�turulur
-      * @param array $files
-      * @return multitype:multitype:
-      */
-     
-     private static function createHead(array $files)
-     {
-
-
-         if(isset($files['css']))self::$css = self::createCss($files['css']);
-         if(isset($files['js'])) self::$js = self::createJs($files['js']);
-         if(isset($files['files']) )self::$files = self::createFiles($files['files']);
-
-
-         
-         $return =  array(
-             'css' => self::$css,
-             'js' => self::$js,
-             'files' => self::$files,
-         );
-
-         return $return;
-
-     }
-     
-     /**
-      * createHead fonksiyonuna d�nd�r�lmek �zere files de�i�keni olu�tururlur
-      * @param array $files
-      * @return string
-      */
-     private static function createFiles(array $files)
-     {
-
-         $s = '<?php ';
-
-         foreach($files as $file)
-         {
-             $s .= 'include "'.PUBLIC_PATH."files/".$file.'";';
-         }
-         $s .= '?>';
-         return $s;
-     }
-     
-     /**
-      * 
-      * createHead fonksiyonuna d�nd�r�lmek �zere css de�i�keni olu�tururlur
-      * 
-      * @param array $files
-      * @return string
-      */
-     private static function createCss(array $files)
-     {
-         $s = '';
-         foreach($files as $key)
-         {
-             $s .= '<link type="text/css" href="'.PUBLIC_PATH.'css/'.$key.'"/>'."\n";
-         }
-
-         return $s;
-     }
-     
-     /**
-      *
-      * createHead fonksiyonuna d�nd�r�lmek �zere js de�i�keni olu�tururlur
-      *
-      * @param array $files
-      * @return string
-      */
-     private static function createJs($files)
-     {
-         $s = '';
-         foreach($files as $key)
-         {
-             $s .= '<script type="text/javascript" href="'.PUBLIC_PATH.'js/'.$key.'" /></script>'."\n";
-         }
-         return $s;
-     }
-     
-     /**
-      *
-      * createHead fonksiyonuna d�nd�r�lmek �zere language de�i�keni olu�tururlur
-      *
-      * @param array $files
-      * @return array
-      */
-     public static function createLanguage(array $language)
-     {
-         
+/**
+ * Description of Views
+ *
+ * @author vahitşerif
+ */
+class View {
     
+    const TWIG_EXTENSION = '.twig';
+    
+    const FILE_EXTENSION = '.php';
+
+    private $template;
+    private $lang;
+    private $templateVariables = array();
+    private $file;
+    private $autoload;
+    private $lang;
+    
+    public function __construct() {
+   
+         $this->lang = new Language();
          
-         $array = [];
+    }
+    
+    private function languageInstall($lang){
+        
+        
+        
+         $rende = array();
          
-         foreach($language as $k => $s)
-         {
+         foreach($lang as $l => $name){
              
-             foreach($s as $v)
-             {
-                 
-                 $array = array_merge($array, static::$lang->rende($k,$v));
-                 
-             }
+            $rende[] = $this->lang->rende($lang, $name);
              
          }
          
-         return $array;
+         return $rende;
+        
+    }
+    
+    /**
+     * Template engine e istediği verileri atıyoruz
+     * @param type $file
+     * @param array $values
+     */
+    private function setTemplateVariables($file,array $values = array()){
+        
+        $this->templateVariables[$file] = $values;
+        
+    }
+
+    /**
+     * Template enginenin kurulumunu yaptık
+     */
+
+    private function templateInstaller($filePath){
+        
+        if(!$this->template){
+            
+            Engine::Installer($filePath);
+            $this->template = true;
+            
+        }
+        
+       if($this->template === true){
+           
+           return true;
+           
+       }
+    }
+    
+    /**
+     * 
+     * Template engine e kullanılacak değişkenleri gönderdik
+     * 
+     */
+    private function useTemplateVariables(){
+        
+        $variables = $this->templateVariables;
+        
+        $return = array();
+        
+        foreach($variables as $file => $variable){
+            
+            $return[] = Engine::templateInstaller(array(),$variable, $file );
+            
+        }
+        
+
+        return $return;
+        
+    }
+
+    /**
+     * Dosya yolunu oluşturduk
+     * @param string $path
+     * @return boolean|string
+     */
+    private function createFilePath($path = ''){
+        
+        if(strstr($path,".")){
+            
+            $path = str_replace(".", "/", $path);
+            
+        }
+        
+        $explode = explode("/", $path);
+        
+        // Tempalte dosyası
+        
+        $templateFile = end($explode);
+        
+        //
+        
+        $search = array_search($templateFile, $explode);
+        
+        
+        if($search > 0){
+            
+              $key = $search-1;
+              $templateFilePath = $explode[$key];
+            
+        }else{
+            
+            $templateFilePath = '';
+            
+        }
+      
+        
+        $path = APP_PATH.'Views/'.$path.self::TWIG_EXTENSION.self::FILE_EXTENSION;
+        
+    
+        
+        if(file_exists($path)){
+             
+            return [
+                'filepath' => $path,
+                'templateFilePath' => $templateFilePath,
+                'templateFile' => $templateFile.self::TWIG_EXTENSION.self::FILE_EXTENSION ];
+            
+        }else{
+            
+            return false;
+            
+        }
+        
+    }
+    
+    /**
+     * İçerik oluşturma fonksiyonu
+     * @param type $path
+     * @param type $params
+     */
+
+    public function make($path = '', $params = array(),$autoload = true){
+        
+         $num = func_num_args();
+          
+         if(isset($params['LANGUAGE'])){
+             
+             $lang = $params['LANGUAGE'];
+             
+             unset($params['LANGUAGE']);
+             
+             $languageParams = $this->languageInstall($lang);
+             
+             $params = array_merge($params, $languageParams);
+             
+         }
          
-     }
-
-
- }
+         
+           // dosyanın yolu
+           $pathCreated = $this->createFilePath($path);
+           
+              $filepath = $pathCreated['filepath'];
+              $templateFilePath = $pathCreated['templateFilePath'];
+              $templateFile = $pathCreated['templateFile'];
+              
+           
+                $this->setTemplateVariables($templateFile,$params);
+           
+           // 
+         if($this->templateInstaller($templateFilePath)){
+             
+             $this->file = $templateFile;
+             $this->autoload = $autoload;
+             
+             $this->setTemplateVariables($templateFile, $this->templateVariables[$this->file]);
+             
+             return $this;
+             
+         }
+        
+    }
+    
+    /**
+     * 
+     * @param array $variables
+     * @return \Myfc\Views
+     */
+    
+    public function with(array $variables = array()){
+        
+        $this->templateVariables[$this->file] = array_merge($this->templateVariables[$this->file], $variables);
+        return $this;
+    }
+    
+    /**
+     * Çıktıyı gönderir
+     */
+    
+    public function execute(){
+        
+        if($this->autoload){
+            
+            $header = $this->createFilePath('header');
+            $footer = $this->createFilePath('footer');
+            $this->setTemplateVariables($header['templateFile'], $this->templateVariables[$this->file]);
+            $this->setTemplateVariables($footer['templateFile'], $this->templateVariables[$this->file]);
+            
+        }
+        
+        foreach($this->useTemplateVariables() as $template){
+           
+            echo $template;
+            
+        }
+        
+        
+    }
+    
+}

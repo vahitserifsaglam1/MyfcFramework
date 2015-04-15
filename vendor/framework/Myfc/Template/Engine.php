@@ -11,10 +11,10 @@ namespace Myfc\Template;
  * Class Engine
  * @package Myfc\Template
  */
-
  use Twig_Autoloader;
  use Twig_Loader_Filesystem;
  use Twig_Environment;
+ 
  
  class Engine
  {
@@ -29,10 +29,11 @@ namespace Myfc\Template;
       * @return mixed $loader
       */
 
-     public static function Installer()
+     public static function Installer($filePath)
      {
          Twig_Autoloader::register();
-         $loader = new  Twig_Loader_Filesystem(_PUBLIC.'templates');
+         $filePath = APP_PATH.'Views/'.$filePath;
+         $loader = new  Twig_Loader_Filesystem($filePath);
          self::$loader = $loader;
          return $loader;
      }
@@ -43,21 +44,20 @@ namespace Myfc\Template;
       * @return mixed
       */
 
-     public static function templateInstaller($options = array(),array $array,$file)
+     public static function templateInstaller($options = null ,array $array,$file)
      {
 
-         $options[] = [
+         if($options === null){
+             $options[] = [
              'debug' => false,
              'charset' => 'utf-8',
              'cache' => './cache', // Store cached files under cache directory
-             'strict_variables' => true,
-         ];
+             'strict_variables' => true,]; 
+         }
+        
          $twig = new Twig_Environment(self::$loader, $options);
-
          $return =  $twig->render($file,$array);
-
-         echo $return;
-
+         # echo $return;
          return $return;
      }
 
