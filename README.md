@@ -8,7 +8,6 @@ Myfc Framework MVC yapısı üzerine kurulmuş, küçük, fakat hızlı ve etkil
 ## Güçlü sınıflar
 ## Kolay kurulum
 
-
 gibi özellikleri barındırmaktadır
 
 Örnek Rötalama
