@@ -35,7 +35,7 @@ class Functioner {
 	
 	public function check( $functionName = ''){
 		
-		return (isset($this->bind[$functionName])) ? true:false;
+		if(isset($this->bind[$functionName]))  return true;else return false;
 		
 		
 	}

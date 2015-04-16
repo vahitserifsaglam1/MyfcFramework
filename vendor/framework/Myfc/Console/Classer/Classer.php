@@ -27,7 +27,7 @@ class Classer {
     public function check($className){
 
      
-	   return (isset($this->className($name))) ? true:false;
+	   if(isset($this->bind[$className])) return true;else return false;
 
 
     }

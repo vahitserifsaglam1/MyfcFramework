@@ -142,7 +142,7 @@ class View {
 
           $this->file = $path;
           
-           return $this;
+          return $this;
         
     }
     

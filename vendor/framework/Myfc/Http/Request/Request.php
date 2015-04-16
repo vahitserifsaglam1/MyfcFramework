@@ -32,8 +32,7 @@
       public function __construct()
       {
            $this->client = Singleton::make('\GuzzleHttp\Client');
-           
-           $this->findMethod();
+          
 
       }
       
@@ -88,42 +87,8 @@
        *  if method = GET return true else false
        */
       
-      public function findMethod()
-      {
-          
-          $method = $_SERVER['REQUEST_METHOD'];
-          
-          $this->_requestMethod = $method;
-          
-      }
-      
-      public function returnMethod()
-      {
-          
-          return $this->_requestMethod;
-          
-      }
-      
-      public function isGet()
-      {
-          return ($this->_requestMethod === 'GET') ? true:false;
-      }
-      public function isPost()
-      {
-          return $this->_requestMethod === 'POST';
-      }
-      public function isDelete()
-      {
-          return $this->_requestMethod === 'DELETE';
-      }
-      public function isPut()
-      {
-          return $this->_requestMethod === 'PUT';
-      }
-      public function isHead()
-      {
-          return $this->_requestMethod === 'HEAD';
-      }
+
+
       public function isAjax()
       {
           return ($_SERVER['X_REQUESTED_WITH'] !== null && $_SERVER['X_REQUESTED_WITH'] === 'XMLHttpRequest');

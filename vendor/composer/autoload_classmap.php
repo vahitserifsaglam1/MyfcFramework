@@ -294,6 +294,8 @@ return array(
     'Myfc\\Facade\\IP' => $vendorDir . '/framework/Myfc/Facede/facedes/IP.php',
     'Myfc\\Facade\\Mail' => $vendorDir . '/framework/Myfc/Facede/facedes/Mail.php',
     'Myfc\\Facade\\Redirect' => $vendorDir . '/framework/Myfc/Facede/facedes/Redirect.php',
+    'Myfc\\Facade\\Request' => $vendorDir . '/framework/Myfc/Facede/facedes/Request.php',
+    'Myfc\\Facade\\Response' => $vendorDir . '/framework/Myfc/Facede/facedes/Response.php',
     'Myfc\\Facade\\Route' => $vendorDir . '/framework/Myfc/Facede/facedes/Route.php',
     'Myfc\\Facade\\Session' => $vendorDir . '/framework/Myfc/Facede/facedes/Session.php',
     'Myfc\\Facade\\Upload' => $vendorDir . '/framework/Myfc/Facede/facedes/Upload.php',

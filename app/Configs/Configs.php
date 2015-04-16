@@ -50,7 +50,9 @@ return [
         'IP'     => 'Myfc\Security\IP',
         'CSRF'   => 'Myfc\Security\Csrf',
         'View'   => 'Myfc\View',
-        'App' => 'Myfc\App',],
+        'App' => 'Myfc\App',
+        'Request' => 'Myfc\Http\Request',
+        'Response' => 'Myfc\Http\Response'],
      
     /*
      * 

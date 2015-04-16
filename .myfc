@@ -3,8 +3,8 @@
 
 include "vendor/autoload.php";
 
-use Myfc\Console;
+use Myfc\Singleton;
 
-$app = new Console($argv, $argc);
+$app = Singleton::make('Myfc\Console',array($argv,$argc));
 
 $app->start();

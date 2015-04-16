@@ -4,8 +4,9 @@ namespace Myfc;
 
 use Myfc\Console\Functioner;
 use Myfc\Console\Classer;
-use Myfc\Facade\App;
 use Exception;
+use Myfc\Bootstrap;
+use Myfc\Facade;
 
 class Console{
 
@@ -33,11 +34,18 @@ class Console{
 
          unset($argv[0]);
 
+         
          $this->argv = $argv;
          $this->argc = $argc;
 
          $this->funcs   = new Functioner();
          $this->classes = new Classer();
+         
+         $alias = require "app/Configs/Configs.php";
+         $alias = $alias['alias'];
+         Facade::$instance = $alias;
+                 
+
 
      }
 
@@ -52,7 +60,7 @@ class Console{
 
             include "app/Console.php";
             
-            $finded = $this->findFunctionOrClass($this->argv[0]);
+            $finded = $this->findFunctionOrClass($this->argv[1]);
 
             switch($finded){
 
@@ -196,9 +204,9 @@ class Console{
      */
     private function returnTheCallingParams(array $argv){
 
-        $first = $argv[0];
+        $first = $argv[1];
 
-        unset($argv[0]);
+        unset($argv[1]);
 
         if(strstr($first, "--class:")){
 
@@ -212,6 +220,12 @@ class Console{
 
         $array = (array) $first;
 
+        $argv = array_map(function($a){
+           if(strstr($a, "--param:")){
+               $a = str_replace("--param:", "", $a);
+           }
+           return $a;
+        }, $argv);
         return array_merge($array, $argv);
 
 
