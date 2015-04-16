@@ -14,15 +14,17 @@ return [
     
      'timezone' => 'Europe/Istanbul',
  
-    /**
-     * View sınıfında eğer son parametreye true verirseniz header ve footer dosyalarını çeker
-     * O dosyaların view dosyasındaki yolunu girmelisiniz
-     *  
-     *  Örnek : 'inc/'
-     * 
-     */
-    
-    'allIncludePath' => 'inc',
+     /*
+      * 
+      *   MyfcFrameworkde view dosyalarınızı hazırlarken kullanacağınız template engine
+      *   2 engine desteklenir => smarty
+      *                           twig
+      * 
+      *   Eğer engine kullanmak istemiyorsanız 'php' girmeniz gerekir
+      * 
+      */
+  
+    'templateEngine' => 'php',
     
     /*
      * Framework içinde kullanılacak facede sınıflarını hazırlar

@@ -56,6 +56,18 @@ class Parser {
      }
      
      /**
+      * Explode with ataması yapar
+      * @param string $param explode with yerine kullanılacak değer
+      * @return \Myfc\Support\String\Parser
+      */
+     public function explodeWith($param) {
+      
+          $this->explodeWith = $param;
+          return $this;
+         
+     }
+     
+     /**
       * sınama işlemi sırasında aranacak anahtar 
       * @param string $key
       * @return \Myfc\Support\String\Parser
@@ -210,22 +222,22 @@ class Parser {
          
          // parçalanmış url
          $urlExploded = explode($this->explodeWith, $url);
-         
-         
+
          for($i = 0;$i<count($explode);$i++){
              
              $ex = $explode[$i];
-             
+          
        
              if(strstr($ex,$this->explodeKey)){
                  
                     $baslangic = strpos($ex,"{");
-
+            
                   
                     $baslangicS = substr($ex,0,$baslangic);
                     
                     if(isset($urlExploded[$i])){
                         
+                       
                         $param = substr($urlExploded[$i],$baslangic,strlen($urlExploded[$i]));
                           
                         preg_match($this->parseWith, $ex,$finds);
@@ -235,32 +247,34 @@ class Parser {
                         
                           if(!strstr($ex,$this->explodeKey."!")){
 
+                       
                           $unsetParams[] = $param;
 
                           }
                           
                             $metin = $baslangicS.$param;
                         
-                    }else{ $metin = ""; }
+                    }else{ $metin = ""; echo "burda4";}
      
              }else{
                $metin = $ex;
+             
 
            }
+          
            $array[] = $metin;
-             
+           
          }
          
          $this->params = $p;
          
          $actionImpodedString = implode($this->implodeWith, $array);
-        
+         
+         
          $urlActionEsitString = substr($url, 0,strlen($actionImpodedString));
          
-    
-          
          if($actionImpodedString == $urlActionEsitString){
-          
+           
              $this->paramsWithoutNulls = $this->cleanParamsNulls($this->params);
              return $this;
              
@@ -272,6 +286,46 @@ class Parser {
          
      }
      
+     /**
+      * When işlemi için patterne uygun url yapası arar
+      * @param string $string  Girilecek action 
+      * @param string $url Girilecek url
+      * @param string $pattern Girilecek pattern
+      * @return string|boolean
+      */
+     public function when($string = '', $url = '', $pattern = "*"){
+         
+         if(strstr($string, $pattern)){
+          
+             $position = strpos($string, $pattern);
+             
+             $checkString = substr($string,0, $position-1);
+             
+             $checkUrl = substr($url,0, $position-1);
+             
+             
+         }else{
+             
+             
+             $checkString = $string;
+             $checkUrl = substr($url,0, strlen($checkString));
+            
+             
+         }
+         
+         if($checkString == $checkUrl){
+             
+             return $url;
+             
+         }else{
+             
+             return false;
+             
+         }
+         
+     }
+
+
      /**
       * 
       * Parametreleri döndürür

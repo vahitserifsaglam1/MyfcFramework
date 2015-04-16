@@ -8,7 +8,7 @@ use Myfc\File\App\Finder;
 use Exception;
 
 /** 
- * @author vahitþerif
+ * @author vahitï¿½erif
  * 
  */
 class File
@@ -21,9 +21,9 @@ class File
     public $in;
 
     /**
-     *   Baþlatýcý fonksiyon
+     *   Baï¿½latï¿½cï¿½ fonksiyon
      *   
-     *   Adapter a gerekli sýnýflarý yükler
+     *   Adapter a gerekli sï¿½nï¿½flarï¿½ yï¿½kler
      */
     public function __construct()
     {
@@ -58,7 +58,7 @@ class File
     }
     
     /**
-     * Ýstenen tipteki özellikleri döndürür
+     * ï¿½stenen tipteki ï¿½zellikleri dï¿½ndï¿½rï¿½r
      * @param unknown $type
      * @param string $path
      */
@@ -80,7 +80,7 @@ class File
     }
     
     /**
-     * in ile atanan klasör ana klasör olarak seçilir
+     * in ile atanan klasï¿½r ana klasï¿½r olarak seï¿½ilir
      * @param unknown $path
      * @return Filesystem
      */
@@ -106,7 +106,7 @@ class File
     
     /**
      *  
-     *   Girilen path yollarýný in e döndürür
+     *   Girilen path yollarï¿½nï¿½ in e dï¿½ndï¿½rï¿½r
      * 
      * @param unknown $path
      * @return string|unknown
@@ -128,7 +128,7 @@ class File
     }
     
     /**
-     * Dosyanýn olup olmadýðýný kontrol eder
+     * Dosyanï¿½n olup olmadï¿½ï¿½ï¿½nï¿½ kontrol eder
      * @param unknown $path
      * @return boolean
      */
@@ -143,7 +143,7 @@ class File
     }
     
     /**
-     * Dosyanýn içeriðini okur
+     * Dosyanï¿½n iï¿½eriï¿½ini okur
      * @param unknown $filename
      * @param string $remote
      * @return string|unknown
@@ -169,7 +169,7 @@ class File
     }
     
     /**
-     * Dosyanýn içeriðini deðiþtirir
+     * Dosyanï¿½n iï¿½eriï¿½ini deï¿½iï¿½tirir
      * @param unknown $data
      * @param unknown $filename
      * @param string $append
@@ -190,7 +190,7 @@ class File
     }
     
     /**
-     * Yeni bir klasör oluþturur
+     * Yeni bir klasï¿½r oluï¿½turur
      * @param unknown $path
      */
     public function createDirectory($path)
@@ -199,7 +199,7 @@ class File
     }
     
     /**
-     * Yeni bir dosya oluþturur
+     * Yeni bir dosya oluï¿½turur
      * @param unknown $path
      * @return unknown
      */
@@ -221,7 +221,7 @@ class File
     }
     
     /**
-     * Yeni bir klasör oluþturur
+     * Yeni bir klasï¿½r oluï¿½turur
      * @param unknown $path
      * @return boolean
      */
@@ -242,7 +242,7 @@ class File
     }
     
     /**
-     * Bir dosya yada klasörü siler
+     * Bir dosya yada klasï¿½rï¿½ siler
      * @param unknown $src
      * @return boolean
      */
@@ -284,7 +284,7 @@ class File
     }
     
     /**
-     * Bir dosyayý bir hedeften baþka bir hedefe kopyalar
+     * Bir dosyayï¿½ bir hedeften baï¿½ka bir hedefe kopyalar
      * @param unknown $src
      * @param unknown $dest
      * @return boolean
@@ -348,18 +348,24 @@ class File
         @unlink($src);
     }
     
-    public function inc($path)
+    public function inc($path, $parametres = null)
     {
         
         $path = $this->inPath($path);
+        
+        if($parametres !== null){
+            
+            extract($parametres);
+            
+        }
         
         return include $path;
         
     }
     /**
-     * Sýnýfta bulunmayan fonksiyonlar önce iterator sýnýfýnda aranýr
-     * Eðer o sýnýfta bulunmassa 
-     * finder sýnýfýnda aranýr ve oradada yoksa hata mesajý verilir
+     * Sï¿½nï¿½fta bulunmayan fonksiyonlar ï¿½nce iterator sï¿½nï¿½fï¿½nda aranï¿½r
+     * Eï¿½er o sï¿½nï¿½fta bulunmassa 
+     * finder sï¿½nï¿½fï¿½nda aranï¿½r ve oradada yoksa hata mesajï¿½ verilir
      * @param unknown $name
      * @param unknown $params
      * @throws Exception
@@ -379,7 +385,7 @@ class File
             
         }else{
             
-            throw new Exception(sprintf( "%s adýnda bir fonsiyon bulunamadý",$name));
+            throw new Exception(sprintf( "%s adï¿½nda bir fonsiyon bulunamadï¿½",$name));
             
         }
         

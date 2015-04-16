@@ -25,7 +25,8 @@
 		"symfony/http-foundation": "3.0.*@dev",
 		"nesbot/carbon": "dev-master",
 		"danielstjules/Stringy":"dev-master",
-		"geoip2/geoip2":"dev-master"
+		"geoip2/geoip2":"dev-master",
+                "smarty/smarty":"dev-master"
        
     }
 }

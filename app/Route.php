@@ -3,11 +3,8 @@
  use Myfc\Facade\Route;
  
  Route::get('/', function(){
-     
-   
-     return view('index');
+    
+     $test = "title test";
+     return view('index', compact('test'));
      
  });
- 
-
-?>

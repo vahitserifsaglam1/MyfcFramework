@@ -7,58 +7,50 @@
  *   *****************************************************
  */
 namespace Myfc\Template;
-/**
- * Class Engine
- * @package Myfc\Template
- */
- use Twig_Autoloader;
- use Twig_Loader_Filesystem;
- use Twig_Environment;
- 
- 
- class Engine
- {
 
-     /**
-      * @var $loader
-      */
+use Myfc\Config;
+use Myfc\Singleton;
+use Exception;
 
-     public static $loader;
-
-     /**
-      * @return mixed $loader
-      */
-
-     public static function Installer($filePath)
-     {
-         Twig_Autoloader::register();
-         $filePath = APP_PATH.'Views/'.$filePath;
-         $loader = new  Twig_Loader_Filesystem($filePath);
-         self::$loader = $loader;
-         return $loader;
-     }
-
-     /**
-      * @param array $array
-      * @param $file
-      * @return mixed
-      */
-
-     public static function templateInstaller($options = null ,array $array,$file)
-     {
-
-         if($options === null){
-             $options[] = [
-             'debug' => false,
-             'charset' => 'utf-8',
-             'cache' => './cache', // Store cached files under cache directory
-             'strict_variables' => true,]; 
-         }
+class Engine{
+    
+    private $driverList = array(
         
-         $twig = new Twig_Environment(self::$loader, $options);
-         $return =  $twig->render($file,$array);
-         # echo $return;
-         return $return;
-     }
-
- }
+        'php' => 'Myfc\Template\Connector\noTemplate',
+        'smarty' => 'Myfc\Template\Connector\Smarty',
+        'twig'  => 'Myfc\Template\Connector\Twig'
+        
+    );
+    
+    private $driver;
+    
+    private $configs;
+    
+    public function __construct() {
+        $this->configs = Config::get('Configs','templateEngine');
+        
+        $this->connect($this->configs);
+    }
+    
+    
+    private function connect($driver = ''){
+        
+        if(isset($this->driverList[$driver])){
+            $this->driver = Singleton::make($this->driverList[$driver]);
+            
+        }else{
+            
+            throw new Exception(sprint_f("%s seçtiğiniz driver yüklü değil",$driver));
+            
+        }
+        
+        
+    }
+    
+    public function __call($name, $parametres){
+        return call_user_func_array(array($this->driver, $name), $parametres);
+        
+    }
+    
+    
+}

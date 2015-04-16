@@ -12,6 +12,9 @@
  *  Route::group(array('before' => 'auth'))
  * 
  *  Route::filter('auth' => function(){});
+ *  
+ *  Route::get(array('domain' => '{test}.ornekdomain.com'), function(){}); 
+ *  => subdomain parçalamada kullanılır
  */
 
 namespace Myfc;
@@ -113,9 +116,13 @@ class Route {
         
         $this->method = $this->bootstrap->server->method;
         
+        
+        // when işlemini kontrol eder
+        $collection = $this->startWhening();
+        
         // gruplandırma işlemi başlar
         
-        $collection = $this->startGrouping();
+        $collection = $this->startGrouping($collection->getCollection());
         
         // parçalama başlar
         
@@ -126,14 +133,61 @@ class Route {
     }
     
     /**
+     * When İşlemini yapar
+     * @return collection
+     */
+    
+    private function startWhening() {
+        
+        $when = $this->getCollection['WHEN'];
+        
+        if(count($when) > 0){
+            
+            foreach ($when as $whe) {
+                
+                list($pattern ,$callback) = $whe;
+                
+                if($return = $this->whenCheck($pattern)){
+                    
+                     $return = $callback();
+                     return $this->collection;
+                }else{
+                    
+                    return $this->collection;
+                    
+                }
+                
+            }
+            
+        }else{
+            
+            return $this->collection;
+            
+        }
+        
+    }
+    
+   /**
+    * When olarak girilen string in doğru olup olmadığını kontrol eder
+    * @param string $pattern girilecek action
+    * @return string|boolean
+    */
+    private function whenCheck($pattern = ''){
+        
+        return $this->parser->when($pattern, $this->url, "*");
+        
+    }
+
+
+    /**
      * 
      *  Gruplandırma işlemi başlar
      * 
      */
-    private function startGrouping(){
+    private function startGrouping($collection){
         
         // grupları çektik
-        $group = $this->getCollection['GROUP'];
+        $group = $collection['GROUP'];
         
         
         // eğer dizi boş değilse 
@@ -150,6 +204,10 @@ class Route {
                 
                 // eğer filtreden geçerse callback çağrılacak
                 $return = $callback();
+                return $this->collection;
+                
+            }else{
+                
                 return $this->collection;
                 
             }
@@ -288,16 +346,15 @@ class Route {
         
         //methoda göre neyde işlem yapacağımızı seçtik
         $selected = $collection[$method];
-         
-     
+       
         if($selected !== null){
           
             foreach ($selected as $select){
-              
-               if($this->parser->checkWithUrl($select[0])){
+   
+               $parameters = $this->urlCheck($select[0]);
+               if(is_array($parameters)){
                    
-                    $parametes = $this->parser->getParams();
-                    $this->callbackParse($select[1], $parametes);
+                    $this->callbackParse($select[1], $parameters);
                    
                }
               
@@ -308,23 +365,33 @@ class Route {
         }
         
 
+       
     }
     
+
+
+
     /**
      * Url kontrol işlemi yapar
-     * @param type $param
-     * @return type
+     * @param string|array $param
+     * @return array|boolean
      */
     
     private function urlCheck($param) {
+       
+        $url = $this->url;
+        if(is_array($param)){
+            $this->parser->explodeWith(".");
+            $url = $this->bootstrap->server->host;
+            $param = $param['domain'];
+        }
         
         $this->parser->set($param);
-        
         $parse = $this->parser->parse();
-        
         if($parse instanceof Parser){
-            
-            if($parse->checkWithUrl($this->url)){
+    
+            if($parse->checkWithUrl($url)){
+           
                 return $this->parser->getParams();
                 
             }else{

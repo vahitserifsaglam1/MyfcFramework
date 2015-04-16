@@ -21,7 +21,8 @@ class RouteCollection {
         'WHERE' => array(),
         'GET'   => array(),
         'PUT'   => array(),
-        'DELETE'=> array()
+        'DELETE'=> array(),
+        'WHEN'  => array()
          
     );
     
@@ -215,8 +216,21 @@ class RouteCollection {
      */
     public function pattern($name, $pattern){
         
-        $this->setCollection('WHERE', func_num_args());
+        $this->setCollection('WHERE', func_get_args());
         return null;
+        
+    }
+    /**
+     * Return ataması yapar
+     * @param string $pattern
+     * @param mixed $callback
+     * @return \Myfc\Route\RouteCollection
+     */
+    
+    public function when($pattern, $callback){
+        
+        $this->setCollection('WHEN', func_get_args());
+        return $this;
         
     }
     
