@@ -22,6 +22,15 @@ gibi özellikleri barındırmaktadır
 
 Örnek Http Request
 
+> use Myfc\Facade\Request;
+>$request = Request::get('http://www.ornekdomain.com');
+
+Örnek Sayfalama
+> $pagination = $db->pagination('index/sayfa/{sayfa}');
+> echo $pagination;
+
+ 
+
 
 
 
