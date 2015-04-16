@@ -18,7 +18,6 @@ class RouteCollection {
     private $collection = array(
         
         'GROUP' => array(),
-        'WHERE' => array(),
         'GET'   => array(),
         'PUT'   => array(),
         'DELETE'=> array(),
@@ -26,6 +25,16 @@ class RouteCollection {
          
     );
     
+    /**
+     * atanan whereler tutulur
+     * @var type 
+     */
+    private $where = array();
+    
+    /**
+     * Atanan filter lar tutunur
+     * @var type 
+     */
     private $filter;
     
     /**
@@ -51,6 +60,25 @@ class RouteCollection {
     public function getCollection(){
         
         return $this->collection;
+        
+    }
+    /**
+     * Where ataması yapar
+     * @param array $where
+     */
+    private function setWhere(array $where) {
+        
+        $this->where = $where;
+        
+    }
+    
+    /**
+     * Get değerlerini döndürür
+     * @return array
+     */
+    public function getWhere(){
+        
+        return $this->where;
         
     }
     
@@ -202,9 +230,9 @@ class RouteCollection {
      * @return \Myfc\Route\RouteCollection
      */
     
-    public function where($name, $pattern){
+    public function where(array $where){
         
-        $this->setCollection('WHERE', func_get_args());
+        $this->setWhere($where);
         return $this;
         
     }
@@ -216,7 +244,7 @@ class RouteCollection {
      */
     public function pattern($name, $pattern){
         
-        $this->setCollection('WHERE', func_get_args());
+        $this->setWhere(func_get_args());
         return null;
         
     }

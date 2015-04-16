@@ -176,7 +176,7 @@ class File
      * @return boolean
      */
     
-    public function write($data,$filename,$append=false){
+    public function write($filename,$data,$append=false){
         
         $filename = $this->inPath($filename);
         

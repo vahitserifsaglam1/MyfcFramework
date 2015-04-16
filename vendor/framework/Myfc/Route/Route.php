@@ -354,6 +354,7 @@ class Route {
                $parameters = $this->urlCheck($select[0]);
                if(is_array($parameters)){
                    
+                    $parameters = $this->parametresWhereCheck($parameters);
                     $this->callbackParse($select[1], $parameters);
                    
                }
@@ -409,6 +410,37 @@ class Route {
         
     }
     
+    public function parametresWhereCheck($parametres){
+        
+         $where = $this->collection->getWhere();
+         
+         $params = array();
+         
+         foreach($parametres as $key => $value){
+             
+               if(isset($where[$key])){
+
+                preg_match($where[$key], $value,$o);
+
+                if($o){
+
+                    $params[] = $o[1];
+
+                }
+
+            }else{
+
+                $params[] = $value;
+
+            }
+             
+         }
+         
+         return $params;
+         
+    }
+
+
     /**
      * callback parçalama işlemi yapılır
      * @param mixed $callback

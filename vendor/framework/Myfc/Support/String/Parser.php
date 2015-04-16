@@ -33,6 +33,8 @@ class Parser {
      private $explodedAction;
      
      private $explodeKey = "{";
+     
+     private $finds;
     
      /**
       * Başlatıcı fonksiyon
@@ -243,8 +245,9 @@ class Parser {
                         preg_match($this->parseWith, $ex,$finds);
 
 
-                        $p[] = $param;
+                        $p[$finds[1]] = $param;
                         
+           
                           if(!strstr($ex,$this->explodeKey."!")){
 
                        
@@ -324,7 +327,12 @@ class Parser {
          }
          
      }
-
+     
+    public function getFinded(){
+        
+        return $this->finds;
+        
+    }
 
      /**
       * 
