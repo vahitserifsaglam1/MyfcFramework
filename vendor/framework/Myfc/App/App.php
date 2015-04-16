@@ -3,7 +3,6 @@
 namespace Myfc;
 
 use Myfc\Bootstrap;
-
 /**
  * Class App
  * @package Myfc
@@ -12,7 +11,7 @@ use Myfc\Bootstrap;
  *
  *  Sınıflarda facede kısmı çağrılacak
  *
- *  Bootsrap sınıfının çağrılmasından oluşacak sınıfı kapatmak için kullanılacak
+ *  Bootsrap sınıfının çağrılmasından oluşacak açığı kapatmak için kullanılacak
  */
 
 class App{
@@ -20,7 +19,7 @@ class App{
     private $bootstrap;
 
 
-    public function __construct($bootstrap){
+    public function __construct(Bootstrap $bootstrap){
 
         $this->bootstrap = $bootstrap;
 

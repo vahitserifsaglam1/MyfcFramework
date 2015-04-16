@@ -1,16 +1,17 @@
 <?php
 
+use Myfc\MainController;
 /**
  * Class index
  *
  *  ****************************
  *
- *  OzsaFramework standart index contoller dosyası
+ *  MyfcFramewok standart index contoller dosyası
  *
  *
  *  ****************************
  */
-  class index extends Myfc\MainController
+  class index extends MainController
   { 
       
 
@@ -19,11 +20,8 @@
          
          parent::__construct();
          
-         
-         
      }
-     
-
+    
 
 
   }

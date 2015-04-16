@@ -4,16 +4,22 @@
  * 
  *  Myfc framework route sınıfı
  * 
+ * 
+ *  Route::get($param, array('before' => 'auth', 'name' => 'name', 'use' => 'controller@method'));
+ * 
+ *  Route::get($param, array('before' => 'auth', 'name' => 'name', 'use' => callable function));
+ * 
+ *  Route::group(array('before' => 'auth'))
+ * 
+ *  Route::filter('auth' => function(){});
  */
 
 namespace Myfc;
 
 use Myfc\Route\RouteCollection;
 use Myfc\Support\String\Parser;
-use Myfc\Facade\CSRF;
 use Myfc\Bootstrap;
 use Myfc\Http\Response;
-use Myfc\Facade\App;
 use Exception;
 /**
  *  Route
@@ -149,6 +155,10 @@ class Route {
             }
             
         }
+            
+        }else{
+            
+            return $this->collection;
             
         }
         
@@ -454,8 +464,8 @@ class Route {
     private function callbackUseControllerRunner($callbackuse, $parametres){
         
         list($controller, $method) = $this->useControllerParse($callbackuse);
-        
-        $controller =  App::make('controller@'.$controller, array(), true);
+     
+        $controller =  $this->bootstrap->make('controller@'.$controller, array(), true);
         
         if(is_callable(array($controller,$method)) || method_exists($controller, $method)){
             

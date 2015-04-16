@@ -24,7 +24,6 @@ class View {
     const FILE_EXTENSION = '.php';
 
     private $template;
-    private $lang;
     private $templateVariables = array();
     private $file;
     private $autoload;
@@ -227,10 +226,17 @@ class View {
         
         if($this->autoload){
             
-            $header = $this->createFilePath('header');
-            $footer = $this->createFilePath('footer');
-            $this->setTemplateVariables($header['templateFile'], $this->templateVariables[$this->file]);
-            $this->setTemplateVariables($footer['templateFile'], $this->templateVariables[$this->file]);
+            if($header = $this->createFilePath('header')){
+                
+                $this->setTemplateVariables($header['templateFile'], $this->templateVariables[$this->file]);
+                
+            }
+            if($footer = $this->createFilePath('footer')){
+                
+                 $this->setTemplateVariables($footer['templateFile'], $this->templateVariables[$this->file]);
+                
+            }
+            
             
         }
         

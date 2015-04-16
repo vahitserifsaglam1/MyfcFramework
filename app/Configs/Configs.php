@@ -22,7 +22,7 @@ return [
      * 
      */
     
-    'allIncludePath' => '',
+    'allIncludePath' => 'inc',
     
     /*
      * Framework içinde kullanılacak facede sınıflarını hazırlar
@@ -47,7 +47,8 @@ return [
         'Upload' => 'Myfc\File\Upload',
         'IP'     => 'Myfc\Security\IP',
         'CSRF'   => 'Myfc\Security\Csrf',
-        'View'   => 'Myfc\View'],
+        'View'   => 'Myfc\View',
+        'App' => 'Myfc\App',],
      
     /*
      * 

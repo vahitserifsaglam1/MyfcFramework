@@ -125,7 +125,8 @@
       
       public function make($className = '', array $parametres = array(), $autoInstance = true)
       {
-          
+
+         
           if(strstr($className, "@"))
           {
               
@@ -133,7 +134,7 @@
               
               if($class[0] == "controller")
               {
-                  
+                 
                  return $this->makeController($class[1], $parametres, $autoInstance);
                   
               }elseif($class[0] == "modal")
