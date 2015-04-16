@@ -10,6 +10,12 @@ Myfc Framework MVC yapısı üzerine kurulmuş, küçük, fakat hızlı ve etkil
 
 gibi özellikleri barındırmaktadır
 
+### Kurulum
+
+>İndirdiğiniz dosyayı sunucunuza attıkdan sonra app/Configs/Configs.php ve app/Configs/databaseConfigs.php dosyalarını sunucunuzun özelliklerine göre düzenlemeniz yeterlidir
+
+
+
 Örnek Rötalama
 > Route::get('/', function(){ echo "hello wordl"; }); // Örnek bir rötalama sistemi
 
