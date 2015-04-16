@@ -17,7 +17,11 @@ gibi özellikleri barındırmaktadır
 Örnek Veritabanı sorgusu (user tablosunda username i admin'e eşit olanın bilgileri çeker)
 > user::where('username','admin') // örnek bir veritabanı sorgusu
 
+Örnek View oluşturma sistemi(seçtiğiniz template engine'e göre [ 'smarty' ise index.tpl, 'twig' ise index.twig.php , 'php' ise index.php dosyasını çeker) 
 > view('index', array('param' => 'value')) || View::make('index', array('param' => 'value') // örnek view oluşturma kodları
+
+Örnek Http Request
+
 
 
 
