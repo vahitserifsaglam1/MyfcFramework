@@ -2,7 +2,6 @@
 
 
 namespace Myfc\Template\Connector;
- use Twig_Autoloader;
  use Twig_Loader_Filesystem;
  use Twig_Environment;
 /**
@@ -21,11 +20,11 @@ class Twig {
     private $parametres;
     public function __construct(){
         
-        Twig_Autoloader::register();
+   
               $this->options = [
              'debug' => false,
              'charset' => 'utf-8',
-             'cache' => './cache', // Store cached files under cache directory
+             'cache' => VIEW_PATH.'twig/cache', // Store cached files under cache directory
              'strict_variables' => true,]; 
             
     }
@@ -39,10 +38,10 @@ class Twig {
     
     public function execute($file){
         
+       
         $file = $file.".twig.php";
-        $filepath = VIEW_PATH.$file;
-        
-        $loader = new Twig_Loader_Filesystem($filepath);
+     
+        $loader = new Twig_Loader_Filesystem(VIEW_PATH);
         $this->twig = new Twig_Environment($loader, $this->options);
         $return = $this->twig->render($file, $this->parametres);
         echo $return;

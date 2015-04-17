@@ -118,6 +118,7 @@ class View {
 
     public function make($path = '', $params = array(),$autoload = true){
         
+         $this->autoload = $autoload;
          $num = func_num_args();
           
          if(isset($params['LANGUAGE'])){
@@ -158,6 +159,7 @@ class View {
     
     public function execute(){
          
+ 
           if($this->autoload){
               
               $this->template->execute("header");

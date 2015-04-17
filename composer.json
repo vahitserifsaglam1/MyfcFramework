@@ -26,7 +26,8 @@
 		"nesbot/carbon": "dev-master",
 		"danielstjules/Stringy":"dev-master",
 		"geoip2/geoip2":"dev-master",
-                "smarty/smarty":"dev-master"
+                "smarty/smarty":"dev-master",
+				"mailgun/mailgun-php":"~1.7.2"
        
     }
 }

@@ -3,7 +3,8 @@
 
  namespace Myfc;
  
- use Myfc\Mail\PHPMailer\PHPMailer;
+ use Myfc\Mail\PHPMAILER\PHPMailer;
+
 /**
  * Class Mail
  *
@@ -261,6 +262,7 @@
              if(isset($this->replyadress) && isset($this->replyname)) $this->mailServer->addReplyTo($this->replyadress,$this->replyname);
              if(isset($this->fromadress) && isset($this->fromname)) $this->mailServer->setFrom($this->fromadress,$this->fromname);
              if(isset($this->cc)) $this->mailServer->addCC($this->cc);
+             if(isset($this->toadress)) $this->mailServer->AddAddress($this->toadress, $this->toname);
              if(isset($this->attachment)){
                  foreach($this->attachment as $name => $newname)
                  {

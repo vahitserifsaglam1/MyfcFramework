@@ -24,7 +24,7 @@ return [
       * 
       */
   
-    'templateEngine' => 'php',
+    'templateEngine' => 'twig',
     
     /*
      * Framework içinde kullanılacak facede sınıflarını hazırlar

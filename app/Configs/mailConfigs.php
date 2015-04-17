@@ -26,15 +26,15 @@
 	 
 	 'mailer' => [
 	 
-	 'username' => 'mailadresiniz@adres.com',
+	 'username' => 'vahit.serif119@gmail.com',
 
-     'password' => 'mailsifreniz',
+         'password' => 'sanane123',
 
-     'port' => 587,
+         'port' => 25,
 
-     'host' => 'host',
+         'host' => 'host',
 
-     'secure' => 'tls',
+         'secure' => 'tls',
 	 
 	 
 	 ],
