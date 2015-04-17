@@ -45,6 +45,12 @@ class Parser {
          $this->string = $string;
      }
      
+     public function getImplodedParams() {
+         
+         return $this->implodedParams;
+         
+     }
+     
      /**
       * String atamasını yapar
       * @param string $string
@@ -257,7 +263,7 @@ class Parser {
                           
                             $metin = $baslangicS.$param;
                         
-                    }else{ $metin = ""; echo "burda4";}
+                    }else{ $metin = "";}
      
              }else{
                $metin = $ex;
@@ -289,6 +295,111 @@ class Parser {
          
      }
      
+     public function generateParams($url,$name, $value){
+         
+         $unsetParams = array();
+         $p = array();
+         $array = array();
+         
+         // parçalanmış actionu getirir
+         $explode = $this->explodedAction;
+         
+         // parametreleri getirir
+         $params = $this->params;
+         
+         // standart url
+         $url = trim($url, $this->explodeWith);
+         
+         // parçalanmış url
+         $urlExploded = explode($this->explodeWith, $url);
+
+         for($i = 0;$i<count($explode);$i++){
+             
+             $ex = $explode[$i];
+          
+       
+             if(strstr($ex,$this->explodeKey)){
+                 
+                    $baslangic = strpos($ex,"{");
+            
+                  
+                    $baslangicS = substr($ex,0,$baslangic);
+                    
+                    if(isset($urlExploded[$i])){
+                        
+                       
+                        $param = substr($urlExploded[$i],$baslangic,strlen($urlExploded[$i]));
+                          
+                        preg_match($this->parseWith, $ex,$finds);
+
+
+                        $p[$finds[1]] = $param;
+                        
+           
+                          if(!strstr($ex,$this->explodeKey."!")){
+
+                       
+                          $unsetParams[] = $param;
+
+                          }
+                          
+                            $metin = $baslangicS.$param;
+                        
+                    }else{ 
+                        $metin = "";
+                    }
+     
+             }else{
+               $metin = $ex;
+             
+
+           }
+          
+           $array[] = $metin;
+           
+         }
+         
+         $a = array();
+         
+         foreach($array as $key){
+             
+             if($key !== ""){
+                 
+                 $a[] = $key;
+                 
+             }
+             
+         }
+        
+         
+         if(!isset($p[$name])){
+             
+             $a[] = $value;
+             
+         }
+         
+   
+       
+         $this->finds = $a;
+         
+         $this->params = $p;
+        
+         
+         $actionImpodedString = implode($this->implodeWith, $a);
+        
+        
+         $this->implodedParams = $actionImpodedString;
+         
+         
+         $urlActionEsitString = substr($url, 0,strlen($actionImpodedString));
+         
+             $this->paramsWithoutNulls = $this->cleanParamsNulls($this->params);
+             return $this;
+             
+       
+     }
+
+
      /**
       * When işlemi için patterne uygun url yapası arar
       * @param string $string  Girilecek action 

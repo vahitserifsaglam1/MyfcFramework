@@ -1,9 +1,11 @@
 <?php
 
  use Myfc\Facade\Route;
+ use Myfc\Html\Pagination;
  
- Route::get('/index/{test}/{deneme}', function($test = null,$deneme = null){
+ Route::get('/', function(){
      
-     echo $test; echo $deneme;
+     $pagination = new Pagination("index/{sayfa}","sayfa");
+     $parse = $pagination->execute();
      
  });

@@ -1,9 +1,9 @@
 <?php
-namespace Myfc\DB\Creator;
+namespace Myfc\Html;
 
 /**
  *
- * @author vahitşerif
+ * @author vahitÅŸerif
  *        
  */
 class Pagination
@@ -21,9 +21,9 @@ class Pagination
      const PAGINATION_CONFIGS = 'app/Configs/paginationConfigs.php';
     /**
      *  
-     *  Başlatıcı Sınıf
+     *  BaÅŸlatÄ±cÄ± SÄ±nÄ±f
      *  
-     *   Dosyayı parçalar
+     *   DosyayÄ± parÃ§alar
      * 
      */
     public function __construct($parse)
@@ -37,7 +37,7 @@ class Pagination
             
         }else{
             
-            die('Pagination ayarları çekilemedi, dosyanız silinmş');
+            die('Pagination ayarlarÄ± Ã§ekilemedi, dosyanÄ±z silinmÅŸ');
             
         }
         
@@ -58,7 +58,7 @@ class Pagination
     }
     
     /**
-     * Stati olarak sınıfı başlatmaya yarar
+     * Stati olarak sÄ±nÄ±fÄ± baÅŸlatmaya yarar
      * @param unknown $parse
      * @return \Myfc\DB\Creator\Pagination
      */
@@ -71,7 +71,7 @@ class Pagination
     }
     
     /**
-     * ayarları değiştirir 
+     * ayarlarÄ± deÄŸiÅŸtirir 
      * @param array $configs
      * @return \Myfc\DB\Creator\Pagination
      */
@@ -86,7 +86,7 @@ class Pagination
     }
     
     /**
-     * Gelen veriyi parçalamakta kullanılır, veri return etmez(void)
+     * Gelen veriyi parÃ§alamakta kullanÄ±lÄ±r, veri return etmez(void)
      * @param array $parse
      */
     
@@ -147,7 +147,7 @@ class Pagination
     }
     
     /**
-     * Gelen veri stringse kullanılır, veri return etmez(void)
+     * Gelen veri stringse kullanÄ±lÄ±r, veri return etmez(void)
      * @param string $string
      */
     private function parseString( $string = '' )
@@ -165,7 +165,7 @@ class Pagination
     }
     
     /**
-     * Class,id,data vs gibi html kodları oluşturmak için kullanılır
+     * Class,id,data vs gibi html kodlarÄ± oluÅŸturmak iÃ§in kullanÄ±lÄ±r
      * @param array $array
      * @return string
      */
@@ -187,7 +187,7 @@ class Pagination
     }
     
     /**
-     * Ebeveyn div in sınıflarını vs özellikleri için kullanılır
+     * Ebeveyn div in sÄ±nÄ±flarÄ±nÄ± vs Ã¶zellikleri iÃ§in kullanÄ±lÄ±r
      * @return string
      */
     private function parentCreator()
@@ -202,7 +202,7 @@ class Pagination
     }
     
     /**
-     * Çocuk div lerin sınıflarını vs özellikleri için kullanılır
+     * Ã‡ocuk div lerin sÄ±nÄ±flarÄ±nÄ± vs Ã¶zellikleri iÃ§in kullanÄ±lÄ±r
      * @return string
      */
     
@@ -337,7 +337,7 @@ class Pagination
     }
     
     /**
-     * Aktif sayfayı dööndürür
+     * Aktif sayfayÄ± dÃ¶Ã¶ndÃ¼rÃ¼r
      * @return Ambigous <number, unknown, array>
      */
     
@@ -349,7 +349,7 @@ class Pagination
     }
     
     /**
-     * Açtif sayfa ataması yapar
+     * AÃ§tif sayfa atamasÄ± yapar
      * @param number $page
      * @return \Myfc\DB\Creator\Pagination
      */
@@ -364,7 +364,7 @@ class Pagination
     }
     
     /**
-     * Sayfalama yapılırkenki maxiumum sayfa sayısını belirler
+     * Sayfalama yapÄ±lÄ±rkenki maxiumum sayfa sayÄ±sÄ±nÄ± belirler
      * @param number $max
      * @return \Myfc\DB\Creator\Pagination
      */
@@ -383,7 +383,7 @@ class Pagination
     }
     
     /**
-     * Sayfalama yaparken başlanacak sayıyı belirler
+     * Sayfalama yaparken baÅŸlanacak sayÄ±yÄ± belirler
      * @param number $min
      * @return \Myfc\DB\Creator\Pagination
      */
@@ -402,7 +402,7 @@ class Pagination
     
  
      /**
-      * Max ve min ataması yapar
+      * Max ve min atamasÄ± yapar
       * @param string $max
       * @param string $min
       * @return \Myfc\DB\Creator\Pagination

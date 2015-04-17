@@ -97,29 +97,23 @@ class View {
         }
       
         
-        $path = APP_PATH.'Views/'.$path.self::TWIG_EXTENSION.self::FILE_EXTENSION;
-        
-    
-        
-        if(file_exists($path)){
-             
-            return [
+    return [
                 'filepath' => $path,
                 'templateFilePath' => $templateFilePath,
-                'templateFile' => $templateFile.self::TWIG_EXTENSION.self::FILE_EXTENSION ];
+                'templateFile' => $templateFile  ];
             
-        }else{
-            
-            return false;
-            
-        }
+      
         
     }
     
     /**
-     * İçerik oluşturma fonksiyonu
-     * @param type $path
-     * @param type $params
+     * View dosyasının temelini hazırlar, çıktıyı tamponlamak için
+     * Execute() fonksiyonu çağrılamlıdır
+     * 
+     * @param string $path dosyanın adı
+     * @param array $params gönderilecek parametreler
+     * @param boolean $autoload 
+     * @return $this
      */
 
     public function make($path = '', $params = array(),$autoload = true){
@@ -163,8 +157,19 @@ class View {
      */
     
     public function execute(){
-        
+         
+          if($this->autoload){
+              
+              $this->template->execute("header");
+              
+          }
          $this->template->execute($this->file);
+         
+         if($this->autoload){
+             
+             $this->template->execute("footer");
+             
+         }
         
         
     }
