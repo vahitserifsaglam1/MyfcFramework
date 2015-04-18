@@ -26,9 +26,9 @@
 	 
 	 'mailer' => [
 	 
-	 'username' => 'vahit.serif119@gmail.com',
+	 'username' => '',
 
-         'password' => 'sanane123',
+         'password' => '',
 
          'port' => 25,
 

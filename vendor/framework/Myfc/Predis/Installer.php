@@ -1,33 +1,24 @@
 <?php
   namespace Myfc\Predis;
-  
   use Myfc\Config;
-  
   use PredisClient;
-  
   use Exception;
-  
   use PredisAutoloader;
   
-  /**
-   * 
-   * @author vahitþerif
-   *
-   */
 
-  class  Installer
-
-  {
+  class  Installer{
+      
       /**
        * 
+       * SÄ±nÄ±fÄ±n daha Ã¶nceden kurulup kurulmadÄ±ÄŸÄ±na bakar
        * @var boolean 
        */
       protected static $installed = false;
 
         /**
-         *  Sýnýfý baþlatýr
+         *  Sï¿½nï¿½fï¿½ baï¿½latï¿½r
          */
-        public function boot(  )
+        public static function boot(  )
         {
             try{
                 
@@ -44,7 +35,7 @@
         }
 
         /**
-         * Yeni bir predis client i oluþturup döndürür
+         * Yeni bir predis client i oluÅŸturup dÃ¶ndÃ¼rÃ¼r
          * @param string $configs
          * @return \PredisClient
          */

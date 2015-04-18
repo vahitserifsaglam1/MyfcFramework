@@ -32,13 +32,21 @@ class View {
          $this->template = new Engine();
     }
     
+    public function templateConnectWith($driverName){
+        
+        $this->template->connect($driverName);
+        
+    }
+
+
     private function languageInstall($lang){
 
          $rende = array();
          
          foreach($lang as $l => $name){
              
-            $rende[] = $this->lang->rende($lang, $name);
+          
+            $rende  = array_merge($rende,$this->lang->rende($l, $name));
              
          }
          
@@ -117,10 +125,10 @@ class View {
      */
 
     public function make($path = '', $params = array(),$autoload = true){
-        
+       
          $this->autoload = $autoload;
          $num = func_num_args();
-          
+            
          if(isset($params['LANGUAGE'])){
              
              $lang = $params['LANGUAGE'];
@@ -128,9 +136,10 @@ class View {
              unset($params['LANGUAGE']);
              
              $languageParams = $this->languageInstall($lang);
-             
+
              $params = array_merge($params, $languageParams);
              
+       
          }
     
           $this->template->useTemplateParametres($params);

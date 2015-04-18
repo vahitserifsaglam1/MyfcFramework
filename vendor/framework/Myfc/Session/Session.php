@@ -18,7 +18,7 @@
       );
       
       /**
-       * Sınıfı başlatır
+       * SÄ±nÄ±fÄ± baÅŸlatÄ±r
        * @param array $configs
        */
       
@@ -39,7 +39,7 @@
       }
       
       /**
-       * Bağlayıcaya bağlanır.
+       * BaÅŸlatÄ±cÄ± sÃ¼rÃ¼cÃ¼ye baÄŸlanÄ±r
        * @param array $configs
        * @return unknown
        */
@@ -77,9 +77,9 @@
       
       /**
        *  
-       *  sınıfa yeni bir connector ekler, autocheck true ise otomatik o driverı seçer
+       *  sï¿½nï¿½fa yeni bir connector ekler, autocheck true ise otomatik o driverï¿½ seï¿½er
        *  
-       *    $call dan dönen değer bir SessionInterface e ait olmalıdır,
+       *    $call dan dï¿½nen deï¿½er bir SessionInterface e ait olmalï¿½dï¿½r,
        *    
        *    $name eklentinin ismidir
        * 
@@ -116,7 +116,7 @@
       }
       
       /**
-       * driver seçimi yapar
+       * driver seÃ§imi yapar
        * @param string $name
        */
       
@@ -135,7 +135,7 @@
       }
       
       /**
-       * Dinamik olarak fonksiyon çağırmakta kullanılır
+       * Dinamik olarak fonksiyon ï¿½aï¿½ï¿½rmakta kullanï¿½lï¿½r
        * @param string $method
        * @param array $parametres
        * @return mixed

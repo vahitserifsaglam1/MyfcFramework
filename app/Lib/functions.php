@@ -18,6 +18,7 @@ if(!function_exists('view')){
      */
     function view($dir = '',array $params = array(), $autoload = false){
         
+       
         return View::make($dir, $params, $autoload)->execute();
         
     }

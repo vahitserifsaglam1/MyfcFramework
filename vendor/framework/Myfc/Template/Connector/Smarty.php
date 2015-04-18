@@ -3,6 +3,7 @@
 namespace Myfc\Template\Connector;
 use Smarty as TemplateEngine;
 use Myfc\File;
+use Myfc\Config;
 /**
  * Myfc framework smary template desing connector sınıfı 
  * 
@@ -18,12 +19,12 @@ class Smarty extends TemplateEngine{
         
         $this->file = new File();
         parent::__construct();
-        $this->setTemplateDir(VIEW_PATH);
-        $this->setCompileDir(VIEW_PATH.'smarty/compile/');
-        $this->setConfigDir(APP_PATH.'Configs/');
-        $this->setCacheDir(APP_PATH.'Stroge/Cache/');
-        
-        $this->caching = Smarty::CACHING_LIFETIME_CURRENT;
+        $configs = Config::get('Configs','smarty');
+        $this->setTemplateDir($configs['templateDir']);
+        $this->setCompileDir($configs['compileDir']);
+        $this->setConfigDir($configs['configDir']);
+        $this->setCacheDir($configs['cacheDir']);    
+        $this->caching = $configs['cacheTime'];
     }
     
     /**
@@ -43,6 +44,10 @@ class Smarty extends TemplateEngine{
         
     }
     
+    /**
+     * İçerik gösterir
+     * @param string $file
+     */
     public function execute($file){
         
         $file = $file.".tpl";

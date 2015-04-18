@@ -215,6 +215,7 @@ class Parser {
      
      public function checkWithUrl($url){
          
+      
          $unsetParams = array();
          $p = array();
          $array = array();
@@ -278,11 +279,11 @@ class Parser {
          $this->params = $p;
          
          $actionImpodedString = implode($this->implodeWith, $array);
+        
          
+         #$urlActionEsitString = substr($url, 0,strlen($actionImpodedString));
          
-         $urlActionEsitString = substr($url, 0,strlen($actionImpodedString));
-         
-         if($actionImpodedString == $urlActionEsitString){
+         if($actionImpodedString == $url){
            
              $this->paramsWithoutNulls = $this->cleanParamsNulls($this->params);
              return $this;

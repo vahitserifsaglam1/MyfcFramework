@@ -1,11 +1,19 @@
 <?php
 namespace Myfc;
 
+/*
+ *
+ *   MyfcFramework MainController SÄ±nÄ±fÄ±
+ * 
+ *   SuperSÄ±nÄ±fdÄ±r
+ *  
+ */
+
  use Myfc\View\Loader;
  use Myfc\Singleton;
 /**
  *
- * @author vahitþerif
+ * @author vahitÅŸerf
  *        
  */
 
@@ -19,22 +27,20 @@ class MainController
     private $collection = array();
     
     /**
-     * Baþlatma Fonksiyon
+     * Baï¿½latma Fonksiyon
      */
     
     public function __construct()
     {
         
-      $this->collection['view'] = new Loader();
-      
       $this->collection['assets'] = Singleton::make('Myfc\Assets');
         
     }
     
     /**
-     * Modal Çaðýrma fonksiyonu
+     * Modal ï¿½aï¿½ï¿½rma fonksiyonu
      *  
-     *    $modal deðiþkenine atanan isimde bir modal arar ve bulursa çaðýrýr
+     *    $modal deï¿½iï¿½kenine atanan isimde bir modal arar ve bulursa ï¿½aï¿½ï¿½rï¿½r
      * 
      * @param string $modal
      */
@@ -64,9 +70,9 @@ class MainController
     }
     
     /**
-     * Dinamik olarak deðer çaðrýlmasý
+     * Dinamik olarak deï¿½er ï¿½aï¿½rï¿½lmasï¿½
      * 
-     *   $name deðiþkenin aldýðý deðer $collection içinde varsa döndürülür
+     *   $name deï¿½iï¿½kenin aldï¿½ï¿½ï¿½ deï¿½er $collection iï¿½inde varsa dï¿½ndï¿½rï¿½lï¿½r
      * 
      * @param string $name
      */
@@ -84,7 +90,7 @@ class MainController
     
     /**
      * 
-     *  Caðrýlan method sýnýfta yoksa tetiklenir
+     *  Caï¿½rï¿½lan method sï¿½nï¿½fta yoksa tetiklenir
      * 
      * @param string $name
      * @param array $parametres

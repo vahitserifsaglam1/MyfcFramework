@@ -11,6 +11,7 @@ namespace Myfc\Template;
 use Myfc\Config;
 use Myfc\Singleton;
 use Exception;
+use Myfc\Template\TemplateInterface;
 
 class Engine{
     
@@ -32,11 +33,16 @@ class Engine{
         $this->connect($this->configs);
     }
     
-    
-    private function connect($driver = ''){
+    /**
+     * Bağlantı içini yapar
+     * @param type $driver
+     * @throws Exception
+     */
+    public function connect($driver = ''){
         
         if(isset($this->driverList[$driver])){
             $this->driver = Singleton::make($this->driverList[$driver]);
+  
             
         }else{
             
@@ -46,6 +52,49 @@ class Engine{
         
         
     }
+    
+    /**
+     * Sınıfa eklenti eklemede kullanılır
+     * @param string $name
+     * @param callable $callback
+     * @param boolean $autoselect
+     * @return \Myfc\Template\Engine
+     * 
+     *  Eklentiler  Myfc\Template\TemplateInterface e ait bir instance olmak zorundadır
+     */
+    public function extension($name, callable $callback, $autoselect = false){
+        
+        if(!isset($this->driverList[$name])){
+            
+            $callback = $callback();
+            
+            
+            if($callback instanceof TemplateInterface){
+                
+                $this->driverList[$name] = get_class($callback);
+                
+            }
+            
+        }
+        
+        if($autoselect){
+            
+            $this->connect($name);
+            
+        }
+        
+        return $this;
+        
+    }
+
+  /**
+   * 
+   * Dinamik olarak driverlara yönlendirme fonksiyonu
+   * 
+   * @param string $name
+   * @param array $parametres
+   * @return mixed
+   */
     
     public function __call($name, $parametres){
         return call_user_func_array(array($this->driver, $name), $parametres);

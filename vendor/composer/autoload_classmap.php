@@ -290,6 +290,7 @@ return array(
     'Myfc\\Facade\\Crypt' => $vendorDir . '/framework/Myfc/Facede/facedes/Crypt.php',
     'Myfc\\Facade\\DB' => $vendorDir . '/framework/Myfc/DB/Facade/DB.php',
     'Myfc\\Facade\\Event' => $vendorDir . '/framework/Myfc/Facede/facedes/Event.php',
+    'Myfc\\Facade\\File' => $vendorDir . '/framework/Myfc/Facede/facedes/File.php',
     'Myfc\\Facade\\IP' => $vendorDir . '/framework/Myfc/Facede/facedes/IP.php',
     'Myfc\\Facade\\Mail' => $vendorDir . '/framework/Myfc/Facede/facedes/Mail.php',
     'Myfc\\Facade\\Redirect' => $vendorDir . '/framework/Myfc/Facede/facedes/Redirect.php',

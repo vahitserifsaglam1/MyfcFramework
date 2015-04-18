@@ -2,26 +2,23 @@
 namespace Myfc;
 
  use Myfc\DB;
- 
  use Myfc\Singleton;
- 
  use Myfc\Facade\Session as Sessions;
- 
  use Myfc\Cookie;
- 
  use Myfc\Facade\Carbon;
 /**
  *
- * @author vahit�erif
+ * @author vahitşerif
  *        
  */
 class Auth extends DB
 {
 
     private $table = 'user';
-    
     private $key = 'login';
     /**
+     * 
+     * @param string $table
      */
     public function __construct($table = '')
     {
@@ -54,11 +51,11 @@ class Auth extends DB
     }
     
     /**
-     * Girilen verilere g�re veritan�ndan sorgulama yap�l�r 
+     * Girilen verilere göre veritan�ndan sorgulama yapılır 
      *   
-     *    E�er $param1 array girilmediyse $param2 ile birlikte username, password �eklinde array olu�tururlur
+     *    Eğer $param1 array girilmediyse $param2 ile birlikte username, password �eklinde array olu�tururlur
      *    
-     *    E�er $rememberMe true ise cookie atamas� yapar
+     *    Eğer $rememberMe true ise cookie ataması yapar
      *    
      * @param string|array $param1
      * @param string $param2
@@ -75,9 +72,7 @@ class Auth extends DB
             $param1 = array('username' => $param1, 'password' => $param2);
             
         }
-        
-        
-        
+     
         if( $eslesen = $this->where($param1)->returnQuery()->rowCount())
         {
             
@@ -105,7 +100,7 @@ class Auth extends DB
     }
     
     /**
-     * Giri� yap�l�p yap�lmad���n� kontrol eder, Session da ve Cookie de $this->key i arar
+     * Giriş yapılıp yapılmadığonı kontrol eder, Session da ve Cookie de $this->key i arar
      * @return boolean
      */
     

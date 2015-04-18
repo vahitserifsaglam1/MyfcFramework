@@ -238,7 +238,7 @@
       }
       
       /**
-       * girilen parametrelere g�re yeni bir s�n�f �a�r�l�r
+       * girilen parametrelere göre yeni bir sınıf çağırır
        * @param string $className
        * @param array $parametres
        * @return object
@@ -280,13 +280,7 @@
 
       }
 
-      public function base(){
-
-          $url = $this->ayarlar['url'];
-          return '<base href="'.$url.'">';
-
-      }
-      
+     
       /**
        * Dinamik olarak method �a��rma i�lemi
        * @param string $name

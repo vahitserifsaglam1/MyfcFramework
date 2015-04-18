@@ -12,6 +12,9 @@
  use Myfc\Singleton;
  use Myfc\Container;
  use Myfc\Config;
+ use Exception;
+ 
+ 
  class Bootstrap extends Container
  {
     
@@ -60,10 +63,7 @@
     {
         foreach($providers as $pro)
         {
-
-                $this->maked[] = $pro;
-                new $pro($this);
-               
+                new $pro($this);     
             
         }
         
@@ -71,7 +71,7 @@
 
      /**
       * @return int
-      * @throws \Exception
+      * @throws Exception
       *
       *  Myfc frameworkun versionunu döndürür
       *
@@ -79,7 +79,7 @@
 
      private function version(){
 
-         if(defined("VERSION")) return VERSION;else throw new \Exception("MyfcFramework versionu bulunamadı");
+         if(defined("VERSION")) return VERSION;else throw new Exception("MyfcFramework versionu bulunamadı");
 
      }
 

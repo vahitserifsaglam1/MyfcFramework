@@ -4,6 +4,7 @@
 namespace Myfc\Template\Connector;
  use Twig_Loader_Filesystem;
  use Twig_Environment;
+ use Myfc\Config;
 /**
  * MyfcFramework Twig connector sınıfı 
  * 
@@ -20,12 +21,8 @@ class Twig {
     private $parametres;
     public function __construct(){
         
-   
-              $this->options = [
-             'debug' => false,
-             'charset' => 'utf-8',
-             'cache' => VIEW_PATH.'twig/cache', // Store cached files under cache directory
-             'strict_variables' => true,]; 
+              
+              $this->options = Config::get('Configs','twig');
             
     }
     

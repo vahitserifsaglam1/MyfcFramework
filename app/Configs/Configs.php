@@ -8,7 +8,7 @@ return [
      *  Düzenlenmesi gerek 
      * 
      */
-     'url' => 'localhost/MyfcFramework',
+     'url' => 'http://localhost/dokumantasyon',
     
     /* Default timezone atamasını İstanbula yapar */
     
@@ -25,6 +25,34 @@ return [
       */
   
     'templateEngine' => 'twig',
+    
+     /**
+     * Twig template ayarları
+     *
+     * -> sadece  twig seçili olduğunda kullanılır
+     */
+    'twig'    =>  [
+             'debug' => false,
+             'charset' => 'utf-8',
+             'cache' => false, // Store cached files under cache directory
+             'strict_variables' => true,],
+    
+    /*
+     * 
+     *  Smarty ayarları 
+     * 
+     *   -> sadece smarty seçili olduğunda kullanılır
+     *  
+     */
+    'smarty' => [
+        
+        'templateDir' => VIEW_PATH,
+        'compileDir'  => VIEW_PATH.'smarty/compile/',
+        'configDir'   => APP_PATH.'Configs/',
+        'cacheDir'    => APP_PATH.'Stroge/Cache/',
+        'cacheTime'   => Smarty::CACHING_LIFETIME_CURRENT
+         
+    ],
     
     /*
      * Framework içinde kullanılacak facede sınıflarını hazırlar
@@ -52,7 +80,8 @@ return [
         'View'   => 'Myfc\View',
         'App' => 'Myfc\App',
         'Request' => 'Myfc\Http\Request',
-        'Response' => 'Myfc\Http\Response'],
+        'Response' => 'Myfc\Http\Response',
+        'File' => 'Myfc\File'],
      
     /*
      * 

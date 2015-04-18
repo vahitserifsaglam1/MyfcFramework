@@ -350,8 +350,8 @@ class Route {
         if($selected !== null){
           
             foreach ($selected as $select){
-   
-               $parameters = $this->urlCheck($select[0]);
+                
+               $parameters = $this->urlCheck($this->nameCheck($select[0]));
                if(is_array($parameters)){
                    
                     $parameters = $this->parametresWhereCheck($parameters);
@@ -369,10 +369,26 @@ class Route {
        
     }
     
-
-
-
     /**
+     * 
+     * @param string  $name
+     * @return strıng
+     */
+     private function nameCheck($name){
+         
+         if($name == "/"){
+             
+             return "index";
+             
+         }
+         else{
+             
+             return $name;
+             
+         }
+     }
+
+         /**
      * Url kontrol işlemi yapar
      * @param string|array $param
      * @return array|boolean
@@ -422,9 +438,10 @@ class Route {
 
                 preg_match($where[$key], $value,$o);
 
+              
                 if($o){
 
-                    $params[] = $o[1];
+                    $params[] = $o[0];
 
                 }
 

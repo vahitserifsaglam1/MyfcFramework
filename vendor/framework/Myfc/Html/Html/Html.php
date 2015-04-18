@@ -1,12 +1,13 @@
 <?php
 
  namespace Myfc\Html;
+ use Myfc\Config;
 /**
  * Class Html
  *
  *  ******************************
  *
- *   Myfcframework Add sýnýfý : iþlev ;
+ *   Myfcframework Add sï¿½nï¿½fï¿½ : iï¿½lev ;
  *
  *   Add::div
  *
@@ -14,10 +15,13 @@
  *
  *   Add::a
  *
- *   Add dan sonraki fonksiyon ismiyle yeni bir html elementi oluþturur
+ *   Add dan sonraki fonksiyon ismiyle yeni bir html elementi oluï¿½turur
  */
 class Html
 {
+    
+
+      
     /**
      * @param $name
      * @param $params

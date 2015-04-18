@@ -56,7 +56,7 @@ namespace Myfc;
      }
      
      /**
-      * Ram kullan�m�n� kar��la�t�r�r
+      * Ram kullanımını kar��la�t�r�r
       * @param unknown $start
       * @param unknown $finish
       * @return Ambigous <number, boolean>
