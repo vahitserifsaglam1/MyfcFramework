@@ -11,13 +11,9 @@
       
       
       public $server;
-      
       public $ayarlar;
-      
       public $get;
-      
       protected $bind;
-      
       public $maked = array();
       
       /**
@@ -29,17 +25,10 @@
       
       public function __construct( Server $server, array $ayarlar, array $get){
           
-          
-          
-          $this->server = $server;
-          
+          $this->server = $server; 
           $this->ayarlar = $ayarlar;
-          
           $this->get = $get;
-
-          
           $this->adapter->assests->returnGet();
-
           $this->runRoute();
 
       }

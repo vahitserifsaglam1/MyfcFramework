@@ -4,9 +4,9 @@ namespace Myfc\File\App;
  use Exception;
 /**
  *
- * @author vahitþerif
+ * @author vahitï¿½erif
  * 
- *  Seçilen dosyanýn alt, üst , tip , boyut vs özellikleri bulunur
+ *  SeÃ§ilen dosyanÄ±n alt, Ã¼st , tip , boyut vs ï¿½zellikleri bulunur
  *        
  */
 class Finder
@@ -19,7 +19,7 @@ class Finder
     public $index = array();
     
     /**
-     * Sýnýfý baþlatýr ve eðer file null girilmemiþse dosyanýn özelliklerini indexler
+     * Sï¿½nï¿½fï¿½ baï¿½latï¿½r ve eï¿½er file null girilmemiï¿½se dosyanï¿½n ï¿½zelliklerini indexler
      * @param string $file
      */
     public function __construct( $file = null)
@@ -36,7 +36,7 @@ class Finder
     }
     
     /**
-     * Dosyanýn özelliklerini okur
+     * Dosyanï¿½n ï¿½zelliklerini okur
      * @param unknown $file
      */
     
@@ -67,7 +67,7 @@ class Finder
     }
     
     /**
-     * Dosyanýn adýný bulur
+     * Dosyanï¿½n adï¿½nï¿½ bulur
      * @param string $file
      * @return mixed
      */
@@ -112,7 +112,7 @@ class Finder
     }
     
     /**
-     * Dosyanýn tipini döndürür
+     * Dosyanï¿½n tipini dï¿½ndï¿½rï¿½r
      * @param unknown $file
      * @return mixed
      */
@@ -149,7 +149,7 @@ class Finder
     }
     
     /**
-     * Üst klasörlere döndüren kod
+     * ï¿½st klasï¿½rlere dï¿½ndï¿½ren kod
      * @param number $folder
      * @return string|boolean
      */
@@ -206,7 +206,7 @@ class Finder
     }
     
     /**
-     * Adapter dan çaðýrýlýrken kullanýlacak ismi
+     * Adapter dan ï¿½aï¿½ï¿½rï¿½lï¿½rken kullanï¿½lacak ismi
      * @return string
      */
     
@@ -218,7 +218,7 @@ class Finder
     }
     
     /**
-     * Adapter standart fonksiyonlarý
+     * Adapter standart fonksiyonlarï¿½
      */
     
     public function boot()
@@ -238,7 +238,7 @@ class Finder
             
         }else{
             
-            throw new Exception( sprintf( "%s adýnda bir parametre bulunamadý", $name));
+            throw new Exception( sprintf( "%s adï¿½nda bir parametre bulunamadï¿½", $name));
             
         }
         
