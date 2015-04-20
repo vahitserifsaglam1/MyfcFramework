@@ -2,7 +2,8 @@
 
 use Myfc\Facade\View;
 use Myfc\Facade\CSRF;
-
+use Myfc\Error;
+use Myfc\Error\MyfcErrorException;
 /*
  * View oluşturma fonksiyonu
  */
@@ -24,8 +25,6 @@ if(!function_exists('view')){
     }
     
 }
-
-
 if(!function_exists('compact')){
     
     /**
@@ -101,6 +100,41 @@ if(!function_exists('compact')){
      }
      
  }
-
+ 
+ /**
+  * 
+  *  MyfcFramework oluşan exceptionları algılamak için kullanılır
+  * 
+  */
+ if(!function_exists('set_myfc_exception_handler')){
+     
+     function set_myfc_exception_handler(Exception $e){
+         
+         new Error($e, Error::EXCEPTION_HANDLER);
+         
+     }
+     
+ }
+ 
+ /**
+  * 
+  *  MyfcFramework oluşan hataları algılamak için kullanılır 
+  * 
+  */
+ if(!function_exists('set_myfc_error_handler')){
+     
+     function set_myfc_error_handler($errno, $errstr, $errfile, $errline){
+         
+         $error = new Error(null , Error::ERROR_HANDLER);
+         
+         $error->setException( new MyfcErrorException($errno, $errstr, $errfile, $errline) );
+         
+     }
+     
+ }
+   // Oluşan hatalar artık myfc error handler tarafından alınacak
+   set_error_handler('set_myfc_error_handler');
+   // oluşan exceptionlar artık myfc exception handler tarafından alınacak
+   set_exception_handler('set_myfc_exception_handler');
 
 

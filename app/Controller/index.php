@@ -23,17 +23,7 @@ use Myfc\Facade\App;
    
          
      }
-	 
-	 
-    public function test(){
-        
-        App::make('modal@user');
-        
-               
-    }
-    
-
-
+   
   }
 
 ?>
