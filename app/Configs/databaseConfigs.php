@@ -18,7 +18,7 @@
                'dbname'   =>  'kutup',
                'username' =>  'root',
                'password' =>  '',
-               'charset'  =>  'utf-8',
+               'charset'  =>  'latin5',
                'driver'   =>  'pdo'
 
            ],

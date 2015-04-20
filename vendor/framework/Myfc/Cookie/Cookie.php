@@ -59,7 +59,7 @@
         public static function get($name = '')
         {
 			
-            if(isset($_Cookie[$name])) return $_COOKIE[$name];else return false;
+            if(isset($_COOKIE[$name])) return $_COOKIE[$name];else return false;
 			
         }
 

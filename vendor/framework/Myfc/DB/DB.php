@@ -30,8 +30,6 @@ namespace Myfc;
  
      private $with;
  
-     private $specialWhere;
- 
      private $like;
  
      private $specialLike;
@@ -41,8 +39,6 @@ namespace Myfc;
      private $or_where;
 
      private $order;
- 
-     private $special_or_where;
  
      const EXTENDTABLE =  'table';
  
@@ -97,6 +93,7 @@ namespace Myfc;
      public function __construct( $table = '' )
      {
  
+         
          if($table !== '')
          {
               
@@ -121,6 +118,7 @@ namespace Myfc;
                   
              }
               
+          
          }
           
           
@@ -139,7 +137,20 @@ namespace Myfc;
  
  
      }
- 
+    
+     /**
+      * Sınıftaki değerleri kullanıma hazırlar, notice hatalarını önler
+      */
+     private function readyForUse(){
+         
+         $this->where[$this->selectedTable] = array();
+         $this->like[$this->selectedTable] = array();
+         $this->limit[$this->selectedTable] = array();
+         $this->order[$this->selectedTable] = array();
+         $this->or_where[$this->selectedTable] = array();
+     }
+
+
      /**
       * Static olarak sınfı başalatır
       * @param string $table
@@ -208,7 +219,7 @@ namespace Myfc;
          }
  
           
-          
+           $this->readyForUse();
  
  
      }
@@ -276,32 +287,80 @@ namespace Myfc;
 
      }
  
-     /**
-      * Where Sorgusu Ekler
-      *
-      *  Örnek Kullanım : $db->where( array('id' => 1 ) )
-      *
-      * @param array $where
-      * @return \Myfc\DB
-      */
+    /**
+     * 
+     *  Örnek kullanımlar 
+     * 
+     *  ->where(array($baslangic, $orta, $son))
+     *  ->where($baslangic,$orta))
+     *  ->where($baslangic, $orta,$son))
+     *  ->where(array($baslangic => $son)) // $orta = "=" ->default
+     * 
+     * @param mixed $whereBaslangic
+     * @param mixed $whereOrta
+     * @param mixed $whereSon
+     * @param mixed $orwherekey 
+     * @return \Myfc\DB
+     */
  
-     public function where(  $where = array() )
+     public function where($whereBaslangic = array(), $whereOrta = null, $whereSon = null, $orwhereKey = null )
      {
  
-         if(!is_array($where))
-         {
- 
-             $args = func_get_args();
-             $where = array($args[0] => $args[1]);
- 
-         }
- 
+        $where =  $this->whereParser($whereBaslangic,$whereOrta,$whereSon, $orwhereKey);
           
-         $this->where[$this->selectedTable][] = $where;
-         $this->autoQuery();
- 
          return $this;
  
+     }
+     
+     /**
+      * 
+      * @param type $whereBaslangic
+      * @param type $whereOrta
+      * @param type $whereSon
+      * @param type $orwhereKey
+      */
+     private function whereParser($whereBaslangic = array(), $whereOrta = null, $whereSon = null, $orwhereKey = null)
+     {
+       
+         if($whereBaslangic && $whereOrta && !$whereSon){
+             
+             $this->where[$this->selectedTable][] = array($whereBaslangic => $whereOrta);
+             
+         }
+         elseif($whereBaslangic && $whereOrta && $whereSon && !$orwhereKey){
+             
+             $this->where[$this->selectedTable][] = array($whereBaslangic,$whereOrta,$whereSon);
+             
+         }elseif($whereBaslangic && $whereOrta && $whereSon && $orwhereKey){
+            
+             $this->or_where[$this->selectedTable][] = array($whereOrta,$whereSon,$orwhereKey);
+             
+         }
+         elseif(is_array($whereBaslangic)){
+             
+             if(isset($whereBaslangic[0])){
+                 
+                 $test = count($whereBaslangic[0]);
+                 
+                 if($test == 2){
+                     
+                 $this->where[$this->selectedTable] = array_merge($this->where[$this->selectedTable], $whereBaslangic);
+                     
+                 }elseif($test === 3){
+                     
+                     $this->where[$this->selectedTable] = array_merge($this->specialWhere[$this->selectedTable],$whereBaslangic);
+                     
+                 }elseif($test === 4){
+                     
+                     $this->or_where[] = array($whereBaslangic[1], $whereBaslangic[2],$whereBaslangic[3]);
+                     
+                 }
+                 
+             }
+             
+         }
+         
+         
      }
 
      /**
@@ -316,95 +375,6 @@ namespace Myfc;
          return $this;
 
      }
- 
-     /**
-      * Sorguya where tanımı ekler(or)
-      * @param unknown $where
-      * @return \Myfc\DB
-      */
- 
-     public function or_where( $where = array() )
-     {
- 
-         if(!is_array($where))
-         {
- 
-             $args = func_get_args();
-             $where = array($args[0] => $args[1]);
- 
-         }
- 
-          
-         $this->or_where[$this->selectedTable][] = $where;
-         $this->autoQuery();
- 
-         return $this;
- 
- 
-     }
- 
-     public function special_or_where($where = array() )
-     {
- 
-         if(!is_array($where))
-         {
- 
-             $args = func_get_args();
- 
-             $where = array($args[0] => $args[1]);
- 
-         }
- 
-         $this->special_or_where[$this->selectedTable][] = $where;
- 
-         $this->autoQuery();
- 
-         return $this;
- 
-     }
- 
-     /**
-      * �zelle�tirilebilir Where sorgusu Ekler (�o�ul ekleme i�in)
-      *
-      *  �rnek Kullan�m : $db->addSpecialWhere( array( $id , '<' $ids ), ... )
-      *
-      * @param array $array
-      * @return \Myfc\DB
-      */
- 
-     public function addSpecialWhere( array $array )
-     {
-         foreach($array as $key)
-         {
- 
-             $this->specialWhere[$this->selectedTable][] = $key;
- 
-         }
- 
-         $this->autoQuery();
-         return $this;
-     }
- 
-     /**
-      * �zelle�tirilebilir where sorgusu ekler (tekil ekleme i�in )
-      *
-      *   �rnek Kullan�m : $db->addSpecial($id,'<',$ids)
-      *
-      * @param unknown $ilk
-      * @param unknown $orta
-      * @param unknown $son
-      * @return \Myfc\DB
-      */
- 
-     public function addSpecial($ilk,$orta,$son){
- 
-         $this->specialWhere[$this->selectedTable][] = func_get_args();
- 
-         $this->autoQuery();
- 
-         return $this;
-     }
- 
      /**
       * ��eri �ekilecek di�er tabloyu ekler
       * @param string $wid
@@ -507,38 +477,7 @@ namespace Myfc;
  
      }
  
-     public function addOrWhere(array $array){
  
-         $array = array_push($this->or_where[$this->selectedTable],$array);
- 
-         $this->or_where[$this->selectedTable] = $array;
- 
-         return $this;
- 
-     }
- 
-     /**
-      *
-      *  �rnek Kullan�m : $db->addSpecialLike( array( array('%',$id','%'), ...))
-      *
-      * Sorguya �zel Like ekler
-      * @param array $array
-      */
- 
-     public function addSpecialLike( array $array )
-     {
- 
-         foreach($array as $key){
- 
-             $this->specialLike[$this->selectedTable][] = $key;
- 
-         }
- 
-         $this->autoQuery();
- 
-         return $this;
- 
-     }
  
      /**
       * Limit atamas� yapar
@@ -644,6 +583,8 @@ namespace Myfc;
  
      private function wither($with,$where)
      {
+         
+         
          reset($where);
  
          list($key,$value) = each($where);
@@ -671,13 +612,21 @@ namespace Myfc;
  
      private function specialer( array $special = array() )
      {
-         $s = " AND ";
+         
+      
+         if(count($special) > 0){
+             
+                      $s = " AND ";
          foreach($special as $array ){
  
              $s .= $array[0].' '.$array[1].' '."'{$array[2]}' AND ";
  
          }
          return rtrim($s," AND ");
+             
+         }
+         
+
      }
  
      /**
@@ -689,42 +638,87 @@ namespace Myfc;
  
      private function wherer(array $array = array())
      {
-         $s = "";
-
-         foreach($array as $a)
-         {
-
-
-             foreach ( $a as $whereKey => $whereValue) {
-
-                 $whereValue = $this->connector->quote($whereValue);
-                 $s .= $whereKey . '=' . "$whereValue AND ";
-             }
-
- 
-         }
-
-         $s = rtrim($s, " AND ");
- 
-         if(is_array($this->or_where[$this->selectedTable]))
-         {
- 
-             $s .= $this->or_wherer($this->or_where[$this->selectedTable]);
- 
-         }
- 
-         if(is_array($this->specialWhere[$this->selectedTable]))
-         {
-             $s .= $this->specialer($this->specialWhere[$this->selectedTable]);
- 
-         }
- 
- 
- 
-         $return = $s;
- 
-         return $return;
- 
+         
+         $s = " AND ";
+        if(count($array) > 0){
+            
+            
+            foreach($array as $key){
+                
+                
+                // foreach parçalama başladı
+                
+                
+                // standart where
+                 if(count($key) == 1){
+                 
+                     
+                 
+                     foreach($key as $keyparsingone => $valueparsingone){
+                         
+                         $s .= "'$keyparsingone' = '$valueparsingone' AND ";
+                         
+                     }
+                 
+                     
+                 }
+                 
+                 //
+                 
+                 if(count($key) == 3){
+                     
+                     $s .= " '{$key[0]}' {$key[1]} '{$key[2]}' AND ";
+                     
+                 }
+                
+                //
+                
+                
+                
+            }
+            
+            $s = ltrim($s, " AND ");
+            
+            
+            
+            if(count($this->or_where[$this->selectedTable])){
+                
+                 if($s != ''){
+                     
+                     
+                     $bas = ' OR ';
+                     
+                 }else{
+                     
+                     $bas = '';
+                     
+                 }
+                 
+                 $or = "";
+                 
+                 foreach($this->or_where as $orkey){
+                     
+                     foreach($orkey as $orkeyv){  
+                       
+                     $or .= "'{$orkeyv[0]}' {$orkeyv[1]} '{$orkeyv[2]}' OR ";                         
+                     }
+                
+                 }
+                 $s = rtrim($s, " AND ");
+                 $or = $bas.$or;
+                 $or = rtrim($or, " OR ");
+                
+            }else{
+                
+                $s = rtrim($s, " AND ");
+                
+            }
+            
+            $s .= $or;
+      
+            echo $s;
+      
+        }
  
      }
  
@@ -742,12 +736,6 @@ namespace Myfc;
  
          }
  
-         if(is_array($this->special_or_where[$this->selectedTable]))
-         {
- 
-             $s .= $this->special_or_wherer($this->special_or_where[$this->selectedTable]);
- 
-         }
  
          return rtrim($s, " OR ");
  
@@ -822,11 +810,16 @@ namespace Myfc;
  
      }
 
-     private function orderer(array $order){
+     private function orderer(array $order = null){
 
-         $s = '';
+         if($order !== null){
+             
+                    $s = '';
 
          return "ORDER BY {$order[0]} {$order[1]}";
+             
+         }
+  
 
      }
  
@@ -922,13 +915,18 @@ namespace Myfc;
      }
  
      /**
+      * 
+      * sorgudaki limit query sini yapar
       * @param $limit
       * @return string
       */
  
      public function limiter($limit)
      {
-         $limitbaslangic = $limit[0];
+         
+         if(count($limit) > 0){
+             
+        $limitbaslangic = $limit[0];
  
          $return = $limitbaslangic;
  
@@ -940,6 +938,9 @@ namespace Myfc;
  
          return $return;
  
+             
+         }
+        
  
  
      }
@@ -953,7 +954,7 @@ namespace Myfc;
      {
  
          $s = '';
-         if (is_array($getter)) {
+         if (is_array($getter) && count($getter) > 0) {
              foreach ($getter as $selectKey) {
                  $s .= $selectKey . ',';
              }
@@ -1048,8 +1049,9 @@ namespace Myfc;
  
          }
 
-         if(is_array($order)){
+         if(is_array($order) && count($order) > 0){
 
+             
              $order = $this->orderer($order[0]);
 
          }

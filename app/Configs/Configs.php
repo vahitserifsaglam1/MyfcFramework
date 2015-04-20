@@ -100,4 +100,5 @@ return [
         'Myfc\Providers\Language\Installer',
         'Myfc\Providers\Event\Installer',
         #'Myfc\Providers\Route\Runner',
-        'Myfc\Providers\Config' ] ];
+        'Myfc\Providers\Config',
+        'Myfc\Providers\App\Installer' ] ];

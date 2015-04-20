@@ -4,9 +4,5 @@
  
  
  
- Route::get('/', function(){
-    
-   
-   
- });
+ Route::get('/', 'index@test');
  
