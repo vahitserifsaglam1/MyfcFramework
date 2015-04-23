@@ -722,39 +722,6 @@ namespace Myfc;
  
      }
  
-     private function or_wherer(array $array){
- 
-         $s = " OR ";
- 
-         foreach($array as $a)
-         {
- 
-             foreach ( $a as $whereKey => $whereValue) {
-                 $whereValue = $this->connector->quote($whereValue);
-                 $s .= $whereKey . '=' . "$whereValue OR ";
-             }
- 
-         }
- 
- 
-         return rtrim($s, " OR ");
- 
- 
-     }
- 
-     private function special_or_wherer(array $specialer){
- 
-         $s = "OR ";
-         foreach($specialer as $array ){
- 
-             $a = $this->connector->quote($array[2]);
-             $s .= $array[0].' '.$array[1].' '."'{$a}' OR ";
- 
-         }
-         return rtrim($s," OR ");
- 
- 
-     }
  
      /**
       * @param array $array

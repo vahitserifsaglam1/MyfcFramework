@@ -19,12 +19,19 @@ return [
       *   MyfcFrameworkde view dosyalarınızı hazırlarken kullanacağınız template engine
       *   2 engine desteklenir => smarty
       *                           twig
+      *                           MyfcTemplate // yapım aşamasında
       * 
       *   Eğer engine kullanmak istemiyorsanız 'php' girmeniz gerekir
       * 
       */
   
     'templateEngine' => 'twig',
+    
+    'MyfcTemplate' => [
+        
+        'templatePath' => VIEW_PATH,
+        'fileExtension' => '.myfc.php'
+    ],
     
      /**
      * Twig template ayarları

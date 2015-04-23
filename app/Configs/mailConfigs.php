@@ -26,9 +26,9 @@
 	 
 	 'mailer' => [
 	 
-	 'username' => 'asdasd',
+	 'username' => 'mail@host.com',
 
-         'password' => 'asdasd',
+         'password' => 'sifre',
 
          'port' => 25,
 

@@ -127,6 +127,12 @@ class File
         
     }
     
+    public function getIniPath() {
+        
+        return $this->in;
+        
+    }
+    
     /**
      * Dosyan�n olup olmad���n� kontrol eder
      * @param unknown $path

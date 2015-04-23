@@ -1,7 +1,8 @@
 <?php
 
 use Myfc\MainController;
-use Myfc\Facade\App;
+use Myfc\Template\MyfcTemplate;
+use Myfc\Template\MyfcTemplate\MyfcTemplateExtensionManager;
 /**
  * Class index
  *
@@ -23,7 +24,8 @@ use Myfc\Facade\App;
    
          
      }
-   
+     
+
   }
 
 ?>

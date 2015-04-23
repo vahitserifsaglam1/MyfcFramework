@@ -249,6 +249,48 @@
          return $halt ? null : $responses;
          
      }
+        /**
+         * 
+         * @param string $event
+         * @param array $payload
+         */
+     	public function push($event, $payload = array())
+	{
+		$this->listen($event.'_pushed', function() use ($event, $payload)
+		{
+			$this->fire($event, $payload);
+		});
+	}
+        
+        
+        /**
+	 *
+	 * @param  string  $subscriber
+	 * @return void
+	 */
+	public function subscribe($subscriber)
+	{
+		$subscriber = $this->resolveSubscriber($subscriber);
+
+		$subscriber->subscribe($this);
+	}
+
+	/**
+	 * 
+	 *
+	 * @param  mixed  $subscriber
+	 * @return mixed
+	 */
+	protected function resolveSubscriber($subscriber)
+	{
+		if (is_string($subscriber))
+		{
+			return $this->container->make($subscriber);
+		}
+
+		return $subscriber;
+	}
+
      
      /**
       * Listeneri siler
@@ -267,6 +309,20 @@
      {
          return end($this->firing);
      }
+     
+     /**
+      * 
+      *  Fire ateşlemesi yapar
+      * 
+      * @param string $event
+      * @param params $payload
+      * @return mixed
+      */
+     
+     public function until($event, $payload = array())
+	{
+		return $this->fire($event, $payload, true);
+	}
       
       
      

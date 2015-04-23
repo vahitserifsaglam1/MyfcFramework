@@ -18,7 +18,7 @@
         */
        
        
-       public function __construct(Exception $e = null, $type = self::ERROR_HANDLER){
+       public function __construct( $e = null, $type = self::ERROR_HANDLER){
            
          $this->exception = $e;
          
@@ -61,6 +61,7 @@
        
        public function setException($exception){
            
+       
            $this->exception = $exception;
            
            return $this;

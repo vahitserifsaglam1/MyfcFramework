@@ -125,9 +125,13 @@ if(!function_exists('compact')){
      
      function set_myfc_error_handler($errno, $errstr, $errfile, $errline){
          
-         $error = new Error(null , Error::ERROR_HANDLER);
          
-         $error->setException( new MyfcErrorException($errno, $errstr, $errfile, $errline) );
+         if($errno !== 0 && $errno !== E_NOTICE && $errno !== E_WARNING){
+             
+                  $error = new Error(new MyfcErrorException($errno, $errstr, $errfile, $errline) , Error::ERROR_HANDLER);
+             
+         }
+    
          
      }
      

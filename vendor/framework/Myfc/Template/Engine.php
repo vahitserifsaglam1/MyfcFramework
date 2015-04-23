@@ -19,7 +19,8 @@ class Engine{
         
         'php' => 'Myfc\Template\Connector\noTemplate',
         'smarty' => 'Myfc\Template\Connector\Smarty',
-        'twig'  => 'Myfc\Template\Connector\Twig'
+        'twig'  => 'Myfc\Template\Connector\Twig',
+        'MyfcTemplate' => 'Myfc\Template\Connector\MyfcTemplate'
         
     );
     
