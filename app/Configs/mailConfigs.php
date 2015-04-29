@@ -25,24 +25,30 @@
      [
 	 
 	 'mailer' => [
+             
+             'forget' => [
+                 
+                 	 
+	         'username' => 'asdasd',
+
+                 'password' => 'asdasd',
+
+                 'port' => 25,
+
+                 'host' => 'host',
+
+                 'secure' => 'tls',
 	 
-	 'username' => 'mail@host.com',
+                 
+             ]
 
-         'password' => 'sifre',
-
-         'port' => 25,
-
-         'host' => 'host',
-
-         'secure' => 'tls',
-	 
 	 
 	 ],
 	 
 	 'mailgun' => [
 	   
 	    'domain' => 'your mailgun domain',
-		'secret' => 'your mailgun secret'
+		'key' => 'your mailgun secret'
 	   
 	 ]
 

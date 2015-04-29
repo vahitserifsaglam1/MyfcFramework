@@ -11,6 +11,12 @@
               'host' => '127.0.0.1',
               'port' => 11211
 
+          ],
+          
+          'file' => [
+              
+              'path' => APP_PATH.'Stroge/Cache'
+              
           ]
 
       ],

@@ -7,7 +7,7 @@
  * 
  *  Route::get($param, array('before' => 'auth', 'name' => 'name', 'use' => 'controller@method'));
  * 
- *  Route::get($param, array('before' => 'auth', 'name' => 'name', 'use' => callable function));
+ *  Route::get($param, array('before' => 'auth', 'name' => 'name', 'use' => callable function)); => check => 'https'
  * 
  *  Route::group(array('before' => 'auth'))
  * 
@@ -23,6 +23,7 @@ use Myfc\Route\RouteCollection;
 use Myfc\Support\String\Parser;
 use Myfc\Bootstrap;
 use Myfc\Http\Response;
+use Myfc\Http\Request;
 use Exception;
 /**
  *  Route
@@ -91,7 +92,7 @@ class Route {
      */
     public function __call($name, $arguments) {
         
-        return call_user_func_array(array($this->collection, $name), $arguments);
+        return call_user_func_array([$this->collection, $name], $arguments);
         
     }
     
@@ -229,9 +230,9 @@ class Route {
      * @return boolean
      */
     
-    private function filterChecker(array $pattern = array()){
+    private function filterChecker(array $pattern = []){
         
-        $before = (isset($pattern['before'])) ? $this->before($pattern):array();
+        $before = (isset($pattern['before'])) ? $this->before($pattern):[];
         
         if($before){
             
@@ -262,7 +263,7 @@ class Route {
            
        }elseif(is_string($before)){
            
-           $array['filters'] = array($before);
+           $array['filters'] = [$before];
            
        }elseif(is_array($before)){
            
@@ -293,7 +294,7 @@ class Route {
     
     private function getFilterPatternKey(array $pattern , $key){
         
-        return (isset($pattern[$key])) ? (array) $pattern[$key]:array();
+        return (isset($pattern[$key])) ? (array) $pattern[$key]:[];
         
     }
 
@@ -304,7 +305,7 @@ class Route {
      * @param array $parametres
      * @return mixed
      */
-    private function runFilter($key,array $parametres = array()) {
+    private function runFilter($key,array $parametres = []) {
         
          $filters = $this->collection->getFilters();
          
@@ -331,7 +332,7 @@ class Route {
             
         }else{
             
-            return array($filter);
+            return [$filter];
             
         }
         
@@ -430,7 +431,7 @@ class Route {
         
          $where = $this->collection->getWhere();
          
-         $params = array();
+         $params = [];
          
          foreach($parametres as $key => $value){
              
@@ -534,8 +535,17 @@ class Route {
             $contuine = $this->filterChecker($callback['before']);
             
         }
+       
+        if(isset($callback['check'])){
+        
+             $contuine = $this->callbackArrayCheck($callback['check']);
+             
+        }
+    
         
         if($contuine){
+            
+        
             
             if(isset($callback['name'])){
                 
@@ -553,6 +563,50 @@ class Route {
             
             
         }
+        
+    }
+    
+    /**
+     * HTTPS ve AJAX kontrolu yapar
+     * @param string $check
+     * @return boolean
+     */
+    private function callbackArrayCheck($check){
+        
+        $check = mb_convert_case($check,MB_CASE_UPPER);
+        
+        $request = Request::this();
+        
+        switch ($check){
+            
+            case 'HTTPS':
+                
+            if($request->isHttps()){
+                
+                return true;
+                
+            }
+                
+                break;
+                
+            case 'AJAX':
+                
+                if($request->isAjax()){
+                    
+                    return true;
+                    
+                }
+                
+                break;
+                
+            default:
+                
+                return false;
+                
+               break;
+            
+        }
+        
         
     }
     
@@ -577,15 +631,23 @@ class Route {
         
     }
     
+    /**
+     * Callback kısmındaki use i ayarlar
+     * @param type $callbackuse
+     * @param type $parametres
+     * @return type
+     * @throws Exception
+     */
+    
     private function callbackUseControllerRunner($callbackuse, $parametres){
         
         list($controller, $method) = $this->useControllerParse($callbackuse);
      
-        $controller =  $this->bootstrap->make('controller@'.$controller, array(), true);
+        $controller =  $this->bootstrap->make('controller@'.$controller, [], true);
         
         if(is_callable(array($controller,$method)) || method_exists($controller, $method)){
             
-            return call_user_func_array(array($controller,$method), $parametres);
+            return call_user_func_array([$controller,$method], $parametres);
             
         }else{
             

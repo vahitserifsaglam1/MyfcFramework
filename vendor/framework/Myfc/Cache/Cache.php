@@ -17,14 +17,14 @@ class Cache {
 
      private $configs;
 
-     public $driverList = array(
+     public $driverList = [
 
          'apc' => 'Myfc\Cache\Connector\apc',
          'file' => 'Myfc\Cache\Connector\file',
          'predis' => 'Myfc\Cache\Connector\predis',
          'memcache' => 'Myfc\Cache\Connector\memcache'
 
-     );
+     ];
 
     public function __construct( array $configs = null)
     {
@@ -47,7 +47,7 @@ class Cache {
      * @return mixed
      */
 
-    private function connectToConnector(array $configs)
+    private function connectToConnector(array $configs = [])
     {
 
         $driver = $configs['driver'];
@@ -96,6 +96,8 @@ class Cache {
     {
 
         $return = $call();
+        
+        // gelen sınıfın bir cacheınterfa e ait olup olmadığna bakıyoruz
 
         if($return instanceof CacheInterface)
         {
@@ -146,10 +148,10 @@ class Cache {
     private function call($method,array $parametres)
     {
 
-        if(is_callable(array($this->connector,$method)))
+        if(is_callable([$this->connector,$method]))
         {
 
-            return call_user_func_array(array($this->connector, $method), $parametres);
+            return call_user_func_array([$this->connector, $method], $parametres);
 
         }
 

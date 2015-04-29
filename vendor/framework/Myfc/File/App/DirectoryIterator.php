@@ -3,9 +3,9 @@ namespace Myfc\File\App;
 
 /**
  *
- * @author vahitþerif
+ * @author vahitï¿½erif
  * 
- *  Sýnýflarda klasörlerin içeriklerini, klasörlerini listelemek için kullanýlacak
+ *  Sï¿½nï¿½flarda klasï¿½rlerin iï¿½eriklerini, klasï¿½rlerini listelemek iï¿½in kullanï¿½lacak
  *        
  */
 class DirectoryIterator
@@ -13,21 +13,21 @@ class DirectoryIterator
     /*
      *  @var $folder
      *  
-     *  Seçilen klasör tutulur
+     *  Seï¿½ilen klasï¿½r tutulur
      */
     public $folder;
     
     
     
-    public $folders = array();
+    public $folders = [];
     
-    public $files=array();
+    public $files   = [];
     
-    public $mixed = array();
+    public $mixed   = [];
     
     /**
      * 
-     * Sýnýfý baþlatýr eðer bir dosya giriþi yapýlmýþsa onu listeler
+     * Sï¿½nï¿½fï¿½ baï¿½latï¿½r eï¿½er bir dosya giriï¿½i yapï¿½lmï¿½ï¿½sa onu listeler
      * @param null $folder
      */
    public function __construct( $folder = null )
@@ -70,7 +70,7 @@ class DirectoryIterator
     }
     
     /**
-     * Klasördeki dosyalarý okur
+     * Klasï¿½rdeki dosyalarï¿½ okur
      * @return string
      */
     public function readFiles()
@@ -99,7 +99,7 @@ class DirectoryIterator
     }
     
     /**
-     * Klasördeki klasörleri okur
+     * Klasï¿½rdeki klasï¿½rleri okur
      */
     
     public function readFolders()
@@ -125,7 +125,7 @@ class DirectoryIterator
     
     /**
      *  
-     *   Dosyalarý Döndürür
+     *   Dosyalarï¿½ Dï¿½ndï¿½rï¿½r
      * 
      * @return multitype:
      */
@@ -138,7 +138,7 @@ class DirectoryIterator
     
     /**
      *  
-     *   Klasörleri Döndürür
+     *   Klasï¿½rleri Dï¿½ndï¿½rï¿½r
      * 
      * @return multitype:
      */
@@ -151,7 +151,7 @@ class DirectoryIterator
     
     /**
      *  
-     *   Tüm içeriði Döndürür
+     *   Tï¿½m iï¿½eriï¿½i Dï¿½ndï¿½rï¿½r
      *  
      * @return multitype:
      */
@@ -163,7 +163,7 @@ class DirectoryIterator
     }
     
     /**
-     * Listelemede noktalarý temizlek için kullanýlacak
+     * Listelemede noktalarï¿½ temizlek iï¿½in kullanï¿½lacak
      * @param string $realpath
      * @return boolean
      */
@@ -184,7 +184,7 @@ class DirectoryIterator
     }
     
     /**
-     * Girilen yoldaki içeriðin dosya olup olmadýðýný kontrol eder
+     * Girilen yoldaki iï¿½eriï¿½in dosya olup olmadï¿½ï¿½ï¿½nï¿½ kontrol eder
      * @param unknown $file
      * @return boolean
      */
@@ -207,7 +207,7 @@ class DirectoryIterator
     }
     
     /**
-     * Girilen yoldaki içeriðin klasör olup olmadýðýný kontrol eder
+     * Girilen yoldaki iï¿½eriï¿½in klasï¿½r olup olmadï¿½ï¿½ï¿½nï¿½ kontrol eder
      * @param unknown $folder
      * @return boolean
      */
@@ -232,7 +232,7 @@ class DirectoryIterator
     }
     
     /**
-     * Aranan bir türdeki içerikleri döndürür
+     * Aranan bir tï¿½rdeki iï¿½erikleri dï¿½ndï¿½rï¿½r
      * @param string $type
      */
     public function getType($type = '')
@@ -255,7 +255,7 @@ class DirectoryIterator
     }
     
     /**
-     * Adapter sýnýfýnýn sýnýfý içerikleyebilmesi için kullanýlacak
+     * Adapter sï¿½nï¿½fï¿½nï¿½n sï¿½nï¿½fï¿½ iï¿½erikleyebilmesi iï¿½in kullanï¿½lacak
      * @return string
      */
     public function getName()

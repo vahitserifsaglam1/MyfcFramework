@@ -15,14 +15,14 @@ use Myfc\Template\TemplateInterface;
 
 class Engine{
     
-    private $driverList = array(
+    private $driverList = [
         
         'php' => 'Myfc\Template\Connector\noTemplate',
         'smarty' => 'Myfc\Template\Connector\Smarty',
         'twig'  => 'Myfc\Template\Connector\Twig',
         'MyfcTemplate' => 'Myfc\Template\Connector\MyfcTemplate'
         
-    );
+    ];
     
     private $driver;
     
@@ -47,7 +47,7 @@ class Engine{
             
         }else{
             
-            throw new Exception(sprint_f("%s seçtiğiniz driver yüklü değil",$driver));
+            throw new Exception(sprintf("%s seçtiğiniz driver yüklü değil",$driver));
             
         }
         
@@ -98,7 +98,7 @@ class Engine{
    */
     
     public function __call($name, $parametres){
-        return call_user_func_array(array($this->driver, $name), $parametres);
+        return call_user_func_array([$this->driver, $name], $parametres);
         
     }
     

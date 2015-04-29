@@ -4,7 +4,7 @@ namespace Myfc\Providers\Url;
  use Myfc\Bootstrap;
 /**
  *
- * @author vahitşerif
+ * @author vahitï¿½erif
  *        
  */
 class Checker
@@ -12,7 +12,7 @@ class Checker
 
     /**
      * 
-     *  Url in olup olmadığını kontrol eder
+     *  Url in olup olmadï¿½ï¿½ï¿½nï¿½ kontrol eder
      * 
      * @param Bootstrap $bootstrap
      */
@@ -24,7 +24,7 @@ class Checker
         if(!isset($get['url']) || $get['url'] == "")
         {
             
-            $bootstrap->adapter->assests->setGet(array('url' => 'index'));
+            $bootstrap->adapter->assests->setGet(['url' => 'index']);
             
         }
         

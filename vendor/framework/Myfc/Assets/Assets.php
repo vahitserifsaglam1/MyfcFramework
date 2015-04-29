@@ -74,7 +74,7 @@
        * @return mixed
        */
 
-      public function setConfigs( array  $configs = array() )
+      public function setConfigs( array  $configs = [] )
       {
           
            $this->configs = $configs;
@@ -83,11 +83,8 @@
 
       /**
        * 
-       *  Post verilerini D�nd�r�r
-       * 
-       * @return mixed
+       * @return type
        */
-      
       public function returnPost()
       {
 
@@ -201,8 +198,7 @@
       public function setPost($post)
       {
           $post = $this->xss_clean( (array) $post);
-          $_POST = array();
-          $_POST[] = $post;
+          $_POST = [];
           $this->post = $post;
 
       }

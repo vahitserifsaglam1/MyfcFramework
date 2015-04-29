@@ -3,6 +3,12 @@
 
  namespace Myfc\File;
 
+ /**
+  * 
+  *  MyfcFramework file upload sınıfı
+  *  @packpage Myfc\File
+  *  @class Upload
+  */
 
  class Upload
  {
@@ -87,7 +93,7 @@
 
      }
 
-     public function setUploadsPath( $path = 'Public/files/upload' )
+     public function setUploadsPath( $path = '' )
      {
 
          $this->uploadsPath = $path;
@@ -96,7 +102,7 @@
      }
 
 
-     public static function boot(  array $file = [], $uploadsPath = 'Public/files/upload', $maxsize = null )
+     public static function boot(  array $file = [], $uploadsPath = 'public/files/upload', $maxsize = null )
      {
 
          if( !static::$ins )
@@ -229,7 +235,7 @@
 
          }
 
-         $name = $uploadsPath.'/'.$fileName;
+         $name = $uploadsPath.DIRECTORY_SEPARATOR.$fileName;
 
          if( !file_exists($name) )
          {

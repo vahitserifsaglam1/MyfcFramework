@@ -26,14 +26,16 @@ class Singleton
         
     }
     
-    public static function make( $class, $parametres = array() )
+    public static function make( $class, $parametres = [] )
     {
         $parametres = (!is_array($parametres)) ?  static::unsetFirstParametres(func_get_args()):$parametres;
         
         if( !isset( static::$classes[$class] ) )
         {
-
-            self::$classes[$class] = (new ReflectionClass($class))->newInstanceArgs($parametres);
+            
+            //  reflection sınıfımızı oluşturduk
+            $classA = new ReflectionClass($class);
+            self::$classes[$class] = $classA->newInstanceArgs($parametres);
     
             self::$classCount++;
             
@@ -56,7 +58,7 @@ class Singleton
      * @param array $array
      */
     
-    public static function unsetFirstParametres( array $array = array() )
+    public static function unsetFirstParametres( array $array = [] )
     {
         
           unset($array[0]);

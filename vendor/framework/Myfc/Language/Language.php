@@ -11,22 +11,33 @@ namespace Myfc;
 class Language
 {
 
-    private $path;
+    private $path = LANGUAGE_PATH;
     
     private $files;
     
     private $file;
     /**
      */
+    
+    public function setPath($path){
+        
+        $this->path = $path;
+        return $this;
+        
+    }
+    
+    public function getPath(){
+        
+        return $this->path;
+        
+    }
+    
     public function __construct()
     {
         
-
-        $this->path = LANGUAGE_PATH;
-        
         $this->file = File::boot();
         
-        $this->files = $this->file->in($this->path)->getType('.php');
+        $this->files = $this->file->in($this->getPath())->getType('.php');
         
     }
     
@@ -39,7 +50,7 @@ class Language
     public function rende($dil,$name)
     {
         
-        $path = $dil."/".$name.".php";
+        $path = $dil.DIRECTORY_SEPARATOR.$name.".php";
 
        
         if($this->file->exists($path))
@@ -51,6 +62,11 @@ class Language
         }
         
     }
+    
+    /**
+     * Interface zorunlu fonksiyonu
+     * @return strıng
+     */
     
     public function getName()
     {

@@ -260,7 +260,7 @@ class File
             // Bring maps to back
             // This is need otherwise some maps
             // can't be deleted
-            $sort_result = array();
+            $sort_result = [];
             foreach($result as $item){
                 if($item['type'] == "file"){
                     array_unshift($sort_result, $item);
@@ -382,12 +382,12 @@ class File
         if(method_exists($this->adapter->iterator, $name))
         {
             
-            return call_user_func_array(array($this->adapter->iterator,$name), $params);
+            return call_user_func_array([$this->adapter->iterator,$name], $params);
             
         }elseif(method_exists($this->adapter->finder, $name))
         {
             
-            return call_user_func_array(array($this->adapter-finder,$name), $params);
+            return call_user_func_array([$this->adapter-finder,$name], $params);
             
         }else{
             

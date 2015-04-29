@@ -28,7 +28,7 @@ class App{
     public function __call($name, $params){
 
 
-        return call_user_func_array(array($this->bootstrap, $name),$params);
+        return call_user_func_array([$this->bootstrap, $name],$params);
 
     }
 

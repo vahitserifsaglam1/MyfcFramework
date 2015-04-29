@@ -2,7 +2,7 @@
 
   /**
    * 
-   *  Sabitlerin tan�mlanmas� -> app klas�r�
+   *  Sabitlerin tanımlanması -> app klasorü
    *  @var unknown
    */
 
@@ -10,7 +10,7 @@
   
   /**
    *
-   *  Sabitlerin tan�mlanmas� -> public klas�r�
+   *  Sabitlerin tanımlanması -> public klasorü
    *  @var unknown
    */
   
@@ -18,7 +18,7 @@
   
   /**
    *
-   *  Sabitlerin tan�mlanmas� -> system klas�r�
+   *  Sabitlerin tanımlanması -> system klasorü
    *  @var unknown
    */
   
@@ -26,28 +26,28 @@
   
   /**
    *
-   *  Sabitlerin tan�mlanmas� -> vendor klas�r�
+   *  Sabitlerin tanımlanması -> vendor klasorü
    *  @var unknown
    */
   
   define("VENDOR_PATH","vendor/");
   
   /**
-   * Sabitlerin tan�mlanmas� -> language(dil) klas�r�
+   * Sabitlerin tanımlanması -> language(dil) klasorü
    * @var unknown
    */
   
   define("LANGUAGE_PATH", PUBLIC_PATH.'language');
   
   /**
-   * Sabitlerin tan�mlanmas� -> view dosyalar�
+   * Sabitlerin tanımlanması -> view dosyaları
    * @var unknown
    */
   
   define('VIEW_PATH', APP_PATH.'Views/');
   
   /**
-   * Sabitlerin tan�mlanmas�
+   * Sabitlerin tanımlanması
    * @var unknown
    */
   

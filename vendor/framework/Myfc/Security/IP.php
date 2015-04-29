@@ -68,7 +68,7 @@ class IP {
     
     /**
      * Kullanıcının ip sini döndürür
-     * @return type
+     * @return string|boolean
      */
     
     public function findIP(){
@@ -79,7 +79,7 @@ class IP {
     
     /**
      * Kullanıcının gerçek ip ile mi yoksa proxy ile mi girdiğini kontrol eder
-     * @return type
+     * @return boolean
      */
     
     public function ipIsReal(){
@@ -116,6 +116,10 @@ class IP {
          
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getIP(){
         
         if($this->ipIsReal()) return $this->ip;else $this->realIP;

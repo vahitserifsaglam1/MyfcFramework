@@ -39,6 +39,14 @@
            $this->page = $page;
            return $this;
        }
+       
+       
+       
+       public function isAdapter($name){
+           
+           (isset($this->adapter[$this->page][$name])) ? true:false;
+           
+       }
 
        /**
         *  call the boot method all adapters
@@ -65,11 +73,11 @@
         {
 
 
-                  $this->adapter[$this->page][$adapter->getName()] = array(
+                  $this->adapter[$this->page][$adapter->getName()] = [
                       'adapter' => $adapter,
                       'priority' => $priority,
                       'selected' => false,
-                  );
+                  ];
 
                 return $this;
 
@@ -89,7 +97,7 @@
 
  
        /**
-        *  Adapterleri s�ralama yapar
+        *  Adapterleri s�ralama yapar
         * @return number
         */
        public function sortAdapter()
@@ -185,6 +193,18 @@
        public function removeAdapter($name)
        {
            if(isset($this->adapter[$this->page][$name])) unset($this->adapter[$this->page][$name]);
+       }
+       
+       /**
+        * Seçilen sayfayı değiştirir
+        * @param string $page
+        * @return \Myfc\Adapter
+        */
+       public function setSelectedPage($page){
+           
+           $this->page = $page;
+           return $this;
+           
        }
 
        /**

@@ -72,7 +72,7 @@ class MyfcTemplate {
     }
 
 
-    public function display($file, $parametres = array()){
+    public function display($file, $parametres = []){
         
         $this->loader->setTemplatePath($this->configsManager->get('templatePath'));
         $content = $this->loader->load($file);

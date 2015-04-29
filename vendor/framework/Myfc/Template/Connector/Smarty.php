@@ -32,7 +32,7 @@ class Smarty extends TemplateEngine{
      * @param array $parametres
      * @return \Myfc\Template\Connector\Smarty
      */
-    public function useTemplateParametres(array $parametres = array()){
+    public function useTemplateParametres(array $parametres = []){
         
         foreach($parametres as $param => $value){
             

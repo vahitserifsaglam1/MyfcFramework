@@ -1,18 +1,29 @@
 <?php
 
   namespace Myfc;
- 
-/**
+  /**
  * Class Validator
  * ********************************************************
- * MyfcFramework validator sýnýfý
- * gump validator sýnýfý kullanýlýr;
+ * MyfcFramework validator sï¿½nï¿½fï¿½
+ * Gump validator sÄ±nÄ±fÄ± kullanÄ±lÄ±r
  * @author MyfcFramework
+ * @package Myfc
  * *******************************************************
  */
+  use Myfc\Singleton;
+
   class Validate
   {
+      /**
+       *
+       * @var GUMP 
+       */
       public  $gump;
+      
+      /**
+       *
+       * @var boolean 
+       */
       public  $autoValidate = true;
       public static $options;
       public static $functions;
@@ -21,21 +32,19 @@
       /**
        * @param string $options
        *
-       *  Validate Klasörünün belirlenmesi ve gerekli klasörün çekilmesi
+       *  Validate Klasï¿½rï¿½nï¿½n belirlenmesi ve gerekli klasï¿½rï¿½n ï¿½ekilmesi
        */
 
       public function __construct( )
       {
-          $options = require APP_PATH.'Configs/validateConfigs.php';
-          $this->set = $options;
-          self::$options = $options;
-          $this->gump =  Desing\Single::make('\GUMP');#new GUMP;     
+          
+          $this->gump = Singleton::make('\GUMP');#new GUMP;     
 
       }
 
 
       /**
-       * Sýnýfý baþlatýr
+       * Sï¿½nï¿½fï¿½ baï¿½latï¿½r
        * @return \Myfc\Validate
        */
 
@@ -53,7 +62,7 @@
        * @param array $rules
        * @return boolean|unknown
        */
-      public function make($veri,array $filters = array(),array $rules = array())
+      public function make($veri,array $filters = [],array $rules =[])
       {
           
           $s = $veri->gump->filter($veri,$filters);
@@ -66,7 +75,7 @@
       }
 
       /**
-       * Sýnýfa ilerde çaðrýlabilmesi için fonksiyon eklemesi yapar
+       * Sï¿½nï¿½fa ilerde ï¿½aï¿½rï¿½labilmesi iï¿½in fonksiyon eklemesi yapar
        * @param String $name
        * @param callable $call
        */
@@ -123,12 +132,12 @@
                       $this->validatorOzsa($value);
                   }else{
 
-                      $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','=',"or","select"),'',htmlentities(htmlspecialchars(strip_tags($value)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
+                      $return = filter_var(str_replace(['<script>',"'",'"','</script>','<?','?>',' = ','=',"or","select"],'',htmlentities(htmlspecialchars(strip_tags($value)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
 
               }
           }
           }else{
-              $return = filter_var(str_replace(array('<script>',"'",'"','</script>','<?','?>',' = ','='," or "," select ", " and ","  AND ", " OR ", " SELECT "),'',htmlentities(htmlspecialchars(strip_tags($validate)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
+              $return = filter_var(str_replace(['<script>',"'",'"','</script>','<?','?>',' = ','='," or "," select ", " and ","  AND ", " OR ", " SELECT "],'',htmlentities(htmlspecialchars(strip_tags($validate)))),FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW);
           }
            return $return;
       }

@@ -118,10 +118,8 @@
            }
            
            
-           return call_user_func_array(array($instance,$method), $parametres);
+           return call_user_func_array([$instance,$method], $parametres);
            
-          /* $reflectionMethod = new ReflectionMethod($instance,$method);
-           return  $reflectionMethod->invokeArgs($instance,$parametres); */
 
       }
 

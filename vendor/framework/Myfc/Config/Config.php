@@ -1,13 +1,14 @@
 <?php
  
  namespace Myfc;
+ use Myfc\Config\ConfigInterface;
 /**
  * Class Config
  *
- *   Sýnýflar içinden configleri çekmek için kullanýlacak sýnýf
+ *   SÄ±nÄ±flar iÃ§inden configleri Ã§ekmek iÃ§in kullanÄ±lacak sÄ±nÄ±f
  */
 
-  class Config{
+  class Config implements ConfigInterface{
 
       protected $check;
 
@@ -19,9 +20,9 @@
 
       /**
        *
-       *  Baþlatýcý Sýnýf
+       *  BaÅŸlatÄ±cÄ± SÄ±nÄ±f
        *
-       *   configs dosyalarýnýn yolunu gösterir
+       *   configs dosyalarÄ±nÄ±n yolunu gÃ¶sterir
        */
 
       public function __construct()
@@ -37,7 +38,7 @@
 
       /**
        * @return mixed
-       *  Static olarak sýnýfý baþlatmak için kullanýlýr
+       *  Static olarak sÄ±nÄ±fÄ± baÅŸlatmak iÃ§in kullanÄ±lÄ±r
        */
 
       public static function boot()
@@ -58,7 +59,7 @@
        * @param $name
        * @param null $config
        * @return bool|mixed
-       *  Conif i çekmek için kullanýlýr
+       *  Conif i Ã§ekmek iÃ§in kullanÄ±lÄ±r
        */
 
       public static  function get($name,$config = null)
@@ -103,7 +104,7 @@
        * @param null $value
        * @return null
        *
-       *  Configi ayarlamak için kullanýlýr
+       *  Configi ayarlamak iÃ§in kullanÄ±lÄ±r
        */
       public static function set($name,$configs = null,$value = null)
       {

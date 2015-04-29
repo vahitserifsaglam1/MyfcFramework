@@ -26,7 +26,7 @@ class Twig {
             
     }
     
-    public function useTemplateParametres(array $parametres){
+    public function useTemplateParametres(array $parametres = []){
         
          $this->parametres = $parametres;
           return $this;  

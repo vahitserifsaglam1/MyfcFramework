@@ -9,12 +9,15 @@
   
   class Container{
       
+      const CONTROLLER = "controller";
+      
+      const MODAL = "modal";
       
       public $server;
       public $ayarlar;
       public $get;
       protected $bind;
-      public $maked = array();
+      public $maked = [];
       
       /**
        * sınıfı başlatır
@@ -112,7 +115,7 @@
        * @param array $parametres
        */
       
-      public function make($className = '', array $parametres = array(), $autoInstance = true)
+      public function make($className = '', array $parametres = [], $autoInstance = true)
       {
 
          
@@ -121,17 +124,23 @@
               
               $class = explode("@", $className);
               
-              if($class[0] == "controller")
-              {
-                 
-                 return $this->makeController($class[1], $parametres, $autoInstance);
+              switch($class[0]){
                   
-              }elseif($class[0] == "modal")
-              {
+                  case self::CONTOLLER:
+                      
+                      
+                      
+                      break;
                   
-                  return $this->makeModal($class[1], $parametres,$autoInstance );
+                  case self::MODAl:
+                      
+                      
+                      
+                      break;
+                  
                   
               }
+         
               
           }else{
               
@@ -151,7 +160,7 @@
        * @return unknown|boolean
        */
       
-      public function makeController($controller,$parametres = array(), $autoInstance = true)
+      public function makeController($controller,$parametres = [], $autoInstance = true)
       {
           
           $controllerPath = APP_PATH."Controller/$controller.php";
@@ -190,41 +199,6 @@
        * @return boolean
        */
       
-      public function makeModal($modalName = '', array $parametres = array(), $autoInstance = false )
-      {
-
-          
-          $modalPath = APP_PATH.'Modals/'.$modalName.'.php';
-
-          $this->maked[] = $modalName;
-          
-          if(file_exists($modalPath))
-          {
-
-              if(!class_exists($modalName,false)){
-
-                  include $modalPath;
-
-              }
-
-              if($autoInstance)
-              {
-                  return (new ReflectionClass($modalName))->newInstanceArgs($parametres);
-              }else{
-
-                  return true;
-
-              }
-
-
-              
-          }else{
-              
-              return false;
-              
-          }
-          
-      }
       
       /**
        * girilen parametrelere göre yeni bir sınıf çağırır
@@ -232,7 +206,7 @@
        * @param array $parametres
        * @return object
        */
-      public function makeClass($className = '', array $parametres = array() )
+      public function makeClass($className = '', array $parametres = [] )
       {
           
           $this->maked[] = $className;
@@ -249,16 +223,21 @@
        * @param array $parametres
        * @return object
        */
-      public function singleton($className, $parametres = array() )
+      public function singleton($className, $parametres = [] )
       {
 
           $this->maked[] = $className;
           
-          if(!is_array($parametres)) $parametres = array($parametres);
+          if(!is_array($parametres)) $parametres = [$parametres];
           
           return Singleton::make($className, $parametres);
       }
 
+      /**
+       * 
+       *  Rotalandırmayı başlatır
+       * 
+       */
       private function runRoute()
       {
 
@@ -271,7 +250,7 @@
 
      
       /**
-       * Dinamik olarak method �a��rma i�lemi
+       * Dinamik olarak method çağırma fonksiyonu
        * @param string $name
        * @param array $parametres
        * @return \Myfc\mixed

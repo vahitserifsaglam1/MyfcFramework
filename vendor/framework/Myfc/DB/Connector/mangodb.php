@@ -8,7 +8,7 @@
 
      private $mangodb;
 
-     public function __construct($mangoDB, $Configs = array())
+     public function __construct($mangoDB, $Configs = [])
      {
 
          if($this->checkDriver())
@@ -71,7 +71,7 @@
          if($this->checkInstall())
          {
 
-             return call_user_func_array(array($this->mangodb, $method),$parametres);
+             return call_user_func_array([$this->mangodb, $method],$parametres);
 
          }
 

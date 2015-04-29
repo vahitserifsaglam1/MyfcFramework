@@ -4,6 +4,7 @@ use Myfc\Facade\View;
 use Myfc\Facade\CSRF;
 use Myfc\Error;
 use Myfc\Error\MyfcErrorException;
+use Myfc\Facade\File;
 /*
  * View oluşturma fonksiyonu
  */
@@ -140,5 +141,34 @@ if(!function_exists('compact')){
    set_error_handler('set_myfc_error_handler');
    // oluşan exceptionlar artık myfc exception handler tarafından alınacak
    set_exception_handler('set_myfc_exception_handler');
+
+   
+   if(!function_exists('read')){
+       
+       /**
+        * Dosyanın içeriğini okur
+        * @param string $fileName
+        */
+       function read($fileName = ''){
+           
+           return File::read($fileName);
+           
+       }
+       
+   }
+   
+      if(!function_exists('write')){
+       
+       /**
+        * Dosyaya içerik yazar
+        * @param string $fileName
+        */
+       function write($fileName = ''){
+           
+           return File::write($fileName);
+           
+       }
+       
+   }
 
 

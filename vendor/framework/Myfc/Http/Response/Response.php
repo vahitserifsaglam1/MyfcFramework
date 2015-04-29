@@ -34,7 +34,7 @@
           *
           */
 
-          public function __construct($content = '', $status = 200, array $headers = array())
+          public function __construct($content = '', $status = 200, array $headers = [])
           {
 
                $this->redirect = Redirect::boot();
@@ -60,7 +60,7 @@
          public function __call($name,$params)
          {
 
-           return call_user_func_array(array($this->factory,$name),$params);
+           return call_user_func_array([$this->factory,$name],$params);
 
          }
 
@@ -69,7 +69,7 @@
 
              $s = new static();
 
-             return call_user_func_array(array($s->factory,$name),$params);
+             return call_user_func_array([$s->factory,$name],$params);
 
          }
 

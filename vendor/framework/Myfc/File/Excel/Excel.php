@@ -79,7 +79,7 @@
            return $this;
        }
    
-       public function setTableNames($names = array()){
+       public function setTableNames(array $names = []){
            $this->tableNames = $names;
            return $this;
        }
@@ -88,7 +88,7 @@
         * @param array $values
         * @return $this
         */
-       public function setTableValues($values = array()){
+       public function setTableValues( array $values = [] ){
            $this->tableValues[] = $values;
            return $this;
        }
@@ -187,10 +187,10 @@
        if(is_string($content) || is_numeric($content))
        {
        $newFileName = $this->fileName.".doc";
-       header("Content-type: application/octet-stream");
-       header("Content-Disposition: attachment; filename=$newFileName");
-           header("Pragma: no-cache");
-                header("Expires: 0");
+            header("Content-type: application/octet-stream");
+            header("Content-Disposition: attachment; filename=$newFileName");
+            header("Pragma: no-cache");
+            header("Expires: 0");
            echo $content;
        }else{
        $this->error = "içeriğiniz bir sting değil; içerik türü : ".var_dump($content);
@@ -204,19 +204,21 @@
        */
        public function createPdf()
        {
-       $content = $this->content;
+         $content = $this->content;
             $newFileName = $this->fileName.".pdf";
-       $desc = "ozsaClass";
-       if(is_string($content) || is_numeric($content)) {
-       $fpdf = new \Myfc\File\Excel\FPDF();
-       $fpdf->AddPage();
-       $fpdf->SetFont('Arial', 'b', 10);
-       $fpdf->Cell(40, 10, $content);
-       $fpdf->Output($newFileName,"I");
-       }else{
+         $desc = "ozsaClass";
+       if(is_string($content) || is_numeric($content)) 
+        {
+         $fpdf = new \Myfc\File\Excel\FPDF();
+         $fpdf->AddPage();
+         $fpdf->SetFont('Arial', 'b', 10);
+         $fpdf->Cell(40, 10, $content);
+          $fpdf->Output($newFileName,"I");
+       }
+       else
+       {
            $this->error = "içeriğiniz bir sting değil; içerik türü : ".var_dump($content);
-           }
+       }
            return $this;
-           }
-           }
-?>
+       }
+ }

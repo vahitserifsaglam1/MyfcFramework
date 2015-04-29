@@ -6,6 +6,7 @@ namespace Myfc;
  use Myfc\Html\Pagination;
  use Myfc\File\Excel;
  use stdClass;
+ use Myfc\Helpers\StringBuilder;
 
  /**
   *
@@ -16,9 +17,11 @@ namespace Myfc;
  class DB
  {
  
+     use StringBuilder;
+     
      private $selectedTable;
  
-     private $where = array();
+     private $where = [];
  
      private $join;
  
@@ -39,6 +42,8 @@ namespace Myfc;
      private $or_where;
 
      private $order;
+     
+     private $group;
  
      const EXTENDTABLE =  'table';
  
@@ -52,7 +57,7 @@ namespace Myfc;
  
      const FETCH_BOTH = 4;
  
-     private $configs = array();
+     private $configs = [];
  
      private $lastQuery;
  
@@ -68,14 +73,14 @@ namespace Myfc;
  
      private $lastErrorString;
 
-     private $driverList = array(
+     private $driverList = [
 
          'pdo' => 'Myfc\DB\Connector\pdo',
          'mysql' => 'Myfc\DB\Connector\mysql',
          'sqlite' => 'Myfc\DB\Connector\sqlite',
          'mangodb' => 'Myfc\DB\Connector\mangodb'
 
-     );
+     ];
  
      /**
       * Sınıfın tutulacağı static değişken
@@ -143,11 +148,11 @@ namespace Myfc;
       */
      private function readyForUse(){
          
-         $this->where[$this->selectedTable] = array();
-         $this->like[$this->selectedTable] = array();
-         $this->limit[$this->selectedTable] = array();
-         $this->order[$this->selectedTable] = array();
-         $this->or_where[$this->selectedTable] = array();
+         $this->where[$this->selectedTable] = [];
+         $this->like[$this->selectedTable] =  [];
+         $this->limit[$this->selectedTable] = [];
+         $this->order[$this->selectedTable] = [];
+         $this->or_where[$this->selectedTable] = [];
      }
 
 
@@ -279,10 +284,9 @@ namespace Myfc;
 
              return $this;
 
-                 }else{
-
+         }
+         else{
              return false;
-
          }
 
      }
@@ -303,7 +307,7 @@ namespace Myfc;
      * @return \Myfc\DB
      */
  
-     public function where($whereBaslangic = array(), $whereOrta = null, $whereSon = null, $orwhereKey = null )
+     public function where($whereBaslangic = [], $whereOrta = null, $whereSon = null, $orwhereKey = null )
      {
  
         $where =  $this->whereParser($whereBaslangic,$whereOrta,$whereSon, $orwhereKey);
@@ -319,21 +323,21 @@ namespace Myfc;
       * @param type $whereSon
       * @param type $orwhereKey
       */
-     private function whereParser($whereBaslangic = array(), $whereOrta = null, $whereSon = null, $orwhereKey = null)
+     private function whereParser($whereBaslangic = [], $whereOrta = null, $whereSon = null, $orwhereKey = null)
      {
        
          if($whereBaslangic && $whereOrta && !$whereSon){
              
-             $this->where[$this->selectedTable][] = array($whereBaslangic => $whereOrta);
+             $this->where[$this->selectedTable][] = [$whereBaslangic => $whereOrta];
              
          }
          elseif($whereBaslangic && $whereOrta && $whereSon && !$orwhereKey){
              
-             $this->where[$this->selectedTable][] = array($whereBaslangic,$whereOrta,$whereSon);
+             $this->where[$this->selectedTable][] = [$whereBaslangic,$whereOrta,$whereSon];
              
          }elseif($whereBaslangic && $whereOrta && $whereSon && $orwhereKey){
             
-             $this->or_where[$this->selectedTable][] = array($whereOrta,$whereSon,$orwhereKey);
+             $this->or_where[$this->selectedTable][] = [$whereOrta,$whereSon,$orwhereKey];
              
          }
          elseif(is_array($whereBaslangic)){
@@ -352,7 +356,7 @@ namespace Myfc;
                      
                  }elseif($test === 4){
                      
-                     $this->or_where[] = array($whereBaslangic[1], $whereBaslangic[2],$whereBaslangic[3]);
+                     $this->or_where[] = [$whereBaslangic[1], $whereBaslangic[2],$whereBaslangic[3]];
                      
                  }
                  
@@ -360,6 +364,23 @@ namespace Myfc;
              
          }
          
+         
+     }
+     
+     /**
+      * 
+      * @param $group
+      * @return $this;
+      * 
+      */
+     
+     private function group($group = null){
+         
+         if(!is_null($group)){
+             
+             $this->group[$this->selectedTable] = $group;
+             
+         }
          
      }
 
@@ -371,7 +392,7 @@ namespace Myfc;
       */
      public function order($id, $type = 'DESC'){
 
-         $this->order[$this->selectedTable][] = array($id,$type);
+         $this->order[$this->selectedTable][] = [$id,$type];
          return $this;
 
      }
@@ -399,7 +420,7 @@ namespace Myfc;
       * @return \Myfc\DB
       */
  
-     public function set( Array $array = [] )
+     public function set( array $array = [] )
      {
  
          foreach ( $array as $key => $value )
@@ -422,7 +443,7 @@ namespace Myfc;
       * @return \Myfc\DB
       */
  
-     public function get( Array $array = [] )
+     public function get( array $array = [] )
      {
  
          foreach ( $array as $key )
@@ -443,7 +464,7 @@ namespace Myfc;
       * @return \Myfc\DB
       */
  
-     public function join( Array $join = [] )
+     public function join( array $join = [] )
      {
  
          $this->join[$this->selectedTable][] = $join;
@@ -484,7 +505,7 @@ namespace Myfc;
       * @param unknown $limit
       * @return \Myfc\DB
       */
-     public function limit($limit = array())
+     public function limit($limit = [])
      {
  
          if(is_array($limit))
@@ -568,12 +589,8 @@ namespace Myfc;
          if($configs['autoQuery'] === true)
          {
  
-              
-             if(!isset($this->set[$this->selectedTable])){
- 
-                 $this->read(false);
- 
-             }
+             
+             (!isset($this->set[$this->selectedTable])) ? $this->read(false):null;
               
  
          }
@@ -594,23 +611,9 @@ namespace Myfc;
          ]]);
  
      }
+    
  
-     private function mixer(array $array,$end)
-     {
-         $s = "";
-
-         foreach($array as $key => $value)
-         {
-             $s .= $key.'='. "'$value'".$end;
-         }
- 
- 
-         return rtrim($s,$end);
- 
- 
-     }
- 
-     private function specialer( array $special = array() )
+     private function specialer( array $special = [] )
      {
          
       
@@ -628,18 +631,56 @@ namespace Myfc;
          
 
      }
- 
+     
      /**
-      *
-      * @param $array
-      * @return string
-      *
+      * 
+      * @param mixed $group
+      * @return mixed
       */
  
-     private function wherer(array $array = array())
+     private function groupper($group){
+         $s = "GROUP BY";
+                foreach($group as $grup){
+                    
+                    $s .= $grup.",";
+                    
+                }
+                
+                return rtrim($s,",");
+         
+     }
+     
+     /**
+      *
+      * 3 değer alan diziyi 2 e düşürür
+      * @param $array
+      * @return array
+      *
+      */
+     
+     private function returnTheQueryArrayForTheGenerate(array $array = []){
+         
+         $return = [];
+         foreach($array as $key){
+             
+           $return[$key[0]] = $key[2];
+             
+         }
+         
+     }
+
+     /**
+      * 
+      * @param array $array
+      * @return string
+      */
+
+     private function wherer(array $array = [])
      {
          
          $s = " AND ";
+     
+         $end = ' AND ';
         if(count($array) > 0){
             
             
@@ -648,17 +689,14 @@ namespace Myfc;
                 
                 // foreach parçalama başladı
                 
-                
+           
                 // standart where
                  if(count($key) == 1){
                  
-                     
-                 
-                     foreach($key as $keyparsingone => $valueparsingone){
-                         
-                         $s .= "'$keyparsingone' = '$valueparsingone' AND ";
-                         
-                     }
+                    $arrays = $this->getStringWithStringAndEndStringsFromArrayAndReturnArray($key, "'", "'",'value'); 
+           
+                  
+                    $s .= $this->databaseWhereQueryBuilder($arrays, '', '=', $end);
                  
                      
                  }
@@ -667,7 +705,11 @@ namespace Myfc;
                  
                  if(count($key) == 3){
                      
-                     $s .= " '{$key[0]}' {$key[1]} '{$key[2]}' AND ";
+                     $startKey = $this->getStringWithStringAndEndStrings($key[0], "'", "'");
+                     $endKey = $this->getStringWithStringAndEndStrings($key[2], "'", "'");
+                     
+                     $queryArray = $this->returnTheQueryArrayForTheGenerate($key);
+                     $s = $this->databaseWhereQueryBuilder($queryArray, '', $key[1], ' AND ');
                      
                  }
                 
@@ -677,8 +719,7 @@ namespace Myfc;
                 
             }
             
-            $s = ltrim($s, " AND ");
-            
+            $s = ltrim($s, $end);
             
             
             if(count($this->or_where[$this->selectedTable])){
@@ -698,10 +739,10 @@ namespace Myfc;
                  
                  foreach($this->or_where as $orkey){
                      
-                     foreach($orkey as $orkeyv){  
-                       
-                     $or .= "'{$orkeyv[0]}' {$orkeyv[1]} '{$orkeyv[2]}' OR ";                         
-                     }
+                     $orvkey = $this->returnTheQueryArrayForTheGenerate($orkey);
+                 
+                     $or .= $this->databaseWhereQueryBuilder($orvkey, '', $orvkey[1], ' OR ');                         
+                     
                 
                  }
                  $s = rtrim($s, " AND ");
@@ -716,9 +757,10 @@ namespace Myfc;
             
             $s .= $or;
       
-            echo $s;
       
         }
+       
+        return $s;
  
      }
  
@@ -736,8 +778,10 @@ namespace Myfc;
          foreach($likes as $array)
          {
  
+             
              foreach (  $array as $likeKey => $likeValue)
              {
+    
                  $like .= $likeKey.' LIKE %'.$this->connector->quote($likeValue).'% AND ';
              }
  
@@ -922,10 +966,7 @@ namespace Myfc;
  
          $s = '';
          if (is_array($getter) && count($getter) > 0) {
-             foreach ($getter as $selectKey) {
-                 $s .= $selectKey . ',';
-             }
-             return rtrim($s, ',');
+             $this->databaseWhereQueryBuilderOnlyKey($getter, '', ',');
          } else {
              return "*";
          }
@@ -942,7 +983,7 @@ namespace Myfc;
      {
          $table = $this->selectedTable;
  
-         $msg = ' INSERT INTO '.$this->selectedTable.' SET '.$this->mixer($this->set[$table],',');
+         $msg = ' INSERT INTO '.$this->selectedTable.' SET '.$this->databaseWhereQueryBuilder($this->set[$table],'','=',', ');
  
          return $this->query( $msg );
  
@@ -957,7 +998,7 @@ namespace Myfc;
      {
          $table = $this->selectedTable;
          $where = $this->where[$table];
-         $msg = ' UPDATE '.$table.' SET '.$this->mixer($this->set[$table],', ').' WHERE '.$this->wherer($where);
+         $msg = ' UPDATE '.$table.' SET '.$this->databaseWhereQueryBuilder($this->set[$table],'','=',', ').' WHERE '.$this->wherer($where);
          return $this->query( $msg );
      }
  
@@ -990,8 +1031,9 @@ namespace Myfc;
          $limit = $this->limit[$table];
          $with =  $this->with[$table];
          $order = $this->order[$table];
+         $group = $this->group[$table];
          //where baslangic
- 
+         $groupString = '';
          if(is_array($where))
          {
              $where = $this->wherer($where);
@@ -999,9 +1041,15 @@ namespace Myfc;
          // where son
  
          // like baslangic
-         if(is_array($like))
+         if(is_array($like) && count($like) > 0)
          {
              $like =   $this->liker($like);
+         }
+         
+         if(is_array($group) && count($group) > 0){
+             
+             $groupString = $this->groupper($group);
+             
          }
          // like son
  
@@ -1040,7 +1088,15 @@ namespace Myfc;
          //limit son
  
          $msg = 'SELECT '.$select.' FROM '.$table.' ';
+         
+         
+         if($groupString !== ''){
+             
+             $msg .= $groupString.' ';
+             
+         }
  
+         
          if ( isset($join) && is_string($join) )
          {
              $msg .= $join;
@@ -1051,12 +1107,13 @@ namespace Myfc;
              $msg .= ' WHERE '.$where;
          }
  
+        
          if( isset($like) && is_string($like) )
          {
              if( isset( $where ) && is_string( $where )) $msg .= ' AND '.$like;
              else $msg .= ' WHERE '.$like;
          }
-
+ 
          if(isset($order) && is_string($order)){
 
              $msg .= $order;
@@ -1076,6 +1133,7 @@ namespace Myfc;
          $this->lastQueryString = $msg;
  
  
+         echo $msg;
  
          if($query && $query instanceof PDOStatement)
          {
@@ -1200,16 +1258,16 @@ namespace Myfc;
      public function flush()
      {
 
-         $this->where = array();
-         $this->specialWhere = array();
-         $this->specialLike = array();
-         $this->limit = array();
-         $this->join = array();
-         $this->set = array();
-         $this->get = array();
-         $this->or_where = array();
-         $this->special_or_where = array();
-         $this->order = array();
+         $this->where = [];
+         $this->specialWhere = [];
+         $this->specialLike = [];
+         $this->limit = [];
+         $this->join = [];
+         $this->set = [];
+         $this->get = [];
+         $this->or_where = [];
+         $this->special_or_where = [];
+         $this->order = [];
          return $this;
 
      }
@@ -1293,30 +1351,19 @@ namespace Myfc;
           
          $excel->setTableNames($keys)->setFileName($fileName);
           
-          
-          
          $excel->setTableValues($values);
-          
-          
-          
          return $excel;
           
- 
- 
- 
      }
  
      public function downloadXml($fileName = 'MyfcDB', $fetch = null)
      {
- 
- 
          if($fetch === null)
          {
               
              $fetch = $this->lastSucessQuery;
               
          }
-          
  
          while($f = $fetch->fetch(static::FETCH_OBJ))
          {
@@ -1340,8 +1387,6 @@ namespace Myfc;
          $excel->setTableNames($keys)->setFileName($fileName);
           
          $excel->setTableValues($values);
-          
-          
           
          return $excel;
           
@@ -1409,10 +1454,10 @@ namespace Myfc;
      public function __call( $name, $params )
      {
  
-         if(method_exists($this->connector, $name) || is_callable(array($this->connector, $name)))
+         if(method_exists($this->connector, $name) || is_callable([$this->connector, $name]))
          {
  
-             return call_user_func_array(array($this->connector, $name), $params);
+             return call_user_func_array([$this->connector, $name], $params);
  
          }else{
  
@@ -1422,20 +1467,7 @@ namespace Myfc;
  
      }
  
-     /**
-      * Dinamik olarak static method �a��rmas� yapar
-      * @param unknown $method
-      * @param unknown $parameters
-      * @return mixed
-      */
- 
-     public static function __callStatic($method, $parameters)
-     {
-         $instance = new static;
- 
-         return call_user_func_array(array($instance, $method), $parameters);
-     }
- 
+     
  
      public function __get($name)
      {

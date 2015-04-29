@@ -15,21 +15,21 @@ namespace Myfc\Route;
  */
 class RouteCollection {
     
-    private $collection = array(
+    private $collection = [
         
-        'GROUP' => array(),
-        'GET'   => array(),
-        'PUT'   => array(),
-        'DELETE'=> array(),
-        'WHEN'  => array()
+        'GROUP' => [],
+        'GET'   => [],
+        'PUT'   => [],
+        'DELETE'=> [],
+        'WHEN'  => []
          
-    );
+    ];
     
     /**
      * atanan whereler tutulur
      * @var type 
      */
-    private $where = array();
+    private $where = [];
     
     /**
      * Atanan filter lar tutunur
@@ -184,11 +184,11 @@ class RouteCollection {
      * @param mixed $callback
      * @return \Myfc\Route\RouteCollection
      */
-    public function match(array $types = array(), $pattern,$callback){
+    public function match(array $types = [], $pattern,$callback){
         
         foreach($types as $key){
             
-            $this->setCollection($key, array($pattern,$callback));
+            $this->setCollection($key, [$pattern,$callback]);
             
         }
         

@@ -57,17 +57,8 @@
           return self::$_singleton;
       }
 
-      /**
-       * @return null
-       *  Return Query String
-       */
-      public function getQueryString()
-      {
-          if ($this->_queryString === null) {
-              $this->_queryString = self::getVar('QUERY_STRING', false);
-          }
-          return $this->_queryString;
-      }
+
+
 
       /**
        * @return bool
@@ -93,52 +84,9 @@
       {
           return ($_SERVER['X_REQUESTED_WITH'] !== null && $_SERVER['X_REQUESTED_WITH'] === 'XMLHttpRequest');
       }
-      public function httpGet($index = null)
-      {
-          if ($index === null) {
-              return $_GET;
-          }
-          return (array_key_exists($index, $_GET)) ? $_GET[$index] : null;
-      }
-      public function httpPost($index = null)
-      {
-          if ($index === null) {
-              return $_POST;
-          }
-          return (array_key_exists($index, $_POST)) ? $_POST[$index] : null;
-      }
+   
 
-      public function getUri()
-      {
-          if ($this->_uri === null) {
-              $_requestUri = filter_var(self::getVar('REQUEST_URI', '/'), FILTER_SANITIZE_URL);
-              if ($_requestUri === $_SERVER['SCRIPT_NAME']) {
-                  $_uri = '/';
-              } else {
-
-                  $_uri = (mb_strpos($_requestUri, $_SERVER['SCRIPT_NAME']) === 0)
-                      ? substr_replace($_requestUri, '', 0, mb_strlen($_SERVER['SCRIPT_NAME']))
-                      : $_requestUri;
-
-
-              }
-
-              if (($_queryString = $this->getQueryString()) !== false) {
-                  $this->_uri = trim(str_replace('?' . $_queryString, '', $_uri), '/');
-              } else {
-                  $this->_uri = trim(rtrim($_uri, '?'), '/');
-              }
-
-          }
-
-          return (is_string($this->_uri) === false || mb_strlen($this->_uri) === 0) ? '/' : $this->_uri;
-      }
-
-
-      public static function getVar($key, $default = null)
-      {
-          return (array_key_exists($key, $_SERVER)) ? $_SERVER[$key] : $default;
-      }
+ 
       public function get($url,$params = array())
       {
           $req = $this->client->createRequest('GET', $url, $params);
@@ -152,6 +100,8 @@
           $cek = $this->client->send($req);
           return $cek;
       }
+      
+      
 
       public function __call($name,$params)
       {
@@ -159,10 +109,10 @@
           {
 
               $thi =  static::this();
-              return call_user_func_array(array($thi->client,$name),$params);
+              return call_user_func_array([$thi->client,$name],$params);
 
           }else{
-              return call_user_func_array(array($this->client,$name),$params);
+              return call_user_func_array([$this->client,$name],$params);
           }
 
       }

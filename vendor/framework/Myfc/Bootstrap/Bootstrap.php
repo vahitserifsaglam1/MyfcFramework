@@ -7,9 +7,6 @@
   *  Myfc Framework başlatıcı sınıf
   *  
   */
- 
- use Myfc\Adapter;
- use Myfc\Singleton;
  use Myfc\Container;
  use Myfc\Config;
  use Exception;
@@ -39,11 +36,11 @@
          
          $this->configs = $configs;
         
-         $this->adapter = Singleton::make('\Myfc\Adapter','Bootstrap');
+         $this->adapter = $this->singleton('\Myfc\Adapter',array('Bootstrap'));
          
-         $this->adapter->addAdapter(Singleton::make('\Myfc\Assets'));
+         $this->adapter->addAdapter($this->singleton('\Myfc\Assets'));
          
-         $this->adapter->addAdapter(Singleton::make('\Myfc\Http\Server'));
+         $this->adapter->addAdapter($this->singleton('\Myfc\Http\Server'));
          
          $this->runServiceProviders($configs['serviceProviders']);
 
@@ -59,16 +56,28 @@
       * Servis hazırlayıcıları kullanılır hale getirir
       * @param array $providers
       */
-    private function runServiceProviders(array $providers = array() )
+    
+    private function runServiceProviders(array $providers = [] )
     {
         foreach($providers as $pro)
         {
-                new $pro($this);     
+                $this->maked[] = $this->runServiceProvider($pro,$this);    
             
         }
         
     }
+    
+    /**
+     * Yürütmeyi yapar
+     * @param type $name
+     * @return mixed
+     */
 
+    public function runServiceProvider($name, $param){
+        
+        return new $name($param);
+        
+    }
      /**
       * @return int
       * @throws Exception

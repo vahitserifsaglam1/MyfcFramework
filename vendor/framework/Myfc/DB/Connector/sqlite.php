@@ -159,5 +159,3 @@ class sqlite {
         return $error;
     }
 }
-
-?>

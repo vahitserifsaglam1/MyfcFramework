@@ -5,10 +5,10 @@ namespace Myfc;
 use Myfc\Console\Functioner;
 use Myfc\Console\Classer;
 use Exception;
-use Myfc\Bootstrap;
 use Myfc\Facade;
+use Myfc\File;
 
-class Console{
+class Console extends File{
 
      public $argv;
 
@@ -21,6 +21,8 @@ class Console{
      const CLASSPARAM = "CLASS";
 
      const FUNCPARAM = "FUNC";
+     
+     private $fileName = "Console.php";
 
 
 
@@ -32,6 +34,7 @@ class Console{
 
      public function __construct(array $argv, $argc){
 
+         parent::boot();
          unset($argv[0]);
 
          
@@ -41,7 +44,7 @@ class Console{
          $this->funcs   = new Functioner();
          $this->classes = new Classer();
          
-         $alias = require "app/Configs/Configs.php";
+         $alias = $this->inc("app/Configs/Configs.php");
          $alias = $alias['alias'];
          Facade::$instance = $alias;
                  
@@ -56,9 +59,21 @@ class Console{
 
     public function start(){
 
+        $fileName = $this->fileName;
+        
         if($this->argc>0){
 
-            include "app/Console.php";
+            $this->in(APP_PATH);
+            
+            if($this->exists($fileName)){
+                
+                $this->inc($fileName);
+                
+            }else{
+                
+                throw new Exception(sprintf("%s içinde %s dosyanız bulunamadı, lütfen kontrol ediniz",$this->getIniPath(), $fileName));
+                
+            }
             
             $finded = $this->findFunctionOrClass($this->argv[1]);
 

@@ -8,7 +8,6 @@
 
 namespace Myfc;
 
-use Myfc\Singleton;
 use Myfc\Template\Engine;
 use Myfc\Language;
 
@@ -21,7 +20,7 @@ class View {
     
 
     private $template;
-    private $templateVariables = array();
+    private $templateVariables = [];
     private $file;
     private $autoload;
     private $lang;
@@ -38,10 +37,15 @@ class View {
         
     }
 
+    /**
+     * Kurulumu yapar
+     * @param type $lang
+     * @return type
+     */
 
     private function languageInstall($lang){
 
-         $rende = array();
+         $rende = [];
          
          foreach($lang as $l => $name){
              
@@ -59,7 +63,7 @@ class View {
      * @param type $file
      * @param array $values
      */
-    private function setTemplateVariables(array $values = array()){
+    private function setTemplateVariables(array $values = []){
         
         $this->template->useTemplateParametres($values);
         
@@ -124,16 +128,14 @@ class View {
      * @return $this
      */
 
-    public function make($path = '', $params = array(),$autoload = true){
+    public function make($path = '', $params = [],$autoload = true){
        
          $this->autoload = $autoload;
          $num = func_num_args();
             
-         if(isset($params['LANGUAGE'])){
-             
-             $lang = $params['LANGUAGE'];
-             
-             unset($params['LANGUAGE']);
+         if($lang = $params['lang']){
+           
+             unset($params['lang']);
              
              $languageParams = $this->languageInstall($lang);
 
@@ -156,7 +158,7 @@ class View {
      * @return \Myfc\Views
      */
     
-    public function with(array $variables = array()){
+    public function with(array $variables = []){
         
         $this->template->useTemplateParametres($variables);
         return $this;

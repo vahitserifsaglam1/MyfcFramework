@@ -394,6 +394,7 @@ class MyfcTemplateCompiler {
       
        $item = $this->system->collector->get($items); 
        $cont = "";
+       $item = (array) $item;
        if(is_array($item)){
            
            foreach ($item as $keys){
@@ -431,6 +432,7 @@ class MyfcTemplateCompiler {
       
        $item = $this->system->collector->get($items); 
        $cont = "";
+       $item = (array) $item;
        if(is_array($item)){
            
            foreach ($item as $keys => $values){

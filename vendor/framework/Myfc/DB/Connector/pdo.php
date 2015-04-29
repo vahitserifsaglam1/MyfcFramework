@@ -5,7 +5,7 @@ namespace Myfc\DB\Connector;
  use Exception;
 /**
  *
- * @author vahitþerif
+ * @author vahitï¿½erif
  *        
  */
 class pdo 
@@ -15,7 +15,7 @@ class pdo
 
     /**
      * 
-     * Baþlatýcý Sýnýf
+     * Baï¿½latï¿½cï¿½ Sï¿½nï¿½f
      * 
      * @param array $configs
      */
@@ -47,7 +47,7 @@ class pdo
         public function __call( $name, $params)
         {
             
-            return call_user_func_array(array($this->pdo,$name), $params);
+            return call_user_func_array([$this->pdo,$name], $params);
             
             
         }

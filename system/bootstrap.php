@@ -8,14 +8,8 @@
   
   include APP_PATH.'Lib/functions.php';
 
-  /**
-   *  
-   *   Başlatıcı sınıf
-   * 
-   */
   
-
-   $app =  Singleton::make('\Myfc\Bootstrap');
+  $app =  Singleton::make('\Myfc\Bootstrap');
    
    
   

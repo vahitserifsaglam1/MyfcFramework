@@ -16,7 +16,7 @@ class Finder
     
     private $type;
     
-    public $index = array();
+    public $index = [];
     
     /**
      * S�n�f� ba�lat�r ve e�er file null girilmemi�se dosyan�n �zelliklerini indexler

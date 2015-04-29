@@ -34,7 +34,7 @@
       }
       
       /**
-       * bekleme yapmadan yönlendirme yapar
+       * bekleme yapmadan yï¿½nlendirme yapar
        * @param string $href
        */
       
@@ -46,7 +46,7 @@
       }
       
       /**
-       * Zamana göre yönlendirme yapar
+       * Zamana gï¿½re yï¿½nlendirme yapar
        * @param string $href
        * @param number $time
        */
@@ -57,11 +57,30 @@
           
       }
       
+      /**
+       * EÄŸer $time girilirse girilen sÃ¼reli olarak, eÄŸer girilmesse direk yÃ¶nlendirmeli olarak gider
+       * @param string $href
+       * @param integer $time
+       */
+      public function to($href, $time = null){
+          
+          if($time !== null){
+              
+              $this->refresh($href, $time);
+              
+          }else{
+              
+              $this->location($href);
+              
+          }
+          
+      }
+      
       
       public function __call($method, $parametres)
       {
           
-          throw new undefinedClassException(sprint_f("%s adýnda bir method bulunamadý ",$method));
+          throw new undefinedClassException(sprintf("%s adÄ±nda bir method bulunamadÄ± ",$method));
           
       }
 

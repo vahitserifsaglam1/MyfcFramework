@@ -25,7 +25,12 @@ use Myfc\Template\MyfcTemplate\MyfcTemplateExtensionManager;
          
      }
      
-
+     public function test(){
+         
+       
+         
+     }
+   
   }
 
 ?>

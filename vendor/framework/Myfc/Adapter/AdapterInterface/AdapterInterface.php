@@ -13,14 +13,14 @@
      /**
       * @return mixed
       *
-      *  Sýnýfýn görünecek ve çaðrýlacak adý
+      *  adapterin adÄ±nÄ± dÃ¶ndÃ¼recek
       */
 
       public function getName();
 
      /**
       * @return mixed
-      *  Adaptere eklenen sýnýflarýn baþlatýlmasýný saðlar
+      *  Adaptere eklenen sï¿½nï¿½flarï¿½n baï¿½latï¿½lmasï¿½nï¿½ saï¿½lar
       */
       public function boot();
 

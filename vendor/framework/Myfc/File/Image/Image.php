@@ -34,13 +34,14 @@ class Image{
 
     const STRING = '_stringed';
 
-    protected $blockedExts = array(
+    protected $blockedExts = [
 
         '.php','.html','.css','.asp','.php5','.php4','.php3'
 
-    );
+    ];
 
     public function __construct($image){
+        
         $this->image = $image;
         $this->folder = PUBLIC_PATH.'files/uploads';
         $this->size = $image['size'];
@@ -56,7 +57,6 @@ class Image{
     {
 
         $array = $this->blockedExts;
-
         $fileName = $this->name;
 
     }

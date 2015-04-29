@@ -32,7 +32,7 @@
       * @return boolean
       */
      
-     public function redirect($type = '' ,array $params = array())
+     public function redirect($type = '' ,array $params = [])
      {
 
 

@@ -30,7 +30,7 @@
       protected  $type;
 
 
-      public function __construct(Array $array = [])
+      public function __construct(array $array = [])
       {
           extract($array);
           $this->con = mysql_connect($host,$username,$password);
@@ -107,7 +107,7 @@
        * @param array $exec
        * @return bool|mysql
        */
-      public function execute($exec = array())
+      public function execute($exec = [])
       {
           $query = $this->queryString;
           preg_match_all("/[?@#$%^]/", $query, $dondu);
@@ -156,7 +156,15 @@
           }
           $funcName = "mysql_fetch_".$type;
           $return =  $funcName(mysql_query($this->queryString));
-          if($return) return $return;else $this->errorMessage = mysql_error();return false;
+          if($return){
+              
+              return $return;
+          }
+      else {
+                  
+                  $this->errorMessage = mysql_error();return false;
+          }
+          
       }
 
       /**
@@ -185,6 +193,9 @@
           return $this;
       }
       
+      /**
+       * Bağlantı kapatıldı
+       */
       public function __destruct()
       {
           mysql_close($this->con);

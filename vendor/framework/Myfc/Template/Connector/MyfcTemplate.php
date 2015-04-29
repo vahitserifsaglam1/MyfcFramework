@@ -20,14 +20,14 @@ class MyfcTemplate {
         
     }
     
-    public function useTemplateParametres(array $parametres = array()){
+    public function useTemplateParametres(array $parametres =[]){
         
         $this->engine->assing($parametres);
         return $this;
         
     }
     
-    public function display($file ,$parametres = array()){
+    public function display($file ,$parametres = []){
         
         $this->engine->display($file, $parametres);
         

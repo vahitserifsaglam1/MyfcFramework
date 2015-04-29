@@ -2,10 +2,9 @@
 namespace Myfc;
 
  use Myfc\DB;
- use Myfc\Singleton;
  use Myfc\Facade\Session as Sessions;
  use Myfc\Cookie;
- use Myfc\Facade\Carbon;
+
 /**
  *
  * @author vahitşerif
@@ -35,6 +34,19 @@ class Auth extends DB
     }
     
     /**
+     * 
+     * @param string $name
+     * @return $this
+     */
+    public function key($value){
+        
+        $this->key = $value;
+        return $this;
+        
+    }
+
+
+    /**
      * Auth s�n�f�n�n sorgularda kullanaca�� veritaban� tablosunu se�er
      *   
      *  
@@ -63,13 +75,13 @@ class Auth extends DB
      * @return integer|boolean
      */
     
-    public function attemp($param1 = array(), $param2 = null, $rememberMe = false)
+    public function attemp($param1 = [], $param2 = null, $rememberMe = false)
     {
 
         if(!is_array($param1))
         {
            
-            $param1 = array('username' => $param1, 'password' => $param2);
+            $param1 = ['username' => $param1, 'password' => $param2];
             
         }
      

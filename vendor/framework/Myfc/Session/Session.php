@@ -10,12 +10,12 @@
       
       private $connector;
       
-      private $driverList = array(
+      private $driverList = [
           
           'php' => 'Myfc\Session\Connector\php',
           'file' => 'Myfc\Session\Connector\file'
           
-      );
+      ];
       
       /**
        * Sınıfı başlatır
@@ -144,10 +144,10 @@
       private function call($method,array $parametres)
       {
           
-          if(is_callable(array($this->connector,$method)) && method_exists($this->connector, $method))
+          if(is_callable([$this->connector,$method]) && method_exists($this->connector, $method))
           {
               
-              return call_user_func_array(array($this->connector, $method), $parametres);
+              return call_user_func_array([$this->connector, $method], $parametres);
               
           }
               

@@ -9,7 +9,6 @@ namespace Myfc;
  *  
  */
 
- use Myfc\View\Loader;
  use Myfc\Singleton;
 /**
  *
@@ -97,13 +96,13 @@ class MainController
      * @return mixed
      */
     
-    public function __call($name = '',array $parametres)
+    public function __call($name = '',array $parametres = [])
     {
         $thi = $this;
         array_map(function($a) use ($name,$parametres,$thi){
-             if(method_exists($thi->collection[$a],$name) || is_callable(array($thi->collection[$a],$name))){
+             if(method_exists($thi->collection[$a],$name) || is_callable([$thi->collection[$a],$name])){
                  
-                 return call_user_func_array(array($thi->collection[$a],$name),$parametres);
+                 return call_user_func_array([$thi->collection[$a],$name],$parametres);
                  
              }
                 
