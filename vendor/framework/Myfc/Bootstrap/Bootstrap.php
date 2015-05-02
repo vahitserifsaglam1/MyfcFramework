@@ -36,7 +36,7 @@
          
          $this->configs = $configs;
         
-         $this->adapter = $this->singleton('\Myfc\Adapter',array('Bootstrap'));
+         $this->adapter = $this->singleton('\Myfc\Adapter','Bootstrap');
          
          $this->adapter->addAdapter($this->singleton('\Myfc\Assets'));
          

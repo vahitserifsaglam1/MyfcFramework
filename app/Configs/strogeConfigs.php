@@ -4,8 +4,7 @@
 
       'Cache' => [
 
-          'driver' => 'memcache',
-          'default' => 'predis',
+          'driver' => 'predis',
           'memcache' => [
 
               'host' => '127.0.0.1',

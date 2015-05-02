@@ -39,16 +39,8 @@ class Crypt {
 
         $config = Config::get('Configs');
 
-        if(isset($config['key'])){
-
-            $this->securityKey = $config['key'];
-
-        }else{
-
-            $this->securityKey = md5($config['url']);
-
-        }
-
+        $this->securityKey = (isset($config['key'])) ? $config['key']:md5($config['url']);
+        
     }
 
     /**

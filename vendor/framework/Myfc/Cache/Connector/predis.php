@@ -13,11 +13,22 @@ class predis
 
     public function __construct( )
     {
-        $configs = Config::get('strogeConfigs','predis');
+       
 
-        Installer::boot();
-        $this->predis = Installer::create($configs['predis']);
+    }
+    
+    /**
+     * Başlatıcı fonksiyon
+     */
+    public function boot(){
+        
+        
+         $configs = Config::get('strogeConfigs','predis');
 
+         Installer::boot();
+         $this->predis = Installer::create($configs['predis']);
+      
+        
     }
 
     public function __call( $name,$params )
@@ -30,13 +41,8 @@ class predis
     public function check()
     {
 
-
-         if($this->predis instanceof PredisClient)
-         {
-
-             return true;
-
-         }
+      
+        return true;
 
 
     }

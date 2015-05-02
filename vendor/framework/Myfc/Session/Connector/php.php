@@ -6,8 +6,12 @@ namespace Myfc\Session\Connector;
 
 class php{
     
-    
-    public function check()
+    public function boot(){
+        
+        
+    }
+
+        public function check()
     {
         
         if(isset($_SESSION)) return true;else return false;

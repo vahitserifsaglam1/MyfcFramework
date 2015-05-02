@@ -1,0 +1,378 @@
+[20-Apr-2015 17:11:52 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\App::__construct() must be an instance of Myfc\Bootstrap, none given in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\App\App.php on line 22
+[20-Apr-2015 17:12:49 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1057
+[20-Apr-2015 17:12:50 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1057
+[20-Apr-2015 17:12:51 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1057
+[20-Apr-2015 17:12:54 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1057
+[20-Apr-2015 17:17:22 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:17:23 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:17:23 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:17:23 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:17:24 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:17:31 Europe/Istanbul] PHP Notice:  Undefined index: user in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1075
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\DB::orderer() must be of the type array, null given, called in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109 and defined in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 881
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:04 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\DB::orderer() must be of the type array, null given, called in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109 and defined in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 881
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109
+[20-Apr-2015 17:18:05 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\DB::orderer() must be of the type array, null given, called in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109 and defined in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 881
+[20-Apr-2015 17:18:07 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:07 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:07 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109
+[20-Apr-2015 17:18:07 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\DB::orderer() must be of the type array, null given, called in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109 and defined in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 881
+[20-Apr-2015 17:18:30 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:30 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:18:30 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109
+[20-Apr-2015 17:18:30 Europe/Istanbul] PHP Catchable fatal error:  Argument 1 passed to Myfc\DB::orderer() must be of the type array, null given, called in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1109 and defined in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 881
+[20-Apr-2015 17:20:02 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:20:02 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:20:02 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1114
+[20-Apr-2015 17:20:02 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 992
+[20-Apr-2015 17:20:03 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:20:03 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 733
+[20-Apr-2015 17:20:03 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1114
+[20-Apr-2015 17:20:03 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 992
+[20-Apr-2015 17:20:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1115
+[20-Apr-2015 17:20:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 993
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1115
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 993
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1115
+[20-Apr-2015 17:20:36 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 993
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: baslangic in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: orta in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: son in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: baslangic in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: orta in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:04 Europe/Istanbul] PHP Notice:  Undefined variable: son in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: baslangic in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: orta in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: son in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: baslangic in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: orta in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: son in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: baslangic in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: orta in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:22:05 Europe/Istanbul] PHP Notice:  Undefined variable: son in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 338
+[20-Apr-2015 17:23:32 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:23:32 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 734
+[20-Apr-2015 17:23:32 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1115
+[20-Apr-2015 17:23:32 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 993
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:21 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 738
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1123
+[20-Apr-2015 17:24:23 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1001
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:24:34 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Uninitialized string offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 739
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:24:35 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:26:44 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:26:44 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:26:45 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:26:45 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:26:45 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:26:45 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:26:46 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1124
+[20-Apr-2015 17:26:46 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:27:25 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1125
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1125
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1125
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1125
+[20-Apr-2015 17:27:26 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:27:27 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1125
+[20-Apr-2015 17:27:27 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 17:28:22 Europe/Istanbul] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 1002
+[20-Apr-2015 18:02:19 Europe/Istanbul] PHP Notice:  Array to string conversion in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:19 Europe/Istanbul] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:19 Europe/Istanbul] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:20 Europe/Istanbul] PHP Notice:  Array to string conversion in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:20 Europe/Istanbul] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:20 Europe/Istanbul] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Array to string conversion in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Array to string conversion in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Undefined offset: 1 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 18:02:21 Europe/Istanbul] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\DB\DB.php on line 699
+[20-Apr-2015 20:06:12 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[20-Apr-2015 20:06:13 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[20-Apr-2015 20:06:13 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[20-Apr-2015 20:06:13 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:31:44 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\sprint_f() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateLoader.php on line 88
+[21-Apr-2015 21:39:16 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCompiler::startParsing() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 61
+[21-Apr-2015 21:39:17 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCompiler::startParsing() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 61
+[21-Apr-2015 21:54:02 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:54:03 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:54:04 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:54:04 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:52 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:52 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:52 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:53 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:53 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:55:53 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:56:40 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:56:41 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:56:59 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[21-Apr-2015 21:57:00 Europe/Istanbul] PHP Fatal error:  Call to a member function getMessage() on null in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Error\Error.php on line 48
+[22-Apr-2015 00:19:10 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\expode() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 84
+[22-Apr-2015 00:19:11 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\expode() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 84
+[22-Apr-2015 00:19:12 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\expode() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 84
+[22-Apr-2015 00:21:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ',', expecting '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 85
+[22-Apr-2015 01:34:00 Europe/Istanbul] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 42 bytes) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 146
+[22-Apr-2015 01:43:49 Europe/Istanbul] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 23 bytes) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 147
+[22-Apr-2015 18:58:11 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(161) : eval()'d code on line 1
+[22-Apr-2015 18:58:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(161) : eval()'d code on line 1
+[22-Apr-2015 18:58:29 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(161) : eval()'d code on line 1
+[22-Apr-2015 18:58:29 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(161) : eval()'d code on line 1
+[22-Apr-2015 19:07:04 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(168) : eval()'d code on line 1
+[22-Apr-2015 19:07:13 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(168) : eval()'d code on line 1
+[22-Apr-2015 19:08:03 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:13 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:14 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:14 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:08:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(170) : eval()'d code on line 1
+[22-Apr-2015 19:09:18 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '=', expecting ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:09:41 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '--' (T_DEC), expecting ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:10:06 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\ForItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 156
+[22-Apr-2015 19:10:08 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\ForItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 156
+[22-Apr-2015 19:10:08 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\ForItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 156
+[22-Apr-2015 19:10:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:11:01 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:11:22 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:11:23 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 1
+[22-Apr-2015 19:11:41 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:11:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:11:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:11:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:11:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:34 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:34 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:35 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:48 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:48 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:49 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:49 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:12:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:15 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:13:27 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(169) : eval()'d code on line 1
+[22-Apr-2015 19:13:27 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(169) : eval()'d code on line 1
+[22-Apr-2015 19:13:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(169) : eval()'d code on line 1
+[22-Apr-2015 19:13:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(169) : eval()'d code on line 1
+[22-Apr-2015 19:13:51 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:14:24 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:14:24 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:14:25 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:14:25 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:15:01 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '.' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 171
+[22-Apr-2015 19:15:23 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 19:15:25 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '<' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(172) : eval()'d code on line 2
+[22-Apr-2015 20:11:35 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:11:36 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:11:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:11:53 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:11:54 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:11:54 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:16 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:41 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:42 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:12:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(192) : eval()'d code on line 1
+[22-Apr-2015 20:13:00 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:10 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:11 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:17 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:18 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:18 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(194) : eval()'d code on line 1
+[22-Apr-2015 20:13:27 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:38 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:51 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:52 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:13:52 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:03 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:03 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:04 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:04 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:04 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:14:05 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(195) : eval()'d code on line 1
+[22-Apr-2015 20:21:28 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(176) : eval()'d code on line 1
+[22-Apr-2015 20:21:29 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(176) : eval()'d code on line 1
+[22-Apr-2015 20:21:29 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(176) : eval()'d code on line 1
+[22-Apr-2015 20:21:29 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(176) : eval()'d code on line 1
+[22-Apr-2015 20:24:43 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'asdasd' (T_STRING) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 174
+[22-Apr-2015 20:24:44 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'asdasd' (T_STRING) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 174
+[22-Apr-2015 20:31:48 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(180) : eval()'d code on line 1
+[22-Apr-2015 20:31:49 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(180) : eval()'d code on line 1
+[22-Apr-2015 20:31:49 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(180) : eval()'d code on line 1
+[22-Apr-2015 20:31:50 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ',' or ';' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(180) : eval()'d code on line 1
+[22-Apr-2015 20:46:51 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\ForItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 182
+[22-Apr-2015 20:46:53 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\ForItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 182
+[22-Apr-2015 20:49:12 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(204) : eval()'d code on line 1
+[22-Apr-2015 20:49:14 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(204) : eval()'d code on line 1
+[22-Apr-2015 20:49:26 Europe/Istanbul] PHP Parse error:  syntax error, unexpected end of file in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(204) : eval()'d code on line 1
+[22-Apr-2015 20:49:26 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '}' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(206) : eval()'d code on line 1
+[22-Apr-2015 21:09:51 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Exceptions\ItemExceptions\EachItemException' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 231
+[22-Apr-2015 21:48:44 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCompiler::getParametresValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 139
+[23-Apr-2015 04:29:12 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$variable' (T_VARIABLE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 384
+[23-Apr-2015 04:29:13 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$variable' (T_VARIABLE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 384
+[23-Apr-2015 04:29:13 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$variable' (T_VARIABLE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 384
+[23-Apr-2015 04:29:13 Europe/Istanbul] PHP Parse error:  syntax error, unexpected '$variable' (T_VARIABLE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 384
+[23-Apr-2015 04:29:54 Europe/Istanbul] PHP Fatal error:  Call to undefined function display() in C:\xampp\htdocs\MyfcFramework\app\Controller\index.php on line 33
+[23-Apr-2015 04:29:54 Europe/Istanbul] PHP Fatal error:  Call to undefined function display() in C:\xampp\htdocs\MyfcFramework\app\Controller\index.php on line 33
+[23-Apr-2015 04:29:55 Europe/Istanbul] PHP Fatal error:  Call to undefined function display() in C:\xampp\htdocs\MyfcFramework\app\Controller\index.php on line 33
+[23-Apr-2015 13:34:01 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php(295) : eval()'d code on line 1
+[23-Apr-2015 13:40:03 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 137
+[23-Apr-2015 13:40:03 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 143
+[23-Apr-2015 13:40:16 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 140
+[23-Apr-2015 13:40:17 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 140
+[23-Apr-2015 13:40:18 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 137
+[23-Apr-2015 13:40:34 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 170
+[23-Apr-2015 13:41:23 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 168
+[23-Apr-2015 13:43:10 Europe/Istanbul] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 116
+[23-Apr-2015 13:51:13 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:14 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:14 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:15 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:22 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:23 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:23 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 13:51:23 Europe/Istanbul] PHP Fatal error:  Call to undefined method Myfc\Template\MyfcTemplate\MyfcTemplateCollector::getParameterValue() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 133
+[23-Apr-2015 14:08:44 Europe/Istanbul] PHP Fatal error:  Class 'Myfc\Template\MyfcTemplate\Extensions\System' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateExtensionManager.php on line 20
+[23-Apr-2015 14:09:06 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\sprint_f() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateExtensionManager.php on line 45
+[23-Apr-2015 14:09:09 Europe/Istanbul] PHP Fatal error:  Call to undefined function Myfc\Template\MyfcTemplate\sprint_f() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateExtensionManager.php on line 45
+[23-Apr-2015 14:10:30 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'interface' (T_INTERFACE), expecting '{' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\Extensions\System.php on line 12
+[23-Apr-2015 14:10:37 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\Extensions\System.php on line 17
+[23-Apr-2015 14:10:37 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\Extensions\System.php on line 17
+[23-Apr-2015 14:10:38 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\Extensions\System.php on line 17
+[23-Apr-2015 14:36:50 Europe/Istanbul] PHP Parse error:  syntax error, unexpected ',' in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 151
+[23-Apr-2015 14:36:57 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 173
+[23-Apr-2015 14:36:58 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 173
+[23-Apr-2015 14:36:59 Europe/Istanbul] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 173
+[23-Apr-2015 14:52:28 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 14:53:04 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 14:53:05 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 14:53:05 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 14:53:05 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 14:53:05 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 15:16:31 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 15:16:32 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 15:16:47 Europe/Istanbul] PHP Fatal error:  Call to undefined function  csrf_active () in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 199
+[23-Apr-2015 15:22:44 Europe/Istanbul] PHP Fatal error:  Call to undefined function Csrf::active() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 175
+[23-Apr-2015 15:22:45 Europe/Istanbul] PHP Fatal error:  Call to undefined function Csrf::active() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 175
+[23-Apr-2015 15:22:46 Europe/Istanbul] PHP Fatal error:  Call to undefined function Csrf::active() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 175
+[23-Apr-2015 15:22:51 Europe/Istanbul] PHP Fatal error:  Call to undefined function Csrf::active() in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Template\MyfcTemplate\MyfcTemplateCompiler.php on line 175
+[29-Apr-2015 18:32:03 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:04 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:04 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:32 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:33 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:34 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:32:34 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 9
+[29-Apr-2015 18:33:17 Europe/Istanbul] PHP Fatal error:  Class 'users' not found in C:\xampp\htdocs\MyfcFramework\app\Route.php on line 8
+[29-Apr-2015 21:32:19 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:32:20 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:32:20 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:32:20 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:32:20 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:32:21 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:11 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:11 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:12 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:12 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:12 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:23 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:23 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:33:24 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:35:17 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:35:18 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:35:18 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:35:18 Europe/Istanbul] PHP Fatal error:  Class 'Memcache' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\memcache.php on line 14
+[29-Apr-2015 21:43:53 Europe/Istanbul] PHP Fatal error:  Cannot declare class Myfc\Cache\Connector\file because the name is already in use in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Cache\Connector\file.php on line 8
+[29-Apr-2015 21:59:25 Europe/Istanbul] PHP Fatal error:  Class 'PredisClient' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 42
+[29-Apr-2015 21:59:26 Europe/Istanbul] PHP Fatal error:  Class 'PredisClient' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 42
+[29-Apr-2015 21:59:26 Europe/Istanbul] PHP Fatal error:  Class 'PredisClient' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 42
+[29-Apr-2015 21:59:27 Europe/Istanbul] PHP Fatal error:  Class 'PredisClient' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 42
+[29-Apr-2015 22:00:03 Europe/Istanbul] PHP Fatal error:  Class 'PredisAutoloader' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 25
+[29-Apr-2015 22:00:04 Europe/Istanbul] PHP Fatal error:  Class 'PredisAutoloader' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 25
+[29-Apr-2015 22:00:04 Europe/Istanbul] PHP Fatal error:  Class 'PredisAutoloader' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 25
+[29-Apr-2015 22:00:04 Europe/Istanbul] PHP Fatal error:  Class 'PredisAutoloader' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 25
+[29-Apr-2015 22:00:05 Europe/Istanbul] PHP Fatal error:  Class 'PredisAutoloader' not found in C:\xampp\htdocs\MyfcFramework\vendor\framework\Myfc\Predis\Installer.php on line 25

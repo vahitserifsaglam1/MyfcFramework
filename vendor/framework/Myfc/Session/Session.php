@@ -3,19 +3,11 @@
   namespace Myfc;
   
   use Myfc\Session\SessionInterface;
-  
-  class Session{
+  use Myfc\Helpers\DriverManager;
+  class Session extends DriverManager{
       
-      private $configs;
-      
-      private $connector;
-      
-      private $driverList = [
-          
-          'php' => 'Myfc\Session\Connector\php',
-          'file' => 'Myfc\Session\Connector\file'
-          
-      ];
+
+    
       
       /**
        * Sınıfı başlatır
@@ -25,6 +17,12 @@
       public function __construct( array $configs = null )
       {
           
+          $this->setDriverList([
+          
+          'php' => 'Myfc\Session\Connector\php',
+          'file' => 'Myfc\Session\Connector\file'
+          
+      ]);
           if($configs === null)
           {
 
@@ -32,49 +30,11 @@
              
           }
           
-          $this->configs = $configs;
-          
-          $this->connector =   $this->connectToConnector( $this->configs );
+          $this->boot($configs);
           
       }
       
-      /**
-       * Başlatıcı sürücüye bağlanır
-       * @param array $configs
-       * @return unknown
-       */
-      
-      private function connectToConnector(array $configs)
-      {
-          
-            $driver = $configs['driver'];
-            
-            $default = $configs['default'];
-            
-            if(!isset($this->driverList[$driver]))
-            {
-                
-                $driver = $this->driverList[$default];
-                
-            }
-            
-            if($connector = $this->driverList[$driver])
-            {
-                
-                $connector = new $connector($configs);
-                
-                if($connector->check())
-                {
-                    
-                    return $connector;
-                    
-                }
-                
-            }
-            
-          
-      }
-      
+  
       /**
        *  
        *  s�n�fa yeni bir connector ekler, autocheck true ise otomatik o driver� se�er
@@ -95,13 +55,11 @@
           
           if($return instanceof SessionInterface)
           {
-              
-              $this->driverList[$name] = get_class($return);
-              
+              $this->addDriver($name, $return); 
               if($autocheck)
               {
                   
-                  $this->driver($name);
+                  $this->connectDriver($name);
                   
               }
               
@@ -115,24 +73,7 @@
           
       }
       
-      /**
-       * driver seçimi yapar
-       * @param string $name
-       */
-      
-      public function driver($name)
-      {
-          
-          if(isset($this->driverList[$name]))
-          {
-              
-              $this->configs = $this->configs['driver'] = $name;
-              
-              $this->connectToConnector($this->configs);
-              
-          }
-          
-      }
+  
       
       /**
        * Dinamik olarak fonksiyon �a��rmakta kullan�l�r
@@ -144,10 +85,10 @@
       private function call($method,array $parametres)
       {
           
-          if(is_callable([$this->connector,$method]) && method_exists($this->connector, $method))
+          if(is_callable([$this->getDriver(),$method]) && method_exists($this->getDriver(), $method))
           {
               
-              return call_user_func_array([$this->connector, $method], $parametres);
+              return call_user_func_array([$this->getDriver(), $method], $parametres);
               
           }
               

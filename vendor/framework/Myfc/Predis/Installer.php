@@ -1,10 +1,9 @@
 <?php
   namespace Myfc\Predis;
   use Myfc\Config;
-  use PredisClient;
+  use Predis\Client;
   use Exception;
-  use PredisAutoloader;
-  
+ 
 
   class  Installer{
       
@@ -20,17 +19,7 @@
          */
         public static function boot(  )
         {
-            try{
-                
-                PredisAutoloader::register();
-                static::$installed = true;;
-            }
-            
-            catch(Exception $e)
-            {
-                static::$installed = false;
-                echo $e;
-            }
+   
 
         }
 
@@ -50,7 +39,7 @@
 
            try{
 
-               $redis = new PredisClient( $configs );
+               $redis = new Client( $configs );
 
            }catch(Exception $e)
            {

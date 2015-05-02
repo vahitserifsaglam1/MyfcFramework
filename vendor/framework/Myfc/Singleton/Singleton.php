@@ -1,14 +1,13 @@
 <?php
- namespace Myfc;
-
- use ReflectionClass;
 /**
  *
  * @author Vahit Şerif Sağlam
  *        
  */
-class Singleton
-{
+ namespace Myfc;
+ use ReflectionClass;
+ class Singleton
+ {
  
      protected static $classes;
      
@@ -33,14 +32,11 @@ class Singleton
         if( !isset( static::$classes[$class] ) )
         {
             
+            $classs = new ReflectionClass($class);
             //  reflection sınıfımızı oluşturduk
-            $classA = new ReflectionClass($class);
-            self::$classes[$class] = $classA->newInstanceArgs($parametres);
-    
-            self::$classCount++;
-            
+            self::$classes[$class] = $classs->newInstanceArgs($parametres);
+            self::$classCount++;    
         }
-     
         return static::$classes[$class];
         
     }
@@ -68,6 +64,4 @@ class Singleton
     }
     
     
-}
-
-?>
+ }

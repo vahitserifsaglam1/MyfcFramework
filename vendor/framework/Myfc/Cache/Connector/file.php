@@ -2,7 +2,7 @@
 
 
 namespace Myfc\Cache\Connector;
-use Myfc\File;
+use Myfc\File as Filesystem;
 use Exception;
 
 final class file{
@@ -35,8 +35,13 @@ final class file{
     
   
     
-   public function __construct(array $configs = []) {
-      $this->filesystem = File::boot() ;
+   public function __construct() {
+     
+   }
+   
+   public function boot(array $configs = [] ){
+       
+        $this->filesystem = Filesystem::boot() ;
       $this->path = $configs['file']['path'];
       
       if(!$this->filesystem->exists($this->getPath())){
@@ -45,14 +50,31 @@ final class file{
           
       }
       
-      if(!$this->checkIsReadable()){
+      if(!$this->checkIsWriteable()){
           
           throw new Exception(sprintf("%s dosyasu yazılabilir bir dosya değil",$this->getPath()));
           
       }
       $this->filesystem->in($this->getPath());
+       
    }
-   
+
+   private function checkIsWriteable(){
+       
+           if($path === null){
+           
+           $path = $this->getPath();
+           
+       }else{
+           
+           $path = $this->filesystem->inPath($path);
+           
+       }
+       
+            (is_writeable($path)) ? true:false;  
+       
+   }
+
    public function set($name = '', $value = '', $time = 3600)
    {
        
@@ -170,6 +192,12 @@ final class file{
    public function getPath(){
    
        return $this->path;
+       
+   }
+   
+   public function check(){ 
+        
+       return true;
        
    }
    

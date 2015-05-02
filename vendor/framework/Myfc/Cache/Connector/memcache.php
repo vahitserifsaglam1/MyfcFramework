@@ -8,9 +8,19 @@ class memcache
 
     public $memcache;
 
-    public function __construct(array $configs)
+    public function __construct()
     {
 
+     
+    }
+    
+    /**
+     * 
+     * @param array $configs
+     */
+    
+    public function boot(array $configs = [] ){
+        
         $cache = new cache();
 
         $configs = $configs['memcache'];
@@ -19,6 +29,19 @@ class memcache
 
         $this->cache = $cache;
 
+        
+    }
+
+
+    public function check(){
+        
+        if(extension_loaded('memcache')){
+            
+       
+            return true;
+            
+        }
+        
     }
 
     public function __call($name, $params)

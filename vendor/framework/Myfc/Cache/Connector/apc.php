@@ -79,5 +79,11 @@ class apc {
         }
 
     }
+    
+    public function boot(){
+        
+        //
+        
+    }
 
 }

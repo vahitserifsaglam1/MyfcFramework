@@ -121,6 +121,19 @@ trait StringBuilder {
         
     }
     
+    public function replaceString($string, $search, $replaceWith){
+        
+              $return = $string;
+              if(strstr($string,$search)){
+                  
+                  $return = str_replace($search, $replaceWith, $string);
+                  
+              }
+              
+              return $return;
+        
+    }
+    
     
     
 }

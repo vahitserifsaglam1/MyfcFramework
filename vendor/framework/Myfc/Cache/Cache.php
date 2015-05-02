@@ -9,26 +9,26 @@
 namespace Myfc;
 
 use Myfc\Cache\CacheInterface;
+use Myfc\Helpers\DriverManager;
 
-class Cache {
+class Cache extends DriverManager{
 
 
-     private $connector;
+   
 
-     private $configs;
+    public function __construct( array $configs = null)
+    {
 
-     public $driverList = [
+        
+        $this->setDriverList([
 
          'apc' => 'Myfc\Cache\Connector\apc',
          'file' => 'Myfc\Cache\Connector\file',
          'predis' => 'Myfc\Cache\Connector\predis',
          'memcache' => 'Myfc\Cache\Connector\memcache'
 
-     ];
-
-    public function __construct( array $configs = null)
-    {
-
+     ]);
+        
         if($configs === null)
         {
 
@@ -37,51 +37,18 @@ class Cache {
         }
 
 
-        $this->connectToConnector($this->configs);
+       
+        $this->boot($configs);
 
     }
 
-    /**
-     * Bağlayıcıya bağlanır
-     * @param array $configs
-     * @return mixed
-     */
-
-    private function connectToConnector(array $configs = [])
-    {
-
-        $driver = $configs['driver'];
-
-        $default = $configs['default'];
-
-        if(!isset($this->driverList[$driver]))
-        {
-
-            $driver = $this->driverList[$default];
-
-        }
-
-        if($connector = $this->driverList[$driver])
-        {
-
-            $connector = new $connector($configs);
-
-            if($connector->check())
-            {
-
-                return $connector;
-
-            }
-
-        }
-
-
-    }
+  
+  
 
 
     /**
      *
-     *  sınıfa yeni bir connector ekler, autocheck true ise otomatik o driverı seçer
+     *    sınıfa yeni bir connector ekler, autocheck true ise otomatik o driverı seçer
      *
      *    $call dan dönen değer bir SessionInterface e ait olmalıdır,
      *
@@ -102,12 +69,12 @@ class Cache {
         if($return instanceof CacheInterface)
         {
 
-            $this->driverList[$name] = get_class($return);
+            $this->addDriver($name, $return);
 
             if($autocheck)
             {
 
-                $this->driver($name);
+                $this->connectDriver($name);
 
             }
 
@@ -126,17 +93,7 @@ class Cache {
      * @param string $name
      */
 
-    public function driver($name)
-    {
 
-        if(isset($this->driverList[$name]))
-        {
-
-            $this->configs = $this->configs['driver'] = $name;
-
-        }
-
-    }
 
     /**
      * Dinamik olarak fonksiyon çağırmakta kullanılır
@@ -145,13 +102,13 @@ class Cache {
      * @return mixed
      */
 
-    private function call($method,array $parametres)
+    private function call($method,array $parametres = [])
     {
 
-        if(is_callable([$this->connector,$method]))
+        if(is_callable([$this->getDriver(),$method]))
         {
 
-            return call_user_func_array([$this->connector, $method], $parametres);
+            return call_user_func_array([$this->getDriver(), $method], $parametres);
 
         }
 

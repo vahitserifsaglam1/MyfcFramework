@@ -2,44 +2,40 @@
 
 
 namespace Myfc\Mail;
-
+use Myfc\Helpers\ConfigBag;
 class Collection {
+    
+    use ConfigBag;
     
     private $collection;
     
     
-    public function __construct($array = array()) {
-        $this->collection = $array();
+    public function __construct($array = []) {
+        $this->setConfigs($array);
     }
     
     
     public function __set($name,$value){
         
-        $this->collection[$name] = $value;
+        $this->setConfig($name,$value);
         return $this;
         
     }
     public function __get($name) {
-        if(isset($this->collection[$name])){
-            
-            return $this->collection[$name];
-        }else{
-            
-            return null;
-            
-        }
+        
+        return $this->getConfig($name);
         
     }
     
     public function setCollections($array){
         
-        $this->collection = $array();
+        $this->setConfigs($array);
         
     }
     
     public function getCollections(){
         
-        return $this->collection;
+        return $this->getConfigs();
         
     }
     

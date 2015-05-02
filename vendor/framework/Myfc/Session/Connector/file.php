@@ -15,10 +15,8 @@
   
       public $lifetime;
   
-  
-      public function  __construct( array $options )
-      {
-  
+      public function boot(array $options ){
+          
           $this->filesystem = Filesystem::boot('Local');
   
           $this->options = $options;
@@ -27,6 +25,13 @@
           
           $this->gc();
   
+          
+      }
+
+      public function  __construct( )
+      {
+  
+        
       }
   
       public function set($name,$value,$time)

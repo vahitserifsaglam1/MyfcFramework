@@ -6,9 +6,12 @@
   use Myfc\Facade\Route;
   use ReflectionClass;
   use Closure;
+  use Myfc\Helpers\Classer;
   
   class Container{
       
+      // classer helperi 
+      use Classer;
       const CONTROLLER = "controller";
       
       const MODAL = "modal";
@@ -128,13 +131,13 @@
                   
                   case self::CONTOLLER:
                       
-                      
+                     return   $this->makeController($class[1], $parametres, $autoInstance);
                       
                       break;
                   
                   case self::MODAl:
                       
-                      
+                      return $this->makeModal($class[1], $parametres, $autoInstance);
                       
                       break;
                   
@@ -176,7 +179,8 @@
               }
 
               if($autoInstance) {
-                  return (new ReflectionClass($controller))->newInstanceArgs($parametres);
+                  
+                  return $this->generateClass($controller, $parametres);
 
               }else{
 
@@ -192,6 +196,13 @@
           
       }
       
+      public function makeModal($modalName,$parametres, $autoInstance = false){
+          
+          
+          
+      }
+
+
       /**
        * Modal �a��r�r , instance olu�turmaz.
        * @param string $modalName
@@ -211,7 +222,7 @@
           
           $this->maked[] = $className;
           
-          return (new ReflectionClass($className))->newInstanceArgs($parametres);
+          return $this->generateClass($className, $parametres);
           
       }
       

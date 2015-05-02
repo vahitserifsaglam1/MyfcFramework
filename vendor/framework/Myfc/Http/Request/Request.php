@@ -3,10 +3,12 @@
  namespace Myfc\Http;
  
   use Myfc\Singleton;
+  use Myfc\Helpers\Http;
  
   class Request
   {
 
+      use Http;
       /** they are http versions */
       const VERSION_11 = "HTTP/1.1";
       const VERSION_10 = "HTTP/1.0";
@@ -19,9 +21,7 @@
       protected $client;
       protected $responseGet;
       protected $responsePost;
-      private $_queryString;
-      private $_uri;
-      private $_requestMethod;
+
       protected $server;
 
       /**
@@ -59,46 +59,21 @@
 
 
 
-
-      /**
-       * @return bool
-       *  Check request HTTP or Https
-       */
-
-      public function isHttps()
-      {
-          return (array_key_exists('HTTPS', $_SERVER) || $_SERVER['HTTPS'] === 'off');
-      }
-
-      /**
-       * @return bool
-       *
-       *  Check request method
-       *
-       *  if method = GET return true else false
-       */
-      
-
-
-      public function isAjax()
-      {
-          return ($_SERVER['X_REQUESTED_WITH'] !== null && $_SERVER['X_REQUESTED_WITH'] === 'XMLHttpRequest');
-      }
-   
-
  
       public function get($url,$params = array())
       {
           $req = $this->client->createRequest('GET', $url, $params);
-          $cek = $this->client->send($req);
-              return  $cek;
+          $response = $this->client->send($req);
+              return  $response;
 
       }
       public function post($url,$params = array() )
       {
+          
           $req = $this->client->createRequest('POST', $url, $params);
-          $cek = $this->client->send($req);
-          return $cek;
+          $response = $this->client->send($req);
+          return $response;
+          
       }
       
       

@@ -23,8 +23,8 @@ use Myfc\Route\RouteCollection;
 use Myfc\Support\String\Parser;
 use Myfc\Bootstrap;
 use Myfc\Http\Response;
-use Myfc\Http\Request;
 use Exception;
+use Myfc\Helpers\Http;
 /**
  *  Route
  *
@@ -32,6 +32,7 @@ use Exception;
  */
 class Route {
     
+    use Http;
     /**
      * collection sınıfını tutar
      * @var type 
@@ -115,7 +116,7 @@ class Route {
         
         // methodu seçer 
         
-        $this->method = $this->bootstrap->server->method;
+        $this->method = $this->getRequestMethod();
         
         
         // when işlemini kontrol eder
@@ -575,13 +576,12 @@ class Route {
         
         $check = mb_convert_case($check,MB_CASE_UPPER);
         
-        $request = Request::this();
         
         switch ($check){
             
             case 'HTTPS':
                 
-            if($request->isHttps()){
+            if($this->isHttps()){
                 
                 return true;
                 
@@ -591,7 +591,7 @@ class Route {
                 
             case 'AJAX':
                 
-                if($request->isAjax()){
+                if($this->isAjax()){
                     
                     return true;
                     
